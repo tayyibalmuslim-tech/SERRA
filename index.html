@@ -1523,7 +1523,7 @@ const store={
     try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){}
   }
 };
-let USER = Object.assign({notes:{}, marks:[], ben:[], theme:'dark', fb:null, code:''}, store.get());
+let USER = Object.assign({notes:{}, marks:[], ben:[], theme:'light', fb:null, code:''}, store.get());
 const save = () => { store.set(USER); cloudPush(); };
 
 /* ---------- أدوات ---------- */
@@ -2011,7 +2011,7 @@ function saveSync(){
 /* ============================================================
    الإقلاع
    ============================================================ */
-document.documentElement.dataset.theme = USER.theme||'dark';
+document.documentElement.dataset.theme = USER.theme||'light';
 renderTimeline(); renderSearch(); fbInit();
 if(fbDB && USER.code) setTimeout(()=>{
   fbDB.ref('seerah/'+USER.code).get().then(s=>{
