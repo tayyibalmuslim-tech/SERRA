@@ -1500,12 +1500,15 @@ PERIODS.forEach(p => p.ev.forEach(e => { EV[e.id]=e; EV_PERIOD[e.id]=p; }));
 PEOPLE.forEach(p => PER[p.id]=p);
 TAGS.forEach(t => TAG[t.id]=t);
 
-/* كل الفوائد مسطّحة مع مصدرها */
+/* كل الفوائد مسطّحة مع مصدرها (تشمل تعديلات وإضافات المستخدم على مستوى الحدث) */
 function allBenefits(){
   const out=[];
-  PERIODS.forEach(p=>p.ev.forEach(e=>(e.ben||[]).forEach((b,i)=>{
-    out.push({...b, ev:e.id, evT:e.t, per:p.id, perC:p.c, key:e.id+'-'+i});
-  })));
+  PERIODS.forEach(p=>p.ev.forEach(e=>{
+    const merged = getEv ? getEv(e.id) : e;
+    (merged.ben||[]).forEach((b,i)=>{
+      out.push({...b, ev:e.id, evT:e.t, per:p.id, perC:p.c, key:e.id+'-'+i});
+    });
+  }));
   (USER.ben||[]).forEach((b,i)=>out.push({...b, ev:b.ev||null, evT:b.ev?(EV[b.ev]?.t||''):'إضافة شخصية', mine:true, key:'u'+i}));
   return out;
 }
@@ -1590,8 +1593,10 @@ function renderTimeline(){
           <span class="chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
         <div class="pbody">
-          ${p.ev.map((e,ei)=>`
-            <button class="ev" data-e="${e.id}">
+          ${p.ev.map((e0,ei)=>{ const e=getEv(e0.id);
+            const edited = (USER.edits||{})[e0.id]?.n!=null || (USER.benAdd||{})[e0.id]?.length || Object.keys((USER.benEdit||{})[e0.id]||{}).length;
+            return `
+            <button class="ev" data-e="${e0.id}">
               <span class="evno">${nf(ei+1)}</span>
               <span class="evmeta">
                 <h4>${esc(e.t)}</h4>
@@ -1601,10 +1606,11 @@ function renderTimeline(){
                   <span class="mini g">${nf((e.ben||[]).length)} فوائد</span>
                   ${(e.ppl||[]).length?`<span class="mini">${nf(e.ppl.length)} شخصيات</span>`:''}
                   <span class="mini${e.g==='sahih'||e.g==='hasan'?' s':''}">${GRADES[e.g].i} ${e.g==='sahih'?'صحيح':e.g==='hasan'?'حسن':e.g==='mash'?'مشهور':'ضعيف'}</span>
+                  ${edited?'<span class="mini" style="color:var(--amber);border-color:var(--amber)">معدَّل</span>':''}
                 </div>
               </span>
-              ${USER.notes[e.id]?'<span class="dot-note" title="لك ملاحظة"></span>':''}
-            </button>`).join('')}
+              ${USER.notes[e0.id]?'<span class="dot-note" title="لك ملاحظة"></span>':''}
+            </button>`;}).join('')}
         </div>
       </div>
     </div>`).join('')}
@@ -1616,10 +1622,21 @@ function renderTimeline(){
 /* ============================================================
    نافذة الحدث
    ============================================================ */
+/* دمج تعديلات المستخدم فوق البيانات الأصلية (overwrite للسرد، دمج للفوائد) */
+function getEv(id){
+  const base=EV[id]; if(!base) return null;
+  const ed=(USER.edits||{})[id]||{};
+  const extraBen=(USER.benAdd||{})[id]||[];
+  const overrides=(USER.benEdit||{})[id]||{};
+  const mergedBen=(base.ben||[]).map((b,i)=> overrides[i] ? {...b, ...overrides[i]} : b).concat(extraBen);
+  return { ...base, n: ed.n!=null ? ed.n : base.n, ben: mergedBen };
+}
+
 function openEvent(id){
-  const e=EV[id]; if(!e) return;
+  const e=getEv(id); if(!e) return;
   const p=EV_PERIOD[id];
   const gr=GRADES[e.g];
+  const editingNarr = window.__editNarr===id;
   $('#sheet').style.setProperty('--pcol', p.c);
   $('#sheet').innerHTML=`
   <div class="shead">
@@ -1629,8 +1646,18 @@ function openEvent(id){
   </div>
   <div class="sbody">
     <div class="sec">
-      <h5>السرد</h5>
-      <div class="narr">${e.n.split('\n\n').map(x=>`<p style="margin-bottom:14px">${x}</p>`).join('')}</div>
+      <h5 style="display:flex;align-items:center;justify-content:space-between">
+        <span>السرد</span>
+        <button class="btn" style="padding:3px 11px;font-size:12px" onclick="${editingNarr?`cancelEditNarr('${id}')`:`startEditNarr('${id}')`}">${editingNarr?'إلغاء':'تعديل'}</button>
+      </h5>
+      ${editingNarr
+        ? `<textarea class="note" id="narrEdit" style="min-height:220px">${esc(e.n)}</textarea>
+           <div class="row">
+             <button class="btn pri" onclick="saveNarr('${id}')">حفظ السرد</button>
+             ${(USER.edits||{})[id]?.n!=null?`<button class="btn dgr" onclick="resetNarr('${id}')">استرجاع الأصل</button>`:''}
+           </div>`
+        : `<div class="narr">${e.n.split('\n\n').map(x=>`<p style="margin-bottom:14px">${x}</p>`).join('')}</div>`
+      }
     </div>
 
     <div class="sec">
@@ -1639,17 +1666,43 @@ function openEvent(id){
       <div class="srcbox" style="margin-top:10px">${esc(e.src)}</div>
     </div>
 
-    ${(e.ben||[]).length?`<div class="sec">
+    <div class="sec">
       <h5>الفوائد المستخلصة</h5>
-      ${e.ben.map((b,i)=>`
+      ${(e.ben||[]).map((b,i)=>{
+        const editingThis = window.__editBen===id+':'+i;
+        return editingThis ? `
+        <div class="ben" style="flex-direction:column;align-items:stretch">
+          <input class="fld" id="benEditT" value="${esc(b.t)}" style="margin-bottom:8px">
+          <select class="fld" id="benEditTag" multiple size="4" style="margin-bottom:8px">
+            ${TAGS.map(t=>`<option value="${t.id}" ${(b.tags||[]).includes(t.id)?'selected':''}>${esc(t.n)}</option>`).join('')}
+          </select>
+          <div class="row">
+            <button class="btn pri" onclick="saveBenEdit('${id}',${i})">حفظ</button>
+            <button class="btn" onclick="cancelBenEdit('${id}')">إلغاء</button>
+          </div>
+        </div>` : `
         <div class="ben">
           <span class="bn">${nf(i+1)}</span>
           <span class="bt">${esc(b.t)}
             <span class="btags" style="margin-top:8px">${(b.tags||[]).map(t=>
               `<button class="btag" onclick="jumpTag('${t}')"><span class="hash">#</span>${esc(TAG[t]?.n||t)}</button>`).join('')}</span>
           </span>
-        </div>`).join('')}
-    </div>`:''}
+          <button class="btn" style="padding:3px 10px;font-size:11.5px;flex-shrink:0" onclick="startBenEdit('${id}',${i})">تعديل</button>
+        </div>`;
+      }).join('')}
+
+      ${window.__addBen===id ? `
+        <div class="ben" style="flex-direction:column;align-items:stretch;border-style:dashed">
+          <input class="fld" id="benNewT" placeholder="نصّ الفائدة الجديدة" style="margin-bottom:8px">
+          <select class="fld" id="benNewTag" multiple size="4" style="margin-bottom:8px">
+            ${TAGS.map(t=>`<option value="${t.id}">${esc(t.n)}</option>`).join('')}
+          </select>
+          <div class="row">
+            <button class="btn pri" onclick="addBenTo('${id}')">إضافة</button>
+            <button class="btn" onclick="cancelAddBen('${id}')">إلغاء</button>
+          </div>
+        </div>` : `<button class="btn" style="margin-top:9px" onclick="startAddBen('${id}')">+ أضف فائدة لهذا الحدث</button>`}
+    </div>
 
     ${(e.ppl||[]).length?`<div class="sec">
       <h5>الشخصيات في هذا الحدث</h5>
@@ -1671,6 +1724,52 @@ function openEvent(id){
   </div>`;
   $('#ovl').classList.add('on');
   document.body.style.overflow='hidden';
+}
+
+/* ---------- تعديل السرد ---------- */
+function startEditNarr(id){ window.__editNarr=id; openEvent(id); setTimeout(()=>$('#narrEdit')?.focus(),50); }
+function cancelEditNarr(id){ window.__editNarr=null; openEvent(id); }
+function saveNarr(id){
+  const v=$('#narrEdit').value.trim(); if(!v){ toast('السرد لا يمكن أن يكون فارغاً'); return; }
+  USER.edits=USER.edits||{}; USER.edits[id]=USER.edits[id]||{};
+  USER.edits[id].n=v;
+  window.__editNarr=null;
+  save(); toast('حُفظ السرد المعدَّل'); openEvent(id);
+}
+function resetNarr(id){
+  if(USER.edits?.[id]) delete USER.edits[id].n;
+  window.__editNarr=null;
+  save(); toast('رجع السرد الأصلي'); openEvent(id);
+}
+
+/* ---------- تعديل فائدة موجودة أو مضافة ---------- */
+function startBenEdit(id,i){ window.__editBen=id+':'+i; window.__addBen=null; openEvent(id); }
+function cancelBenEdit(id){ window.__editBen=null; openEvent(id); }
+function saveBenEdit(id,i){
+  const t=$('#benEditT').value.trim(); if(!t){ toast('نص الفائدة مطلوب'); return; }
+  const tags=[...$('#benEditTag').selectedOptions].map(o=>o.value);
+  const origLen=(EV[id].ben||[]).length;
+  if(i<origLen){
+    USER.benEdit=USER.benEdit||{}; USER.benEdit[id]=USER.benEdit[id]||{};
+    USER.benEdit[id][i]={t,tags};
+  } else {
+    USER.benAdd=USER.benAdd||{}; USER.benAdd[id]=USER.benAdd[id]||[];
+    USER.benAdd[id][i-origLen]={t,tags};
+  }
+  window.__editBen=null;
+  save(); toast('حُفظت الفائدة'); openEvent(id); if($('#v-benefits').classList.contains('on')) renderBenefits();
+}
+
+/* ---------- إضافة فائدة تندمج بلا تمييز ---------- */
+function startAddBen(id){ window.__addBen=id; window.__editBen=null; openEvent(id); setTimeout(()=>$('#benNewT')?.focus(),50); }
+function cancelAddBen(id){ window.__addBen=null; openEvent(id); }
+function addBenTo(id){
+  const t=$('#benNewT').value.trim(); if(!t){ toast('اكتب نص الفائدة'); return; }
+  const tags=[...$('#benNewTag').selectedOptions].map(o=>o.value);
+  USER.benAdd=USER.benAdd||{}; USER.benAdd[id]=USER.benAdd[id]||[];
+  USER.benAdd[id].push({t,tags});
+  window.__addBen=null;
+  save(); toast('أُضيفت الفائدة'); openEvent(id); if($('#v-benefits').classList.contains('on')) renderBenefits();
 }
 function saveNote(id){
   const v=$('#nt').value.trim();
@@ -1794,14 +1893,18 @@ function openPerson(pid){
 function renderMine(){
   const notes=Object.keys(USER.notes).filter(k=>EV[k]);
   const marks=USER.marks.filter(k=>EV[k]);
+  const editedNarr=Object.keys(USER.edits||{}).filter(k=>EV[k] && USER.edits[k]?.n!=null);
+  const benEditIds=Object.keys(USER.benEdit||{}).filter(k=>EV[k] && Object.keys(USER.benEdit[k]||{}).length);
+  const benAddIds=Object.keys(USER.benAdd||{}).filter(k=>EV[k] && (USER.benAdd[k]||[]).length);
+  const totalEdits=editedNarr.length + benEditIds.length + benAddIds.reduce((a,k)=>a+USER.benAdd[k].length,0);
   $('#v-mine').innerHTML=`
   <div class="vhead">
-    <div class="eyebrow">${nf(notes.length)} ملاحظة · ${nf(marks.length)} مختار · ${nf((USER.ben||[]).length)} فائدة مضافة</div>
+    <div class="eyebrow">${nf(notes.length)} ملاحظة · ${nf(marks.length)} مختار · ${nf(totalEdits)} تعديل على المحتوى</div>
     <h2>ملاحظاتي</h2>
     <p>كل ما سجّلته أثناء الدراسة. يُحفظ على جهازك، ويمكن مزامنته أو تصديره من زرّ المزامنة بالأعلى.</p>
   </div>
 
-  <div class="sec"><h5>إضافة فائدة من عندك</h5>
+  <div class="sec"><h5>إضافة فائدة من عندك (غير مرتبطة بحدث معيّن)</h5>
     <label class="lbl">نصّ الفائدة</label>
     <input class="fld" id="ubT" placeholder="اكتب الفائدة التي استخرجتها…">
     <label class="lbl">المحور</label>
@@ -1810,7 +1913,24 @@ function renderMine(){
     <select class="fld" id="ubEv"><option value="">— بدون —</option>${
       PERIODS.map(p=>`<optgroup label="${esc(p.t)}">${p.ev.map(e=>`<option value="${e.id}">${esc(e.t)}</option>`).join('')}</optgroup>`).join('')}</select>
     <div class="row"><button class="btn pri" onclick="addBen()">أضف الفائدة</button></div>
+    <div class="srcbox" style="margin-top:10px">لتعديل سرد حدث أو فوائده مباشرة، افتح الحدث من الخط الزمني واضغط "تعديل" بجانب القسم المطلوب.</div>
   </div>
+
+  ${totalEdits?`<div class="sec"><h5>تعديلاتي على المحتوى الأصلي</h5>
+    ${editedNarr.map(k=>`<details class="acc"><summary>سرد معدَّل: ${esc(EV[k].t)}</summary>
+      <div class="inner">تم استبدال السرد الأصلي.
+      <div class="row">
+        <button class="btn" onclick="openEvent('${k}')">افتح الحدث</button>
+        <button class="btn dgr" onclick="resetNarr('${k}');renderMine()">استرجاع الأصل</button>
+      </div></div></details>`).join('')}
+    ${benEditIds.map(k=>`<details class="acc"><summary>فوائد معدَّلة: ${esc(EV[k].t)} (${nf(Object.keys(USER.benEdit[k]).length)})</summary>
+      <div class="inner">تم تعديل نص أو محاور بعض الفوائد الأصلية لهذا الحدث.
+      <div class="row"><button class="btn" onclick="openEvent('${k}')">افتح الحدث</button></div></div></details>`).join('')}
+    ${benAddIds.map(k=>`<details class="acc"><summary>فوائد مضافة: ${esc(EV[k].t)} (${nf(USER.benAdd[k].length)})</summary>
+      <div class="inner">أُضيفت فوائد جديدة مندمجة مع فوائد هذا الحدث.
+      <div class="row"><button class="btn" onclick="openEvent('${k}')">افتح الحدث</button></div></div></details>`).join('')}
+    <div class="row" style="margin-top:12px"><button class="btn" onclick="exportEditsJSON()">تصدير كل التعديلات كملف</button></div>
+  </div>`:''}
 
   ${notes.length?`<div class="sec"><h5>ملاحظاتي على الأحداث</h5>
     ${notes.map(k=>`<details class="acc"><summary>${esc(EV[k].t)}</summary>
@@ -1826,15 +1946,23 @@ function renderMine(){
       </button>`).join('')}</div>
   </div>`:''}
 
-  ${(USER.ben||[]).length?`<div class="sec"><h5>فوائدي المضافة</h5>
+  ${(USER.ben||[]).length?`<div class="sec"><h5>فوائدي العامة المضافة</h5>
     ${USER.ben.map((b,i)=>`<div class="bcard" style="margin-bottom:9px"><p>${esc(b.t)}</p>
       <div class="btags">${(b.tags||[]).map(t=>`<span class="btag"><span class="hash">#</span>${esc(TAG[t]?.n||t)}</span>`).join('')}</div>
       <div class="bsrc">${b.ev?`<a href="#" onclick="openEvent('${b.ev}');return false">${esc(EV[b.ev]?.t||'')}</a>`:'<span>غير مرتبطة بحدث</span>'}
       <button class="btn dgr" style="padding:3px 11px;font-size:12px" onclick="delBen(${i})">حذف</button></div></div>`).join('')}
   </div>`:''}
 
-  ${!notes.length&&!marks.length&&!(USER.ben||[]).length?
-    '<div class="empty"><div class="big">لا شيء بعد</div><p>افتح أي حدث من الخط الزمني واكتب ملاحظتك، أو أضف فائدة من الأعلى.</p></div>':''}`;
+  ${!notes.length&&!marks.length&&!(USER.ben||[]).length&&!totalEdits?
+    '<div class="empty"><div class="big">لا شيء بعد</div><p>افتح أي حدث من الخط الزمني واكتب ملاحظتك، أو عدّل سرداً، أو أضف فائدة.</p></div>':''}`;
+}
+function exportEditsJSON(){
+  const data={edits:USER.edits||{}, benEdit:USER.benEdit||{}, benAdd:USER.benAdd||{}};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='seerah-content-edits-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click(); toast('نُزّل ملف التعديلات');
 }
 function addBen(){
   const t=$('#ubT').value.trim(); if(!t){ toast('اكتب نصّ الفائدة أولاً'); return; }
@@ -1872,9 +2000,9 @@ function doSearch(q){
   const out=$('#sout');
   if(q.length<2){ out.innerHTML='<div class="empty"><div class="big">ابحث</div><p>اكتب كلمتين على الأقل لبدء البحث.</p></div>'; return; }
   const L=q.toLowerCase(), R=[];
-  PERIODS.forEach(p=>p.ev.forEach(e=>{
+  PERIODS.forEach(p=>p.ev.forEach(e0=>{ const e=getEv(e0.id);
     const hay=(e.t+' '+e.s+' '+e.n).toLowerCase();
-    if(hay.includes(L)) R.push({k:'حدث', t:e.t, p:e.s, go:`openEvent('${e.id}')`, sub:p.t+' · '+e.d});
+    if(hay.includes(L)) R.push({k:'حدث', t:e.t, p:e.s, go:`openEvent('${e0.id}')`, sub:p.t+' · '+e.d});
   }));
   allBenefits().forEach(b=>{ if(b.t.toLowerCase().includes(L))
     R.push({k:'فائدة', t:b.t, p:'من: '+b.evT, go:b.ev?`openEvent('${b.ev}')`:'', sub:''}); });
