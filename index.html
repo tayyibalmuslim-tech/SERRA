@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سِفْر السيرة — دراسة السيرة النبوية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lapis-900:#0B1428;
+  --lapis-850:#101B33;
+  --lapis-800:#16243F;
+  --lapis-700:#1D2F51;
+  --lapis-600:#2A4270;
+  --line:#24365C;
+  --gold:#D8A93F;
+  --gold-dim:#9A7A2E;
+  --ivory:#EFE9DC;
+  --ivory-dim:#B9B3A6;
+  --muted:#7C8AA6;
+  --sage:#6FA98C;
+  --rose:#C4697F;
+  --azure:#5B9BD5;
+  --amber:#E0A458;
+  --radius:14px;
+  --sp:clamp(16px,3vw,28px);
+}
+html[data-theme="light"]{
+  --lapis-900:#F1EEE6;
+  --lapis-850:#E9E5DA;
+  --lapis-800:#FFFFFF;
+  --lapis-700:#E2DCCC;
+  --lapis-600:#CFC6AF;
+  --line:#DAD3C2;
+  --gold:#8A6A16;
+  --gold-dim:#B39B5E;
+  --ivory:#1A1F2B;
+  --ivory-dim:#4C5464;
+  --muted:#6C7486;
+  --sage:#2F7A5A;
+  --rose:#A63E56;
+  --azure:#28598C;
+  --amber:#8A5B12;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--lapis-900);
+  color:var(--ivory);
+  font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;
+  font-size:16px;line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+html[data-theme="dark"] body{
+  background-image:
+    radial-gradient(ellipse 900px 500px at 85% -5%, rgba(42,66,112,.5), transparent 65%),
+    radial-gradient(ellipse 700px 400px at 5% 100%, rgba(216,169,63,.07), transparent 60%);
+  background-attachment:fixed;
+}
+::selection{background:var(--gold);color:var(--lapis-900)}
+button,input,textarea,select{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;background:none;border:none}
+a{color:var(--gold);text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* ====== الترويسة ====== */
+header{
+  position:sticky;top:0;z-index:60;
+  background:color-mix(in srgb,var(--lapis-900) 88%,transparent);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.hwrap{max-width:1180px;margin:0 auto;padding:12px var(--sp);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;margin-left:auto}
+.brand .mark{
+  width:38px;height:38px;flex:0 0 38px;border-radius:9px;
+  border:1px solid var(--gold-dim);
+  display:grid;place-items:center;
+  font-family:'Aref Ruqaa',serif;color:var(--gold);font-size:20px;line-height:1;
+  background:linear-gradient(160deg,rgba(216,169,63,.16),transparent);
+}
+.brand h1{font-family:'Aref Ruqaa',serif;font-size:23px;font-weight:700;letter-spacing:.5px;line-height:1.3}
+.brand small{display:block;font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;color:var(--muted);letter-spacing:2px;font-weight:400;margin-top:-2px}
+
+nav{display:flex;gap:2px;flex-wrap:wrap}
+.tab{
+  padding:7px 14px;border-radius:999px;font-size:14px;font-weight:500;
+  color:var(--muted);border:1px solid transparent;transition:.18s;
+}
+.tab:hover{color:var(--ivory);background:var(--lapis-800)}
+.tab.on{color:var(--gold);border-color:var(--gold-dim);background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.icons{display:flex;gap:6px;margin-right:auto}
+.ibtn{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);transition:.18s}
+.ibtn:hover{color:var(--gold);border-color:var(--gold-dim)}
+.ibtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+main{max-width:1180px;margin:0 auto;padding:var(--sp) var(--sp) 90px}
+.view{display:none;animation:fade .35s ease}
+.view.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ====== عناوين الأقسام ====== */
+.eyebrow{font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px}
+.vhead{margin-bottom:26px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.vhead h2{font-family:'Aref Ruqaa',serif;font-size:clamp(26px,4.5vw,38px);font-weight:700;line-height:1.4}
+.vhead p{color:var(--muted);font-size:14.5px;margin-top:6px;max-width:62ch}
+
+/* ====== العمود الزمني ====== */
+.spine{position:relative;padding-right:38px}
+.spine::before{
+  content:'';position:absolute;top:14px;bottom:14px;right:13px;width:1px;
+  background:linear-gradient(180deg,transparent,var(--line) 6%,var(--line) 94%,transparent);
+}
+.stratum{position:relative;margin-bottom:14px}
+.stratum::before{
+  content:'';position:absolute;top:26px;right:-31px;width:15px;height:15px;border-radius:50%;
+  background:var(--lapis-900);border:2px solid var(--pcol,var(--gold));z-index:2;
+}
+.stratum::after{
+  content:'';position:absolute;top:33px;right:-16px;width:16px;height:1px;background:var(--pcol,var(--gold));opacity:.5;
+}
+.pcard{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:var(--lapis-850);transition:.2s;
+}
+.pcard:hover{border-color:color-mix(in srgb,var(--pcol,var(--gold)) 45%,var(--line))}
+.phead{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;width:100%;text-align:right}
+.pnum{
+  font-family:'Aref Ruqaa',serif;font-size:26px;color:var(--pcol,var(--gold));
+  line-height:1;min-width:34px;opacity:.85;padding-top:2px;
+}
+.pmeta{flex:1;min-width:0}
+.pmeta h3{font-family:'Aref Ruqaa',serif;font-size:21px;font-weight:700;line-height:1.5}
+.pera{font-family:'Noto Kufi Arabic',sans-serif;font-size:10.5px;letter-spacing:1.5px;color:var(--pcol,var(--gold));opacity:.85;margin-top:2px}
+.pdesc{font-size:13.5px;color:var(--muted);margin-top:7px;line-height:1.75}
+.pcount{
+  font-family:'Noto Kufi Arabic',sans-serif;font-size:11px;color:var(--muted);
+  border:1px solid var(--line);border-radius:999px;padding:3px 11px;white-space:nowrap;flex:0 0 auto;
+}
+.chev{color:var(--muted);transition:.25s;flex:0 0 auto;margin-top:4px}
+.chev svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.stratum.open .chev{transform:rotate(-180deg);color:var(--pcol,var(--gold))}
+.pbody{display:none;border-top:1px solid var(--line);padding:8px}
+.stratum.open .pbody{display:block}
+
+.ev{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:right;
+  padding:12px 14px;border-radius:10px;transition:.15s;position:relative;
+}
+.ev:hover{background:var(--lapis-800)}
+.ev + .ev{border-top:1px solid color-mix(in srgb,var(--line) 55%,transparent)}
+.evno{font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;color:var(--pcol,var(--gold));opacity:.7;min-width:26px;padding-top:5px}
+.evmeta{flex:1;min-width:0}
+.evmeta h4{font-size:16px;font-weight:600;line-height:1.6}
+.evdate{font-size:11.5px;color:var(--pcol,var(--gold));opacity:.8;font-family:'Noto Kufi Arabic',sans-serif;margin-top:1px}
+.evsum{font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.evbadges{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.mini{
+  font-size:10.5px;font-family:'Noto Kufi Arabic',sans-serif;
+  padding:2px 8px;border-radius:5px;border:1px solid var(--line);color:var(--muted);
+}
+.mini.g{color:var(--gold);border-color:var(--gold-dim)}
+.mini.s{color:var(--sage);border-color:color-mix(in srgb,var(--sage) 45%,transparent)}
+.dot-note{width:6px;height:6px;border-radius:50%;background:var(--amber);flex:0 0 auto;margin-top:9px}
+
+/* ====== شبكات عامة ====== */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(auto-fill,minmax(275px,1fr))}
+.g3{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+
+/* ====== الفوائد / الهاشتاجات ====== */
+.tagbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tagchip{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+  background:var(--lapis-850);font-size:13.5px;color:var(--ivory-dim);transition:.18s;
+}
+.tagchip:hover{border-color:var(--gold-dim);color:var(--ivory)}
+.tagchip.on{background:color-mix(in srgb,var(--gold) 14%,transparent);border-color:var(--gold);color:var(--gold)}
+.tagchip b{font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;font-weight:600;opacity:.65}
+.hash{color:var(--gold-dim);font-weight:700}
+
+.bcard{
+  border:1px solid var(--line);border-right:2px solid var(--gold);
+  border-radius:10px;background:var(--lapis-850);padding:16px 18px;
+}
+.bcard p{font-size:15px;line-height:1.9}
+.bsrc{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  margin-top:11px;padding-top:11px;border-top:1px solid var(--line);
+  font-size:12px;color:var(--muted);font-family:'Noto Kufi Arabic',sans-serif;
+}
+.bsrc a{font-size:12px}
+.btags{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.btag{font-size:11px;color:var(--gold-dim);border:1px solid var(--line);border-radius:5px;padding:1px 7px;transition:.15s}
+.btag:hover{color:var(--gold);border-color:var(--gold-dim)}
+
+/* ====== الشخصيات ====== */
+.pers{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--lapis-850);
+  padding:16px;text-align:right;width:100%;transition:.2s;position:relative;overflow:hidden;
+}
+.pers:hover{border-color:var(--gold-dim);transform:translateY(-2px)}
+.pers .init{
+  font-family:'Aref Ruqaa',serif;font-size:19px;color:var(--kcol,var(--gold));
+  width:44px;height:44px;border-radius:11px;display:grid;place-items:center;
+  border:1px solid color-mix(in srgb,var(--kcol,var(--gold)) 40%,transparent);
+  background:color-mix(in srgb,var(--kcol,var(--gold)) 9%,transparent);margin-bottom:11px;
+}
+.pers h4{font-size:16.5px;font-weight:600;line-height:1.5}
+.pers .role{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.6}
+.pers .kind{
+  position:absolute;top:14px;left:14px;font-size:10px;font-family:'Noto Kufi Arabic',sans-serif;
+  padding:2px 8px;border-radius:5px;border:1px solid currentColor;color:var(--kcol,var(--muted));opacity:.8;
+}
+
+/* ====== النافذة ====== */
+.ovl{
+  position:fixed;inset:0;z-index:100;display:none;
+  background:rgba(4,8,18,.72);backdrop-filter:blur(6px);
+  padding:20px;overflow-y:auto;
+}
+.ovl.on{display:block;animation:fade .22s ease}
+.sheet{
+  max-width:840px;margin:0 auto;background:var(--lapis-850);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;
+}
+.shead{
+  padding:24px 26px 20px;border-bottom:1px solid var(--line);position:relative;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--pcol,var(--gold)) 8%,transparent),transparent);
+}
+.shead .eyebrow{color:var(--pcol,var(--gold-dim))}
+.shead h3{font-family:'Aref Ruqaa',serif;font-size:clamp(22px,4vw,30px);font-weight:700;line-height:1.45;padding-left:44px}
+.xbtn{position:absolute;top:20px;left:22px;width:32px;height:32px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+.xbtn:hover{color:var(--rose);border-color:var(--rose)}
+.xbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.sbody{padding:22px 26px 28px}
+.sec{margin-bottom:26px}
+.sec:last-child{margin-bottom:0}
+.sec > h5{
+  font-family:'Noto Kufi Arabic',sans-serif;font-size:11px;letter-spacing:2.5px;
+  color:var(--gold-dim);margin-bottom:12px;display:flex;align-items:center;gap:10px;
+}
+.sec > h5::after{content:'';flex:1;height:1px;background:var(--line)}
+.narr{font-size:15.5px;line-height:2.05;color:var(--ivory-dim)}
+.narr strong{color:var(--ivory);font-weight:600}
+.quote{
+  border-right:2px solid var(--gold);padding:10px 16px;margin:14px 0;
+  background:color-mix(in srgb,var(--gold) 6%,transparent);border-radius:0 8px 8px 0;
+  font-family:'Aref Ruqaa',serif;font-size:17px;line-height:2.1;color:var(--ivory);
+}
+.grade{
+  display:inline-flex;align-items:center;gap:7px;font-size:12px;font-family:'Noto Kufi Arabic',sans-serif;
+  padding:4px 11px;border-radius:6px;border:1px solid currentColor;
+}
+.grade.sahih{color:var(--sage)}
+.grade.hasan{color:var(--azure)}
+.grade.mash{color:var(--amber)}
+.grade.daif{color:var(--rose)}
+.srcbox{font-size:12.5px;color:var(--muted);line-height:1.8;font-family:'Noto Kufi Arabic',sans-serif}
+
+.ben{
+  display:flex;gap:12px;padding:14px;border-radius:10px;border:1px solid var(--line);
+  background:var(--lapis-800);margin-bottom:9px;
+}
+.ben .bn{font-family:'Aref Ruqaa',serif;color:var(--gold);font-size:16px;line-height:1.6;flex:0 0 auto;opacity:.75}
+.ben .bt{flex:1;min-width:0;font-size:14.5px;line-height:1.9}
+.chipline{display:flex;gap:6px;flex-wrap:wrap}
+.plink{
+  display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:8px;
+  border:1px solid var(--line);background:var(--lapis-800);font-size:13.5px;transition:.15s;color:var(--ivory-dim)
+}
+.plink:hover{border-color:var(--gold-dim);color:var(--gold)}
+.plink i{width:5px;height:5px;border-radius:50%;background:var(--kcol,var(--gold));font-style:normal}
+
+textarea.note{
+  width:100%;min-height:110px;resize:vertical;padding:14px;border-radius:10px;
+  border:1px solid var(--line);background:var(--lapis-900);color:var(--ivory);
+  font-size:14.5px;line-height:1.9;
+}
+textarea.note:focus{border-color:var(--gold-dim);outline:none}
+.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:11px}
+.btn{
+  padding:8px 17px;border-radius:9px;border:1px solid var(--line);
+  font-size:13.5px;font-weight:500;color:var(--ivory-dim);transition:.15s;
+}
+.btn:hover{border-color:var(--gold-dim);color:var(--gold)}
+.btn.pri{background:var(--gold);color:#0B1428;border-color:var(--gold);font-weight:600}
+.btn.pri:hover{filter:brightness(1.12);color:#0B1428}
+.btn.dgr:hover{border-color:var(--rose);color:var(--rose)}
+
+input.fld,select.fld{
+  width:100%;padding:10px 13px;border-radius:9px;border:1px solid var(--line);
+  background:var(--lapis-900);color:var(--ivory);font-size:14px;
+}
+input.fld:focus,select.fld:focus{border-color:var(--gold-dim);outline:none}
+label.lbl{display:block;font-size:12px;color:var(--muted);margin:12px 0 5px;font-family:'Noto Kufi Arabic',sans-serif}
+
+/* ====== البحث ====== */
+.searchwrap{position:relative;margin-bottom:20px}
+.searchwrap svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:17px;height:17px;fill:none;stroke:var(--muted);stroke-width:1.8}
+#q{width:100%;padding:12px 42px 12px 14px;border-radius:11px;border:1px solid var(--line);background:var(--lapis-850);color:var(--ivory);font-size:15px}
+#q:focus{border-color:var(--gold-dim);outline:none}
+.sres{border:1px solid var(--line);border-radius:10px;background:var(--lapis-850);padding:13px 16px;margin-bottom:8px;width:100%;text-align:right;transition:.15s}
+.sres:hover{border-color:var(--gold-dim)}
+.sres .k{font-size:10.5px;font-family:'Noto Kufi Arabic',sans-serif;color:var(--gold-dim);letter-spacing:1.5px}
+.sres h4{font-size:15.5px;font-weight:600;margin-top:3px}
+.sres p{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.7}
+mark{background:color-mix(in srgb,var(--gold) 30%,transparent);color:var(--ivory);border-radius:3px;padding:0 2px}
+
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty .big{font-family:'Aref Ruqaa',serif;font-size:34px;color:var(--gold-dim);opacity:.5;margin-bottom:10px}
+.stat{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+.stat > div{border:1px solid var(--line);border-radius:11px;padding:12px 18px;background:var(--lapis-850);min-width:96px}
+.stat b{font-family:'Aref Ruqaa',serif;font-size:25px;color:var(--gold);display:block;line-height:1.3}
+.stat span{font-size:11px;color:var(--muted);font-family:'Noto Kufi Arabic',sans-serif;letter-spacing:1px}
+
+.toast{
+  position:fixed;bottom:24px;right:50%;transform:translateX(50%) translateY(80px);
+  background:var(--lapis-700);border:1px solid var(--gold-dim);color:var(--ivory);
+  padding:11px 22px;border-radius:11px;font-size:14px;z-index:200;opacity:0;transition:.3s;pointer-events:none;
+}
+.toast.on{transform:translateX(50%) translateY(0);opacity:1}
+
+details.acc{border:1px solid var(--line);border-radius:10px;margin-bottom:9px;background:var(--lapis-850);overflow:hidden}
+details.acc summary{padding:13px 16px;cursor:pointer;font-size:14.5px;font-weight:500;list-style:none}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary::before{content:'▸';color:var(--gold);margin-left:9px;display:inline-block;transition:.2s}
+details.acc[open] summary::before{transform:rotate(-90deg)}
+details.acc .inner{padding:0 16px 16px;font-size:13.5px;color:var(--muted);line-height:1.9}
+
+@media(max-width:640px){
+  .hwrap{padding:10px 14px;gap:9px}
+  .brand h1{font-size:19px}
+  .tab{padding:6px 11px;font-size:13px}
+  main{padding:16px 14px 80px}
+  .spine{padding-right:26px}
+  .spine::before{right:8px}
+  .stratum::before{right:-24px;width:13px;height:13px}
+  .stratum::after{right:-12px;width:12px}
+  .phead{padding:14px 14px;gap:10px}
+  .sbody{padding:18px}
+  .shead{padding:20px 18px 16px}
+  .ovl{padding:10px}
+  .sheet{border-radius:14px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hwrap">
+    <div class="brand">
+      <div class="mark">س</div>
+      <div>
+        <h1>سِفْر السيرة</h1>
+        <small>الفترات · الفوائد · الرجال</small>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="icons">
+      <button class="ibtn" id="themeBtn" title="تبديل المظهر"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button>
+      <button class="ibtn" id="syncBtn" title="المزامنة والنسخ"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9 9 9 0 01-7.6-4.2M3 12a9 9 0 019-9 9 9 0 017.6 4.2"/><path d="M20 4v4h-4M4 20v-4h4"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="view on" id="v-timeline"></section>
+  <section class="view" id="v-benefits"></section>
+  <section class="view" id="v-people"></section>
+  <section class="view" id="v-mine"></section>
+  <section class="view" id="v-search"></section>
+</main>
+
+<div class="ovl" id="ovl"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+/* ============================================================
+   سِفْر السيرة — قاعدة البيانات الأساسية
+   المصادر المعتمدة: صحيحا البخاري ومسلم، سيرة ابن هشام،
+   الطبقات لابن سعد، البداية والنهاية لابن كثير،
+   الرحيق المختوم للمباركفوري، السيرة النبوية الصحيحة للعُمري.
+   ملاحظة: كل حدث مذيّل بدرجة ثبوته ومصدره.
+   ============================================================ */
+
+const TAGS = [
+  {id:"sabr",   n:"الصبر على الأذى",        d:"كيف واجه النبي ﷺ وأصحابه الإيذاء النفسي والجسدي والاقتصادي، وكيف حوّلوه إلى وقود."},
+  {id:"tadarruj",n:"التدرّج في الدعوة",     d:"مراحل الدعوة من السرّ إلى الجهر إلى الدولة، وفقه تنزيل الأحكام على مراحل."},
+  {id:"takhtit", n:"التخطيط والأخذ بالأسباب",d:"الترتيب والإعداد المسبق، وأن التوكل لا يلغي السبب بل يتوّجه."},
+  {id:"tawakkul",n:"التوكل واليقين بالله",  d:"مواطن انقطاع الأسباب، وثبات القلب على أن النصر من عند الله وحده."},
+  {id:"akhlaq",  n:"الأخلاق والمعاملة",     d:"سلوك النبي ﷺ اليومي مع القريب والبعيد والمخالف والخادم."},
+  {id:"qiyada",  n:"القيادة وإدارة الأزمات",d:"كيف قاد ﷺ في الشدة، ووزّع المهام، وامتص الصدمات، ورمّم بعد الهزيمة."},
+  {id:"shura",   n:"الشورى وصناعة القرار",  d:"استشارته ﷺ لأصحابه ونزوله على رأي غيره حتى مع مخالفته لرأيه."},
+  {id:"tarbiya", n:"تربية الرجال",          d:"صناعة الجيل الأول: كيف رُبّي الصحابة على الفكرة قبل الفتح."},
+  {id:"wafa",    n:"الوفاء بالعهد",         d:"احترام المواثيق حتى مع العدو، وحتى حين تكون في غير مصلحة المسلمين ظاهرياً."},
+  {id:"afw",     n:"العفو والرحمة",         d:"مواقف العفو عند المقدرة، وأثرها في كسب القلوب."},
+  {id:"sidq",    n:"الصدق والأمانة",        d:"سمعة النبي ﷺ قبل البعثة وبعدها، وكيف كانت الأمانة رأس ماله الدعوي."},
+  {id:"ukhuwa",  n:"الأخوّة والولاء",       d:"بناء رابطة الإيمان فوق رابطة الدم والقبيلة والمال."},
+  {id:"thabat",  n:"الثبات على المبدأ",     d:"رفض المساومات والعروض المغرية، وعدم التنازل عن أصل الرسالة."},
+  {id:"awlawiyat",n:"فقه الأولويات",        d:"تقديم الأهم على المهم، ودرء أعظم المفسدتين بارتكاب أخفهما."},
+  {id:"siyasa",  n:"السياسة والمعاهدات",    d:"فن التفاوض، وقراءة موازين القوى، وتحييد الأعداء."},
+  {id:"ilam",    n:"الإعلام والمراسلات",    d:"إيصال الرسالة: الخطاب، الوفود، الكتب إلى الملوك، والشعر."},
+  {id:"mukhalif",n:"التعامل مع المخالف",    d:"فقه التعايش مع اليهود والنصارى والمشركين والمنافقين."},
+  {id:"maraa",   n:"المرأة في السيرة",      d:"أدوار النساء: خديجة، سمية، أم سلمة، أسماء، وغيرهن."},
+  {id:"shabab",  n:"الشباب في السيرة",      d:"أعمار من حملوا الرسالة، والمسؤوليات التي أُسندت للصغار."},
+  {id:"ibtila",  n:"الابتلاء والتمكين",     d:"سنة الله في تمحيص الصف قبل التمكين، وأن الشدة مقدمة الفرج."},
+  {id:"mal",     n:"المال والاقتصاد",       d:"تمويل الدعوة، الحصار الاقتصادي، الغنائم، وبناء السوق."},
+  {id:"adl",     n:"العدل والقضاء",         d:"تطبيق العدل على القريب والبعيد، والشريف والوضيع."},
+  {id:"hiwar",   n:"حسن الاستماع والحوار",  d:"إنصاته ﷺ للخصم حتى يفرغ، وأدب المحاورة."},
+  {id:"ajal",    n:"قصر الأمل وتذكّر الأجل",d:"مواقف تذكّر بسرعة انقضاء العمر وأن الدنيا دار عبور."}
+];
+
+/* أنواع الشخصيات وألوانها */
+const KINDS = {
+  bayt:  {n:"آل البيت",     c:"var(--gold)"},
+  sahabi:{n:"صحابي",        c:"var(--sage)"},
+  sahabia:{n:"صحابية",      c:"var(--amber)"},
+  ansar: {n:"من الأنصار",   c:"var(--azure)"},
+  khasm: {n:"من الخصوم",    c:"var(--rose)"},
+  aam:   {n:"شخصية عامة",   c:"var(--muted)"}
+};
+
+const PEOPLE = [
+  {id:"abdulmuttalib",n:"عبد المطلب بن هاشم",k:"bayt",r:"جدّ النبي ﷺ وسيد قريش وساقي الحجيج",
+   b:"اسمه شيبة الحمد، سُمّي عبد المطلب لأن عمه المطلب قدم به مكة فظنّه الناس عبداً له. تولّى السقاية والرفادة، وهو الذي أعاد حفر بئر زمزم بعد اندثارها. نذر إن رُزق عشرة أبناء أن يذبح أحدهم، فوقعت القرعة على عبد الله والد النبي ﷺ ففداه بمئة من الإبل. كفل النبي ﷺ بعد وفاة أمه وكان يقرّبه ويجلسه على فراشه، ومات والنبي ﷺ ابن ثمان سنين."},
+  {id:"abdullah",n:"عبد الله بن عبد المطلب",k:"bayt",r:"والد النبي ﷺ",
+   b:"أحبّ أبناء عبد المطلب إليه، والذي وقعت عليه قرعة النذر ففُدي بمئة من الإبل. تزوّج آمنة بنت وهب، وخرج في تجارة إلى الشام، فمات في المدينة عند أخواله بني عدي بن النجار والنبي ﷺ حمل في بطن أمه. ترك ميراثاً يسيراً: خمسة من الإبل، وقطيع غنم، وجارية هي أم أيمن."},
+  {id:"amina",n:"آمنة بنت وهب",k:"bayt",r:"أم النبي ﷺ",
+   b:"من بني زهرة، أبوها وهب بن عبد مناف سيد بني زهرة نسباً وشرفاً. حملت بالنبي ﷺ ووضعته يتيماً. لما بلغ ست سنين خرجت به إلى المدينة تزور أخواله بني النجار وقبر أبيه، فلما رجعت ماتت بالأبواء بين مكة والمدينة، فرجع به إلى مكة مع حاضنته أم أيمن."},
+  {id:"halima",n:"حليمة السعدية",k:"sahabia",r:"مرضعة النبي ﷺ من بني سعد",
+   b:"حليمة بنت أبي ذؤيب من بني سعد بن بكر. خرجت في سنة جدباء تلتمس رضيعاً، فلم يقبل أحد اليتيم، فأخذته كارهة ألا ترجع فارغة، فبورك لها في شاتها وأتانها ورزقها. بقي عندها نحو أربع سنوات. وقيل إنها أسلمت بعد ذلك وقدمت على النبي ﷺ فبسط لها رداءه."},
+  {id:"abutalib",n:"أبو طالب بن عبد المطلب",k:"aam",r:"عمّ النبي ﷺ وكافله وحاميه",
+   b:"اسمه عبد مناف. كفل النبي ﷺ بعد وفاة عبد المطلب، ومنعه من قريش نحو أربعين سنة، وصبر معه في حصار الشعب. لكنه مات على ملّة قومه ولم يُسلم رغم عرض النبي ﷺ عليه عند الموت، ونزل فيه: {إِنَّكَ لَا تَهْدِي مَنْ أَحْبَبْتَ}. مات في السنة العاشرة من البعثة."},
+  {id:"khadija",n:"خديجة بنت خويلد",k:"sahabia",r:"أم المؤمنين، أول من آمن به ﷺ",
+   b:"سيدة قرشية ذات مال وتجارة وشرف، لُقّبت في الجاهلية بالطاهرة. تزوّجها النبي ﷺ وهو ابن خمس وعشرين، وبقي معها خمساً وعشرين سنة لم يتزوج عليها. أول من آمن به على الإطلاق، وثبّتته يوم نزل الوحي مذعوراً بقولها المشهور: كلا والله لا يخزيك الله أبداً. وُلد له منها كل أولاده إلا إبراهيم. ماتت قبل الهجرة بثلاث سنين في عام الحزن."},
+  {id:"waraqa",n:"ورقة بن نوفل",k:"aam",r:"ابن عم خديجة، تنصّر في الجاهلية وقرأ الكتب",
+   b:"كان امرأً تنصّر في الجاهلية وكتب الكتاب العبراني. لما عُرض عليه خبر الوحي قال: هذا الناموس الذي نزّل الله على موسى، وتمنى أن يكون شاباً حين يُخرجه قومه. أخبر النبيَّ ﷺ أنه لم يأت أحد بمثل ما جاء به إلا عودي. مات بعد ذلك بقليل قبل أن تشتد الدعوة."},
+  {id:"abubakr",n:"أبو بكر الصديق",k:"sahabi",r:"أول الرجال إسلاماً ورفيق الهجرة",
+   b:"عبد الله بن أبي قحافة التيمي، أسنّ من النبي ﷺ بنحو سنتين. تاجر ثري، أنفق ماله في عتق المستضعفين حتى أعتق بلالاً وستة معه. صاحبه ﷺ في الغار وهو المذكور في قوله تعالى {ثَانِيَ اثْنَيْنِ}. أول من صدّق بالإسراء فسُمّي الصديق. تولّى الخلافة بعد وفاة النبي ﷺ فثبّت الأمة في الردة."},
+  {id:"umar",n:"عمر بن الخطاب",k:"sahabi",r:"الفاروق، عزّ الله به الإسلام",
+   b:"من بني عدي، كان من أشدّ الناس على المسلمين قبل إسلامه. أسلم في السنة السادسة من البعثة بعد أن سمع صدر سورة طه في بيت أخته فاطمة. بإسلامه وإسلام حمزة قوي المسلمون حتى صلّوا عند الكعبة علانية. هاجر معلناً وتحدّى قريشاً. صار الخليفة الثاني."},
+  {id:"uthman",n:"عثمان بن عفان",k:"sahabi",r:"ذو النورين، صاحب الهجرتين",
+   b:"من بني أمية، تاجر ثري، من السابقين الأولين أسلم على يد أبي بكر. هاجر إلى الحبشة مع زوجه رقية بنت النبي ﷺ. اشترى بئر رومة وجهّز جيش العسرة في تبوك. أُرسل سفيراً إلى مكة في الحديبية، وشاع أنه قُتل فكانت بيعة الرضوان لأجله. صار الخليفة الثالث."},
+  {id:"ali",n:"علي بن أبي طالب",k:"bayt",r:"ابن عم النبي ﷺ وأول من أسلم من الصبيان",
+   b:"نشأ في بيت النبي ﷺ بعد أن كفله تخفيفاً عن أبي طالب في سنة قحط. أسلم صغيراً وعمره نحو عشر سنين. نام في فراش النبي ﷺ ليلة الهجرة فداءً له وبقي يردّ الودائع. شهد المشاهد كلها إلا تبوك إذ خلّفه النبي ﷺ على المدينة. تزوج فاطمة، وصار الخليفة الرابع."},
+  {id:"hamza",n:"حمزة بن عبد المطلب",k:"bayt",r:"عمّ النبي ﷺ وأسد الله",
+   b:"عمّ النبي ﷺ وأخوه من الرضاعة. أسلم في السنة السادسة من البعثة غضباً حين بلغه أن أبا جهل شتم النبي ﷺ، فكان إسلامه عزّاً للمسلمين. أبلى في بدر بلاءً عظيماً. استُشهد يوم أُحد قتله وحشي بن حرب بتحريض هند بنت عتبة، ومُثّل بجسده، فسُمّي سيد الشهداء."},
+  {id:"bilal",n:"بلال بن رباح",k:"sahabi",r:"مؤذن رسول الله ﷺ",
+   b:"حبشي مملوك لأمية بن خلف. عُذّب في رمضاء مكة تحت الصخرة وهو يردد: أحدٌ أحد. اشتراه أبو بكر فأعتقه. صار مؤذن الإسلام الأول، وأذّن فوق الكعبة يوم الفتح فكان مشهداً في كسر الطبقية. رمز خالد لثبات المستضعفين."},
+  {id:"yasir",n:"آل ياسر: ياسر وسميّة وعمّار",k:"sahabi",r:"أول بيت عُذّب في الله، وسميّة أول شهيدة",
+   b:"ياسر بن عامر من اليمن، حليف بني مخزوم، تزوّج سميّة أمَة أبي حذيفة فولدت عماراً. عُذّبوا في بطحاء مكة، فكان النبي ﷺ يمرّ بهم فيقول: صبراً آل ياسر فإن موعدكم الجنة. قتل أبو جهل سميّة فكانت أول شهيدة في الإسلام. أُكره عمار على كلمة الكفر فنزل فيه {إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُ مُطْمَئِنٌّ بِالْإِيمَانِ}."},
+  {id:"khabbab",n:"خبّاب بن الأرت",k:"sahabi",r:"من السابقين، صانع السيوف المُعذَّب",
+   b:"حدّاد كان يصنع السيوف بمكة. عُذّب عذاباً شديداً حتى كُوي ظهره بالنار على الجمر. هو صاحب السؤال المشهور حين اشتكى للنبي ﷺ فقال: ألا تستنصر لنا؟ فردّ ﷺ بذكر من كان قبلهم يُنشر بالمنشار ولا يصدّه عن دينه، ثم قال: ولكنكم تستعجلون. بكى حين اتّسعت عليه الدنيا بعد الفتوح."},
+  {id:"suhaib",n:"صهيب الرومي",k:"sahabi",r:"ربح البيع أبا يحيى",
+   b:"عربي من النمر بن قاسط، سُبي صغيراً إلى الروم فنشأ بينهم. أسلم مبكراً وعُذّب. لما أراد الهجرة اعترضته قريش فقال: أرأيتم إن تركت لكم مالي أتخلّون سبيلي؟ ففعل وهاجر بلا شيء، فقال له النبي ﷺ: ربح البيع أبا يحيى."},
+  {id:"ibnmasud",n:"عبد الله بن مسعود",k:"sahabi",r:"سادس ستة في الإسلام، أول من جهر بالقرآن",
+   b:"كان راعي غنم لعقبة بن أبي معيط، أسلم مبكراً وهو من أعلم الصحابة بالقرآن. أول من جهر بقراءة القرآن بمكة أمام قريش فضربوه حتى أدموا وجهه، فقال: ما كانوا أهون عليّ منهم اليوم. صار فقيه الكوفة."},
+  {id:"arqam",n:"الأرقم بن أبي الأرقم",k:"sahabi",r:"صاحب الدار التي كانت أول مركز للدعوة",
+   b:"من بني مخزوم — وهي قبيلة أبي جهل نفسها، وهذا من ذكاء اختيار الدار إذ لا يُظنّ بها. جعل النبي ﷺ داره عند الصفا مقرّاً سرياً للتعليم والاجتماع نحو ثلاث سنين، وفيها أسلم عمر بن الخطاب."},
+  {id:"mutim",n:"المُطعم بن عدي",k:"aam",r:"أجار النبيَّ ﷺ عند رجوعه من الطائف، ومات مشركاً",
+   b:"سيد من سادات قريش، لم يُسلم، لكنه سعى في نقض صحيفة المقاطعة، ثم أجار النبيَّ ﷺ بسلاح بنيه حين رجع من الطائف ولم يقدر أن يدخل مكة. حفظ له النبي ﷺ ذلك، حتى قال يوم أسرى بدر: لو كان المطعم بن عديّ حياً ثم كلّمني في هؤلاء النتنى لتركتهم له."},
+  {id:"abujahl",n:"أبو جهل عمرو بن هشام",k:"khasm",r:"فرعون هذه الأمة، رأس الأذى في مكة",
+   b:"عمرو بن هشام المخزومي، كنيته في قومه أبو الحكم فسماه المسلمون أبا جهل. قاد حملة الإيذاء والتعذيب، وهو قاتل سميّة أول شهيدة. حرّض على المقاطعة، وشارك في مؤامرة القتل ليلة الهجرة. أصرّ على قتال بدر رغم نجاة القافلة، فقُتل فيها على يد غلامين من الأنصار وأجهز عليه ابن مسعود."},
+  {id:"abulahab",n:"أبو لهب عبد العزّى",k:"khasm",r:"عمّ النبي ﷺ وألدّ خصومه، نزلت فيه سورة",
+   b:"عمّ النبي ﷺ، وهو أول من ردّ عليه علانية يوم الصفا بقوله: تبّاً لك ألهذا جمعتنا؟ فنزلت سورة المسد. كان يتبعه في الأسواق يكذّبه، وأمرأته أم جميل تحمل الشوك في طريقه. مات بعد بدر بأيام بمرض العدسة فتركه بنوه حتى أنتن. نموذج على أن القرابة لا تنفع مع العناد."},
+  {id:"umayya",n:"أمية بن خلف",k:"khasm",r:"سيد بني جُمح ومعذِّب بلال",
+   b:"من كبار مشركي مكة وصاحب مال. كان يعذّب بلالاً في الرمضاء ويضع الصخرة على صدره. اشتراه أبو بكر منه فأعتقه. خرج إلى بدر كارهاً بعد أن أهانه أبو جهل بمجمرة، فقُتل فيها وقتله بلال ومن معه."},
+  {id:"utba",n:"عتبة بن ربيعة",k:"khasm",r:"من عقلاء قريش، المفاوض والمحذّر من بدر",
+   b:"سيد من سادات قريش. أرسلته قريش يفاوض النبيَّ ﷺ ويعرض عليه المال والملك والطبّ، فقرأ عليه النبي ﷺ صدر فصّلت حتى تأثّر وقال لقومه: خلّوا بينه وبين الناس. نصح بترك القتال يوم بدر فعيّره أبو جهل بالجبن، فخرج فقُتل مبارزةً وهو من أشراف القتلى."},
+  {id:"najashi",n:"النجاشي أصْحَمة",k:"aam",r:"ملك الحبشة الذي أجار المهاجرين وأسلم",
+   b:"ملك نصراني عادل، لجأ إليه المسلمون في الهجرتين. ردّ وفد قريش (عمرو بن العاص وعبد الله بن أبي ربيعة) وأبى أن يسلّمهم، بعد أن سمع كلمة جعفر بن أبي طالب وقراءته من سورة مريم فبكى حتى أخضل لحيته. أسلم سراً، ولما مات صلّى عليه النبي ﷺ صلاة الغائب."},
+  {id:"jafar",n:"جعفر بن أبي طالب",k:"bayt",r:"ذو الجناحين، خطيب المسلمين عند النجاشي",
+   b:"ابن عم النبي ﷺ وأخو علي، أشبه الناس بالنبي ﷺ خَلقاً وخُلقاً. هاجر إلى الحبشة وكان خطيب المهاجرين أمام النجاشي في أشهر خطبة مقارنة بين الجاهلية والإسلام. رجع يوم فتح خيبر. استُشهد قائداً في مؤتة بعد أن قُطعت يداه، فسمّاه النبي ﷺ ذا الجناحين."},
+  {id:"zayd",n:"زيد بن حارثة",k:"sahabi",r:"حِبّ رسول الله ﷺ، الوحيد المسمّى في القرآن",
+   b:"سُبي صغيراً فاشتراه حكيم بن حزام لخديجة فوهبته للنبي ﷺ. لما وجده أبوه خيّره النبي ﷺ فاختار البقاء معه على أبيه وعمه، فأعتقه وتبنّاه، حتى نزل {ادْعُوهُمْ لِآبَائِهِمْ}. من أوائل المسلمين، وصاحبه في رحلة الطائف. قائد مؤتة الأول واستُشهد فيها."},
+  {id:"usama",n:"أسامة بن زيد",k:"sahabi",r:"الحِبّ ابن الحِبّ، أُمّر وهو ابن ثمانية عشر",
+   b:"ابن زيد بن حارثة وأم أيمن. أحبّه النبي ﷺ حباً شديداً. أمّره على جيش فيه كبار المهاجرين والأنصار وهو شاب صغير في آخر حياته ﷺ، فطعن بعض الناس في إمارته فخطب النبي ﷺ مدافعاً عنه. نُفّذ بعثه في خلافة أبي بكر."},
+  {id:"musab",n:"مصعب بن عمير",k:"sahabi",r:"أول سفير في الإسلام ومعلّم أهل المدينة",
+   b:"فتى مكة المدلَّل وأنعمها عيشاً، لبس الخشن بعد إسلامه. هاجر إلى الحبشة، ثم بعثه النبي ﷺ إلى المدينة بعد بيعة العقبة الأولى ليعلّم الناس القرآن، فأسلم على يديه سعد بن معاذ وأسيد بن حضير فأسلمت دور الأنصار كلها. استُشهد يوم أُحد حاملاً اللواء ولم يوجد ما يُكفّن به إلا نمرة."},
+  {id:"saadmuadh",n:"سعد بن معاذ",k:"ansar",r:"سيد الأوس، الذي اهتزّ لموته عرش الرحمن",
+   b:"سيد الأوس، أسلم على يد مصعب بن عمير فقال لقومه: كلام رجالكم ونسائكم عليّ حرام حتى تسلموا، فأسلموا جميعاً في يوم. ثبت مع النبي ﷺ في مشورة بدر بكلمته المشهورة عن استعداد الأنصار. أصيب في الخندق، وحكم في بني قريظة، ثم انفجر جرحه فمات."},
+  {id:"saadubada",n:"سعد بن عبادة",k:"ansar",r:"سيد الخزرج وصاحب الجود",
+   b:"سيد الخزرج ومن نقباء العقبة الثانية. اشتهر بالكرم حتى كانت جفنته تدور مع النبي ﷺ. شارك في مشورة بدر وأحد والخندق، وهو الذي أراد النبي ﷺ أن يعطي غطفان ثلث ثمار المدينة فأبى هو وسعد بن معاذ بشدة."},
+  {id:"ibnubayy",n:"عبد الله بن أُبيّ بن سلول",k:"khasm",r:"رأس المنافقين بالمدينة",
+   b:"كان قومه قد أوشكوا أن يتوّجوه ملكاً على المدينة قبل الهجرة، فجاء الإسلام فذهب ملكه، فأضمر العداوة. أظهر الإسلام وأبطن الكفر. انسحب بثلث الجيش يوم أُحد، وقاد حديث الإفك، وقال في بني المصطلق {لَيُخْرِجَنَّ الْأَعَزُّ مِنْهَا الْأَذَلَّ}. صبر النبي ﷺ عليه سياسةً لئلا يُقال: محمد يقتل أصحابه."},
+  {id:"suraqa",n:"سراقة بن مالك",k:"sahabi",r:"طالب الجائزة الذي وُعد بسواري كسرى",
+   b:"من بني مدلج، خرج يطلب النبيَّ ﷺ وأبا بكر في الهجرة طمعاً في جائزة قريش (مئة ناقة)، فساخت قدما فرسه في الأرض ثلاث مرات، فطلب الأمان وعاد يردّ الناس عنهما. وعده النبي ﷺ بسواري كسرى، فلبسهما في خلافة عمر بعد فتح فارس."},
+  {id:"adas",n:"عدّاس",k:"aam",r:"الغلام النصراني الذي آمن في بستان الطائف",
+   b:"غلام نصراني من نينوى، مملوك لعتبة وشيبة ابني ربيعة. أرسلاه بعنب للنبي ﷺ بعد أن أُدمي في الطائف استهزاءً به. فلما ذكر النبي ﷺ اسم يونس بن متّى وأنه أخوه، أكبّ عدّاس يقبّل رأسه ويديه وقدميه وآمن. ثمرة يوم الطائف الوحيدة."},
+  {id:"abusufyan",n:"أبو سفيان صخر بن حرب",k:"khasm",r:"قائد قريش في أحد والخندق، ثم أسلم يوم الفتح",
+   b:"سيد بني أمية وزعيم قريش بعد بدر. قاد أُحد والخندق. صاحب القافلة التي كانت سبب بدر. أسلم ليلة فتح مكة على يد العباس بعد أن رأى جيش المسلمين، فجعل النبي ﷺ داره أماناً. حسن إسلامه بعد ذلك وشهد حنيناً والطائف وفقد عينه في اليرموك."},
+  {id:"hind",n:"هند بنت عتبة",k:"sahabia",r:"محرّضة قريش في أحد، ثم أسلمت وحسن إسلامها",
+   b:"زوج أبي سفيان وابنة عتبة بن ربيعة. فقدت أباها وأخاها وعمها في بدر، فحرّضت وحشياً على قتل حمزة ومثّلت بجسده. أسلمت يوم الفتح وبايعت النبيَّ ﷺ، وهي صاحبة السؤال المشهور عن نفقة الزوج الشحيح. نموذج على أن أشدّ الخصومة قد تنقلب."},
+  {id:"khalid",n:"خالد بن الوليد",k:"sahabi",r:"سيف الله المسلول، صانع الكرّة يوم أُحد ثم قائد الفتوح",
+   b:"من بني مخزوم، فارس قريش. هو الذي التفّ من خلف الرماة يوم أُحد فحوّل النصر إلى نكسة. أسلم في السنة الثامنة قبل الفتح مع عمرو بن العاص وعثمان بن طلحة. قاد في مؤتة بعد استشهاد الأمراء الثلاثة فأنقذ الجيش، فسماه النبي ﷺ سيف الله. قاد فتوح العراق والشام."},
+  {id:"amr",n:"عمرو بن العاص",k:"sahabi",r:"داهية العرب، مبعوث قريش للحبشة ثم فاتح مصر",
+   b:"من بني سهم، رجل سياسة ودهاء. أرسلته قريش إلى النجاشي ليردّ المهاجرين فرُدّ خائباً. أسلم قبل الفتح بأشهر. أمّره النبي ﷺ على غزوة ذات السلاسل وفيها كبار الصحابة. فتح مصر في خلافة عمر."},
+  {id:"salman",n:"سلمان الفارسي",k:"sahabi",r:"الباحث عن الحق، صاحب فكرة الخندق",
+   b:"فارسي من أصبهان، ترك المجوسية وطاف على النصارى يبحث عن الدين حتى دُلّ على نبي يُبعث بأرض بها نخل، فبيع عبداً حتى وصل المدينة. كاتب سيده على النخل والمال فأعانه النبي ﷺ والصحابة. أشار بحفر الخندق وهو أسلوب فارسي لم تعرفه العرب. قال فيه ﷺ: سلمان منّا أهل البيت."},
+  {id:"suhayl",n:"سهيل بن عمرو",k:"khasm",r:"مفاوض قريش في الحديبية، أسلم يوم الفتح",
+   b:"خطيب قريش. فاوض النبيَّ ﷺ في الحديبية وشدّد في الشروط حتى في كتابة البسملة واسم رسول الله. أُسر يوم بدر وفُدي. أسلم يوم الفتح، وثبّت أهل مكة بخطبته يوم وفاة النبي ﷺ حين ارتجّ الناس."},
+  {id:"aisha",n:"عائشة بنت أبي بكر",k:"sahabia",r:"أم المؤمنين وفقيهة الأمة",
+   b:"بنت الصديق، أحبّ نساء النبي ﷺ إليه. حملت عن النبي ﷺ علماً غزيراً في الفقه والتفسير وأحكام البيت وروت أكثر من ألفي حديث. ابتُليت بحديث الإفك فنزلت براءتها من فوق سبع سماوات في سورة النور. تُوفي النبي ﷺ في بيتها ودُفن فيه."},
+  {id:"umsalama",n:"أم سلمة هند بنت أبي أمية",k:"sahabia",r:"أم المؤمنين، صاحبة المشورة يوم الحديبية",
+   b:"هاجرت إلى الحبشة ثم إلى المدينة، وقصة هجرتها من أشدّ ما يُروى إذ فُرّق بينها وبين زوجها وابنها سنة كاملة. تزوّجها النبي ﷺ بعد استشهاد أبي سلمة. أشارت عليه ﷺ يوم الحديبية حين تلكّأ الصحابة في التحلل أن يخرج فينحر ويحلق دون أن يكلّم أحداً، ففعل فقاموا يتبعونه — من أعظم مواقف مشورة المرأة."},
+  {id:"asmaa",n:"أسماء بنت أبي بكر",k:"sahabia",r:"ذات النطاقين، مموّنة الهجرة",
+   b:"بنت أبي بكر وأخت عائشة. كانت تحمل الطعام إلى الغار سراً، وشقّت نطاقها نصفين لتربط به السفرة فسمّاها النبي ﷺ ذات النطاقين. ثبتت أمام أبي جهل حين صفعها ولم تدلّه على أبيها. ماتت وقد جاوزت المئة."},
+  {id:"abduRahman",n:"عبد الرحمن بن عوف",k:"sahabi",r:"التاجر الذي رفض العطية وطلب السوق",
+   b:"من العشرة المبشّرين. لما آخى النبي ﷺ بينه وبين سعد بن الربيع عرض عليه سعد نصف ماله وأن ينزل له عن إحدى امرأتيه، فقال كلمته الخالدة: بارك الله لك في أهلك ومالك، دلّوني على السوق. فما لبث أن أثرى. نموذج في العزّة الاقتصادية."},
+  {id:"abuubayda",n:"أبو عبيدة بن الجراح",k:"sahabi",r:"أمين هذه الأمة",
+   b:"من السابقين الأولين. هاجر إلى الحبشة. قال فيه النبي ﷺ: لكل أمة أمين وأمين هذه الأمة أبو عبيدة. نزع الحلقتين من وجنتي النبي ﷺ يوم أُحد فسقطت ثنيتاه. قاد فتوح الشام ومات في طاعون عمواس."},
+  {id:"zubayr",n:"الزبير بن العوّام",k:"sahabi",r:"حواريّ رسول الله ﷺ",
+   b:"ابن عمة النبي ﷺ صفية. أسلم صغيراً وهو ابن نحو ست عشرة سنة. أول من سلّ سيفاً في الإسلام حين شاع أن النبيَّ ﷺ قُتل. هاجر الهجرتين. قال فيه ﷺ: إن لكل نبي حواريّاً وحواريّ الزبير."},
+  {id:"saadwaqqas",n:"سعد بن أبي وقاص",k:"sahabi",r:"أول من رمى بسهم في سبيل الله",
+   b:"من السابقين وهو ابن نحو سبع عشرة سنة. أبلت أمه في منعه فامتنعت عن الطعام لتردّه عن دينه فثبت، فنزل {وَإِن جَاهَدَاكَ عَلَى أَن تُشْرِكَ بِي}. أول من رمى بسهم في سبيل الله. فدّاه النبي ﷺ بأبويه يوم أُحد. قاد القادسية وفتح فارس."},
+  {id:"talha",n:"طلحة بن عبيد الله",k:"sahabi",r:"طلحة الخير، وقى النبيَّ ﷺ بيده يوم أُحد",
+   b:"من العشرة المبشّرين، أسلم على يد أبي بكر. وقى النبيَّ ﷺ بنفسه يوم أُحد حتى شُلّت يده، وقال ﷺ يومئذ: من سرّه أن ينظر إلى شهيد يمشي على وجه الأرض فلينظر إلى طلحة."},
+  {id:"abudharr",n:"أبو ذرّ الغفاري",k:"sahabi",r:"رابع أو خامس من أسلم، وأول من حيّا بتحية الإسلام",
+   b:"من غفار، وكانت قبيلته تقطع الطريق. جاء يبحث عن النبي ﷺ فأسلم مبكراً، ثم جهر بالشهادة عند الكعبة فضُرب حتى أُغمي عليه ففعلها مرتين. أمره النبي ﷺ بالرجوع لقومه فأسلم على يديه نصف غفار. اشتهر بالزهد والصدع بالحق."},
+  {id:"huyayy",n:"حيي بن أخطب",k:"khasm",r:"زعيم بني النضير ومحرّك حلف الأحزاب",
+   b:"سيد بني النضير. بعد إجلائهم إلى خيبر ذهب إلى قريش وغطفان يحرّضهم ويجمعهم على المدينة فكانت غزوة الخندق. ثم دخل حصن بني قريظة فأقنع كعب بن أسد بنقض العهد مع النبي ﷺ. قُتل مع بني قريظة."},
+  {id:"kaabmalik",n:"كعب بن مالك",k:"ansar",r:"أحد الثلاثة الذين خُلّفوا وشاعر النبي ﷺ",
+   b:"شاعر من الأنصار. تخلّف عن تبوك بلا عذر ولم يعتذر بكذب كما فعل المنافقون، فهُجر خمسين ليلة هو وصاحباه مرارة بن الربيع وهلال بن أمية، حتى ضاقت عليهم الأرض بما رحبت، ثم نزلت توبتهم في سورة التوبة. قصته أعظم درس في الصدق."}
+];
+</script>
+<script>
+const PB1 = [
+{
+id:"pre", t:"التمهيد: ما قبل المولد", era:"قبل 571م", c:"#8B7B9E",
+d:"الأرض التي نبتت فيها الدعوة: نسبٌ محفوظ، وبيتٌ معظّم، ومجتمعٌ بلغ من الفساد مبلغاً جعل الحاجة للرسالة ضرورة لا ترفاً.",
+ev:[
+ {id:"e1", t:"النسب الشريف وبيت قريش", d:"قبل البعثة بقرون",
+  s:"نسب النبي ﷺ إلى عدنان متفق عليه، وقريش أشرف بيوت العرب، وبنو هاشم أشرف بطون قريش.",
+  n:"هو محمد بن عبد الله بن عبد المطلب بن هاشم بن عبد مناف بن قصي بن كلاب... إلى عدنان، وعدنان من ولد إسماعيل بن إبراهيم عليهما السلام. وهذا القدر من النسب متفق على صحته بين أهل السير، وما فوق عدنان إلى إسماعيل فيه اختلاف والأولى الوقوف عنده.\n\nوقريش كانت تجمع بين <strong>الشرف الديني</strong> (ولاية البيت الحرام)، و<strong>القوة الاقتصادية</strong> (رحلة الشتاء والصيف)، و<strong>الاحترام الاجتماعي</strong> عند سائر العرب. فكان اختيار النبي ﷺ من هذا البيت مقصوداً: قوم إن دخلوا في الدين دخلت العرب معهم، وإن عاندوا كان في نسبه ﷺ ما يحفظ حياته حتى تشتد الدعوة.",
+  g:"sahih", src:"البخاري (المناقب)، سيرة ابن هشام، الرحيق المختوم.",
+  ben:[
+   {t:"الله يختار لرسالته أفضل تربة اجتماعياً وجغرافياً؛ فالدعوة الناجحة تُبنى على قراءة واقع لا على حماس مجرّد.", tags:["takhtit","tadarruj"]},
+   {t:"الشرف النَّسبي كان مقدّمة أمنية: حماية العشيرة أخّرت البطش بالنبي ﷺ ثلاثة عشر عاماً. الأسباب تُستخدم ولا تُعبد.", tags:["takhtit","tawakkul"]},
+   {t:"الأمانة العلمية: علماء السيرة وقفوا عند عدنان ولم يتكلّفوا ما لا يعلمون. أدب في نقل الخبر يُحتاج إليه اليوم أكثر.", tags:["sidq"]}
+  ], ppl:["abdulmuttalib"]},
+
+ {id:"e2", t:"قصيّ بن كلاب وولاية البيت", d:"نحو القرن الخامس الميلادي",
+  s:"قصي جمع قريشاً بعد تفرّقها وأسّس نظاماً إدارياً للبيت الحرام ورث النبي ﷺ بعض مناصبه.",
+  n:"كان البيت في يد خزاعة، فاستردّه <strong>قصيّ بن كلاب</strong> — الجدّ الرابع للنبي ﷺ — وجمع قريشاً من شعاب مكة فأنزلها حولها، فسُمّي مُجمّعاً. وأسّس نظاماً وظيفياً محكماً: السقاية (سقي الحاج)، والرفادة (إطعامه)، والحجابة (مفتاح الكعبة)، واللواء، والندوة (دار الشورى التي لا يُبرم أمر إلا فيها).\n\nثم توزّعت هذه المناصب في بطون قريش، فصارت السقاية والرفادة في بني هاشم، ووصلت إلى <strong>عبد المطلب</strong>. وهذا يفسّر لماذا كانت مكة تحمل شيئاً من روح المؤسسة قبل الإسلام، وكيف وجد النبي ﷺ في قومه ذهنية تنظيمية استُثمرت لاحقاً في بناء الدولة.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات لابن سعد، البداية والنهاية.",
+  ben:[
+   {t:"المؤسسات لا تُبنى بالفوضى: قصي جمع الناس ثم وزّع الأدوار ثم أوجد مرجعية للقرار (دار الندوة). أي كيان ناجح يحتاج الثلاثة.", tags:["takhtit","qiyada"]},
+   {t:"الإسلام لم يهدم كل موروث الجاهلية، بل أبقى الصالح وهذّبه (السقاية والرفادة). التجديد ليس مرادفاً للهدم الكامل.", tags:["awlawiyat","tadarruj"]}
+  ], ppl:["abdulmuttalib"]},
+
+ {id:"e3", t:"حال العرب قبل الإسلام", d:"القرن السادس الميلادي",
+  s:"وثنية متجذّرة، ووأد للبنات، وربا فاحش، وثأر لا ينقطع، مع بقايا من كرم وشجاعة ووفاء.",
+  n:"كان العرب على <strong>وثنية</strong> عمياء تحيط بالكعبة بثلاثمئة وستين صنماً، مع بقايا من الحنيفية يعرفون بها الله ولكن يزعمون أن الأصنام تقرّبهم إليه زلفى. وكان فيهم يهود بيثرب وخيبر، ونصارى بنجران والغساسنة، ومجوس متأثرون بفارس، وقلّة من الحنفاء كزيد بن عمرو بن نفيل.\n\nأما اجتماعياً فالمرأة سلعة تُورث ولا ترث، والبنت تُوأد أحياناً خشية العار أو الفقر. والاقتصاد قائم على <strong>الربا</strong> والقمار وتجارة تحكمها القوة. والقبيلة هي المرجع، والثأر قد يستمر أربعين سنة (كحرب البسوس وداحس والغبراء).\n\nومع ذلك كان فيهم خصال أصيلة: الكرم، والوفاء بالجوار، والشجاعة، وقوة الحفظ، وفصاحة اللسان — وهذه هي المادة الخام التي صقلها الإسلام لاحقاً فصنع منها أعظم جيل.",
+  g:"mash", src:"سيرة ابن هشام، الرحيق المختوم (فصل: المجتمع العربي)، محاضرات في تاريخ العرب.",
+  ben:[
+   {t:"معرفة الداء شرط لفهم الدواء: من لم يتصور جاهلية العرب لن يقدّر حجم الانقلاب الذي أحدثه الإسلام في عشرين سنة.", tags:["tadarruj"]},
+   {t:"لا يوجد مجتمع شرّ محض؛ في أسوأ البيئات مواهب صالحة للاستثمار. القائد الناجح يبحث عن المادة الخام لا عن الكمال.", tags:["tarbiya","qiyada"]},
+   {t:"الفساد الاقتصادي (الربا) والاجتماعي (وأد البنات) والسياسي (القبلية) يأتون معاً — والإصلاح لا بد أن يكون شاملاً.", tags:["mal","adl"]}
+  ], ppl:[]},
+
+ {id:"e4", t:"عبد المطلب وحفر زمزم", d:"قبل المولد بسنوات",
+  s:"إعادة اكتشاف بئر زمزم بعد أن طمرتها جرهم قروناً، وعودة سقاية الحاج لبني هاشم.",
+  n:"كانت جرهم قد دفنت زمزم عند خروجها من مكة، فاندثر موضعها قروناً. فرأى <strong>عبد المطلب</strong> في المنام من يأمره بحفرها ويصفها له، فقام يحفر ومعه ابنه الحارث — وكان يومئذ ولده الوحيد — فنازعته قريش وقالوا: هي بئر أبينا إسماعيل ولنا فيها حق. فاحتكموا إلى كاهنة بالشام، فلما ضلّوا في الطريق وأشرفوا على الهلاك عطشاً، انفجرت تحت راحلة عبد المطلب عين ماء، فقالوا: قد قضى الله لك علينا، والله لا نخاصمك فيها أبداً.\n\nومن هنا نذر عبد المطلب: <strong>لئن وُلد له عشرة أبناء يبلغون معه المنع ليذبحنّ أحدهم عند الكعبة</strong>.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات لابن سعد. القصة مشهورة في كتب السير وليست في الصحيحين.",
+  ben:[
+   {t:"العزم على أمر مع قلة الناصر: بدأ الحفر وليس معه إلا ولد واحد. المشاريع الكبيرة تبدأ صغيرة ووحيدة.", tags:["takhtit","tawakkul"]},
+   {t:"الله يحسم الخلاف بالبرهان لا بالجدل. حين استعصت الخصومة جاء الحل من حيث لا يحتسبون.", tags:["tawakkul"]},
+   {t:"النذر بما لا يملك الإنسان الوفاء به سهلٌ في لحظة الحماس، وثقيلٌ عند التنفيذ — تنبيه على التروّي في الالتزامات.", tags:["wafa"]}
+  ], ppl:["abdulmuttalib"]},
+
+ {id:"e5", t:"النذر وفداء عبد الله", d:"قبل المولد",
+  s:"وقعت قرعة النذر على أحبّ أبناء عبد المطلب إليه، ففُدي بمئة من الإبل — وهو أبو النبي ﷺ.",
+  n:"لما اكتمل لعبد المطلب عشرة من الولد، أخبرهم بنذره فأطاعوه. فأقرع بينهم فخرجت القرعة على <strong>عبد الله</strong> وكان أحبّهم إليه. فأخذه ليذبحه، فمنعته قريش وأخواله من بني مخزوم، وأشارت عليه امرأة عارفة أن يقارع بين عبد الله وبين عشر من الإبل، فإن خرجت القرعة على عبد الله زاد عشراً حتى يرضى الله.\n\nفما زال يزيد حتى بلغت <strong>مئة من الإبل</strong> فخرجت القرعة عليها، فنُحرت وتُرك عبد الله. ومن هنا استقرّت دية النفس في العرب بمئة من الإبل، فأقرّها الإسلام. ولهذا قال بعض السلف: النبي ﷺ ابن الذبيحين — يعني إسماعيل وعبد الله.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات. وحديث «أنا ابن الذبيحين» ضعيف الإسناد وإن اشتهر.",
+  ben:[
+   {t:"العناية الإلهية تحفظ سلسلة النبوة قبل وجودها. ما نراه صدفة هو ترتيب دقيق.", tags:["tawakkul"]},
+   {t:"استشارة أهل الخبرة عند الحيرة — حتى من امرأة — أنقذت نفساً. لا تحتقر مصدر النصيحة.", tags:["shura","maraa"]},
+   {t:"سنّة حسنة استقرّت في المجتمع فأقرّها الشرع لاحقاً (دية المئة). العُرف الصالح يُبنى عليه.", tags:["adl"]}
+  ], ppl:["abdulmuttalib","abdullah"]},
+
+ {id:"e6", t:"عام الفيل", d:"571م تقريباً — قبل المولد بأشهر",
+  s:"أبرهة الحبشي يقصد هدم الكعبة بجيش فيه فيل، فيهلكه الله بطير أبابيل، ونزلت فيه سورة الفيل.",
+  n:"بنى <strong>أبرهة الأشرم</strong> — نائب النجاشي على اليمن — كنيسة عظيمة بصنعاء سمّاها القُلَّيس ليصرف إليها حجّ العرب، فلما لم تُجدِ، خرج بجيش فيه فيل ضخم قاصداً هدم الكعبة. فأخذ في طريقه مئتي بعير لعبد المطلب.\n\nفجاءه عبد المطلب فطلب إبله فقط، فتعجّب أبرهة: أتكلّمني في مئتي بعير وأترك بيتاً هو دينك ودين آبائك؟ فقال كلمته المشهورة: <strong>«أنا ربّ الإبل، وإنّ للبيت ربّاً سيمنعه»</strong>.\n\nفلما توجّه الجيش برك الفيل ولم يقم، وأرسل الله عليهم <strong>طيراً أبابيل ترميهم بحجارة من سجيل</strong> فجعلهم كعصف مأكول. ونزلت فيها سورة الفيل تصديقاً وتخليداً. وكان ذلك قبل مولد النبي ﷺ بنحو خمسين يوماً على المشهور.",
+  g:"sahih", src:"سورة الفيل، سيرة ابن هشام، البخاري (طرف منه).",
+  ben:[
+   {t:"الله يحمي دينه ولو تخلّى عنه أهله. عبد المطلب لم يكن قادراً على الدفاع فوكّل الأمر لربّ البيت — وهذا عين التوكل بعد استفراغ الوسع.", tags:["tawakkul","thabat"]},
+   {t:"توقيت الحادثة قبل المولد بأشهر: تهيئة نفسية لأمة كاملة أن هذا البيت محروس وأن أمراً عظيماً قادم.", tags:["takhtit","tadarruj"]},
+   {t:"القوة العسكرية الجبّارة تُهزم بأضعف الخلق حين يشاء الله. لا تقس موازين القوى بعينك وحدها.", tags:["tawakkul","ibtila"]},
+   {t:"عبد المطلب طالب بحقه المشروع ولم يخلط بين ملكه الخاص وملك الله. وضوح الحدود في التفاوض.", tags:["siyasa"]}
+  ], ppl:["abdulmuttalib"]},
+
+ {id:"e7", t:"زواج عبد الله وآمنة ووفاة عبد الله", d:"قبل المولد بشهور",
+  s:"زواج والدَي النبي ﷺ، ثم وفاة عبد الله في المدينة والنبي ﷺ في بطن أمه، فوُلد يتيماً.",
+  n:"زوّج عبد المطلب ابنه عبد الله من <strong>آمنة بنت وهب</strong> سيدة نساء قريش نسباً وموضعاً. فلما حملت به، خرج عبد الله في تجارة إلى الشام، فلما رجع نزل بالمدينة عند أخواله <strong>بني عدي بن النجار</strong> مريضاً فمات عندهم ودُفن هناك، وعمره نحو خمس وعشرين سنة.\n\nوترك ميراثاً يسيراً جداً: <strong>خمسة من الإبل، وقطيع غنم، وجارية حبشية هي أم أيمن</strong> التي صارت حاضنة النبي ﷺ. فوُلد النبي ﷺ يتيماً فقيراً في بيت شريف — جمعٌ بين شرف النسب وضيق ذات اليد.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات لابن سعد.",
+  ben:[
+   {t:"اليُتم المبكر لم يكن نقصاً بل تربية: صنع في النبي ﷺ رقّة على الضعفاء واستغناءً عن الناس واتصالاً مباشراً بالله.", tags:["tarbiya","ibtila"]},
+   {t:"لا تعتذر بظروف نشأتك عن مشروعك. أعظم رجل في التاريخ بدأ يتيماً بلا مال ولا أب.", tags:["ibtila","shabab"]},
+   {t:"الموت يأتي في أوج الشباب والسفر والتجارة. عبد الله مات وهو في الخامسة والعشرين — تذكير أن الأجل لا ينتظر اكتمال الخطط.", tags:["ajal"]}
+  ], ppl:["abdullah","amina"]}
+]},
+
+{
+id:"birth", t:"المولد والنشأة", era:"571م — 610م", c:"#6FA98C",
+d:"أربعون سنة من الإعداد الصامت: يُتْمٌ يصنع الاستقلال، ورعيٌ يصنع الصبر، وتجارةٌ تصنع السمعة، وخلوةٌ تصنع القلب.",
+ev:[
+ {id:"e8", t:"المولد الشريف", d:"عام الفيل، الاثنين من ربيع الأول",
+  s:"وُلد ﷺ يوم الاثنين في مكة، وأرضعته ثويبة مولاة أبي لهب أياماً.",
+  n:"وُلد ﷺ بمكة في شِعب بني هاشم يوم <strong>الاثنين</strong> — وهذا ثابت في صحيح مسلم من قوله ﷺ حين سُئل عن صوم الاثنين: «ذاك يومٌ وُلدت فيه». أما تحديد اليوم من الشهر ففيه خلاف واسع: قيل الثاني عشر من ربيع الأول وهو المشهور، وقيل التاسع وهو ما رجّحه بعض المحققين بالحساب الفلكي، وقيل غير ذلك.\n\nأرسلت آمنة إلى عبد المطلب تبشّره، فجاء مستبشراً وطاف به الكعبة وسمّاه <strong>محمداً</strong> — وكان اسماً غريباً في العرب — رجاء أن يُحمد في الأرض والسماء. وأرضعته أول أمره <strong>ثُويبة</strong> مولاة أبي لهب أياماً.\n\n<em>تنبيه:</em> كثير مما يُروى من خوارق ليلة المولد (انشقاق إيوان كسرى، خمود نار فارس) لم يثبت بإسناد صحيح، والثابت في فضله ﷺ يُغني عن الضعيف.",
+  g:"sahih", src:"صحيح مسلم (صوم الاثنين)، سيرة ابن هشام. وتحديد اليوم مختلف فيه.",
+  ben:[
+   {t:"أعظم حدث في التاريخ مرّ بلا ضجيج إعلامي. الحق يبدأ هادئاً ثم يعلو — لا تستعجل الضجّة لمشروعك.", tags:["tadarruj"]},
+   {t:"التمييز بين الثابت والمشهور في السيرة منهج لازم؛ محبة النبي ﷺ لا تُبنى على روايات واهية.", tags:["sidq"]},
+   {t:"الاسم أثر: اختار عبد المطلب اسماً نادراً بنيّة عالية. الأسماء والعلامات تحمل رسائل.", tags:["ilam"]}
+  ], ppl:["amina","abdulmuttalib","abulahab"]},
+
+ {id:"e9", t:"الرضاعة في بني سعد", d:"من أيام إلى نحو 4 سنوات",
+  s:"خرج ﷺ إلى بادية بني سعد مع حليمة السعدية، فتعلّم فصاحة العرب وخشونة الصحراء.",
+  n:"كانت عادة أشراف مكة أن يسترضعوا أبناءهم في البادية طلباً لصحة الأبدان وفصاحة الألسنة. فجاءت مراضع بني سعد في <strong>سنة جدباء</strong>، فكل امرأة عُرض عليها اليتيم أعرضت لأنه لا أب له يُرجى عطاؤه.\n\nفلم تجد <strong>حليمة بنت أبي ذؤيب</strong> شيئاً، فكرهت أن ترجع فارغة فأخذته. فما إن أخذته حتى دَرّ ثديها وشبع صاحبه، وامتلأ ضرع شارفهم، وأسرعت أتانهم الضعيفة حتى عجب الناس. وكان القوم يقولون: اضربوا في مراح حليمة فإن غنمها تروح شباعاً وغنمنا جياع.\n\nمكث فيهم نحو أربع سنوات، فنشأ على <strong>لسان عربي فصيح</strong> وبدن قوي وعينٍ ترى السماء المفتوحة لا جدران مكة. وهي تربية قصدها الله لمن سيخاطب العرب كافة بلسانهم.",
+  g:"hasan", src:"سيرة ابن هشام، الطبقات، دلائل النبوة للبيهقي.",
+  ben:[
+   {t:"البركة تأتي مع من ظنّه الناس عبئاً. أعرض الناس عن اليتيم فكان هو مفتاح الرزق.", tags:["tawakkul","akhlaq"]},
+   {t:"البيئة تصنع الأداة: من سيخاطب العرب بلسانهم أُرسل ليتعلم لسانهم في منبعه. جهّز أدواتك قبل مهمتك.", tags:["tarbiya","takhtit"]},
+   {t:"حليمة أخذته كارهةً فكان فيه خيرها كله. كم من أمر تكرهه هو باب رزقك: {وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ}.", tags:["tawakkul","ibtila"]},
+   {t:"تكليف الطفل بشيء من خشونة العيش ليس قسوة بل استثمار. جيل بلا احتكاك ببعض الشدة جيل هشّ.", tags:["tarbiya","shabab"]}
+  ], ppl:["halima"]},
+
+ {id:"e10", t:"حادثة شقّ الصدر", d:"نحو السنة الرابعة",
+  s:"أتاه ملكان فشقّا صدره واستخرجا علقة، فردّاه مطهَّراً — ثابت في صحيح مسلم.",
+  n:"روى مسلم عن أنس أن رسول الله ﷺ أتاه <strong>جبريل</strong> وهو يلعب مع الغلمان، فأخذه فصرعه فشقّ عن قلبه فاستخرج القلب، فاستخرج منه <strong>علقة</strong> فقال: هذا حظّ الشيطان منك. ثم غسله في طست من ذهب بماء زمزم ثم لأمه وأعاده مكانه. وجاء الغلمان يسعون إلى أمه — يعني ظئره — فقالوا: إن محمداً قد قُتل. فاستقبلوه وهو منتقع اللون.\n\nقال أنس: وكنت أرى أثر ذلك المخيط في صدره. وقد ردّت حليمة الغلام إلى أمه بعد ذلك خوفاً عليه.\n\nوقد تكرّر شقّ الصدر مرة أخرى <strong>ليلة الإسراء</strong>، وهو أيضاً ثابت في الصحيحين.",
+  g:"sahih", src:"صحيح مسلم (كتاب الإيمان، حديث أنس).",
+  ben:[
+   {t:"التطهير الباطني سابق على التكليف. من يريد حمل رسالة يبدأ بتصفية قلبه لا بترتيب خطته.", tags:["tarbiya"]},
+   {t:"العصمة صناعة إلهية سابقة، لا نتيجة مجاهدة بشرية فقط — وهذا فارق بين النبي وبين المصلح.", tags:["tarbiya"]},
+   {t:"وقع الحادث والنبي ﷺ يلعب مع الغلمان: أمر عظيم في سياق يومي عادي. عظائم الأمور قد تدخل حياتك في لحظة مألوفة.", tags:["ajal"]}
+  ], ppl:["halima"]},
+
+ {id:"e11", t:"وفاة آمنة بالأبواء", d:"وعمره ﷺ ست سنين",
+  s:"خرجت به أمه لزيارة أخواله وقبر أبيه بالمدينة، فماتت في الطريق فصار يتيم الأبوين.",
+  n:"لما بلغ <strong>ست سنين</strong>، خرجت به أمه آمنة إلى المدينة لتزور أخواله بني عدي بن النجار وقبر أبيه، ومعهما أم أيمن حاضنته. فأقاموا هناك شهراً، ثم رجعوا، فلما بلغوا <strong>الأبواء</strong> — بين مكة والمدينة — ماتت آمنة ودُفنت هناك.\n\nفرجعت به أم أيمن إلى مكة. وقد بقي في نفسه ﷺ أثر هذا، فلما مرّ بقبر أمه في عمرة الحديبية استأذن ربه في زيارته فأُذن له وبكى وأبكى من حوله، كما في صحيح مسلم.\n\nفصار ﷺ في السادسة <strong>يتيم الأب والأم</strong> — ورأى الفقد مرتين قبل أن يبلغ سن التمييز الكامل.",
+  g:"sahih", src:"صحيح مسلم (زيارة القبور)، سيرة ابن هشام.",
+  ben:[
+   {t:"النبي ﷺ بكى على أمه بعد أكثر من خمسين سنة. الرحمة والوفاء لا تسقط بالتقادم، والبكاء رحمةً ليس ضعفاً.", tags:["akhlaq","afw"]},
+   {t:"سلسلة الفقد المتكررة (الأب، الأم، الجد) صنعت رجلاً لا يتعلّق قلبه بأحد سوى الله. المِحن مدرسة تعلّق.", tags:["ibtila","tawakkul"]},
+   {t:"الموت يقطع الرحلة في منتصف الطريق حرفياً — خرجت للزيارة فماتت في الأبواء. لا تؤجّل خيراً إلى «حين نعود».", tags:["ajal"]}
+  ], ppl:["amina"]},
+
+ {id:"e12", t:"كفالة عبد المطلب ثم وفاته", d:"من 6 إلى 8 سنين",
+  s:"كفله جدّه وقرّبه وأجلسه على فراشه الذي لا يجلس عليه أحد، ثم مات فحزن عليه.",
+  n:"كفله جدّه <strong>عبد المطلب</strong> وأحبّه حباً شديداً، حتى كان يُوضع له فراش في ظل الكعبة فيجلس عليه ولا يجلس عليه أحد من بنيه هيبةً له، فكان محمد ﷺ يأتي فيجلس عليه، فيدفعه أعمامه فيقول عبد المطلب: <strong>«دعوا ابني، فوالله إن له لشأناً»</strong>، ويجلسه معه ويمسح ظهره.\n\nفلما بلغ ﷺ <strong>ثماني سنين</strong> مات عبد المطلب، فحزن عليه حزناً شديداً وشيّعه باكياً. وأوصى قبل موته بكفالته إلى ابنه <strong>أبي طالب</strong> شقيق عبد الله لأبيه وأمه.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات لابن سعد.",
+  ben:[
+   {t:"تقدير الصغير أمام الكبار يصنع ثقةً لا تُشترى. عبد المطلب رفع مقام حفيده على أعمامه، فنشأ الطفل واثقاً.", tags:["tarbiya","shabab"]},
+   {t:"الفراسة في اكتشاف المواهب المبكرة: «إن له لشأناً». من أدوار المربّي أن يرى ما لا يراه الناس.", tags:["tarbiya","qiyada"]},
+   {t:"ثالث فقد قبل التاسعة. الله يهيّئ من يريد له مهمة عظيمة بسلسلة من الانقطاعات لا بسلسلة من التسهيلات.", tags:["ibtila"]}
+  ], ppl:["abdulmuttalib","abutalib"]},
+
+ {id:"e13", t:"كفالة أبي طالب ورعي الغنم", d:"من 8 سنين فصاعداً",
+  s:"تولّاه عمّه أبو طالب فحماه ونصره، وعمل ﷺ برعي الغنم على قراريط لأهل مكة.",
+  n:"كفله <strong>أبو طالب</strong> فأحسن كفالته وقدّمه على ولده، وحماه بعد ذلك أربعين سنة. وكان أبو طالب فقيراً كثير العيال، فلم يقعد النبي ﷺ عالة عليه، بل عمل.\n\nروى البخاري عن جابر أن النبي ﷺ قال: <strong>«ما بعث الله نبياً إلا رعى الغنم»</strong>. فقال أصحابه: وأنت؟ قال: «نعم، كنت أرعاها على قراريط لأهل مكة».\n\nوالرعي مدرسة قيادة كاملة: <strong>الصبر</strong> على مخلوق ضعيف متفرّق، و<strong>الرفق</strong> في السوق، و<strong>اليقظة</strong> من الذئب، و<strong>التفرّغ للتأمل</strong> في السماء والصحراء، و<strong>التواضع</strong> بمهنة يزدريها الأشراف.",
+  g:"sahih", src:"صحيح البخاري (الإجارة)، سيرة ابن هشام.",
+  ben:[
+   {t:"لا عيب في مهنة صغيرة تكفّ وجهك عن السؤال. أعظم الخلق رعى الغنم بأجر زهيد وهو ابن سادة مكة.", tags:["mal","akhlaq"]},
+   {t:"الرعي تدريب عملي على قيادة البشر: من صبر على غنم متفرقة صبر على أمة مختلفة.", tags:["qiyada","tarbiya"]},
+   {t:"العمل المبكر يبني الشخصية. الشاب الذي لم يذق تعب كسب درهم لن يقدّر مسؤولية بناء أمة.", tags:["shabab","tarbiya"]}
+  ], ppl:["abutalib"]},
+
+ {id:"e14", t:"رحلة الشام الأولى وبَحِيرا", d:"وعمره ﷺ نحو 12 سنة",
+  s:"خرج مع عمه في تجارة إلى الشام، فرآه راهب فعرف علامات النبوة ونصح أبا طالب بردّه.",
+  n:"خرج أبو طالب في تجارة إلى الشام فتعلّق به النبي ﷺ ولم يطق فراقه فأخرجه معه. فلما نزلوا <strong>بُصرى</strong> بأرض الشام، رآه راهب يقال له <strong>بَحِيرا</strong>، فصنع لهم طعاماً ودعاهم — ولم يكن يفعل ذلك قبل. ثم جعل يتأمّل الغلام ويسأله، ونظر إلى ما بين كتفيه فرأى خاتم النبوة، فقال لأبي طالب: <strong>ارجع به ولا تقدم به الشام، فإني أخشى عليه من اليهود</strong>. فردّه أبو طالب مع نفر.\n\n<em>ملاحظة إسنادية مهمة:</em> القصة رواها الترمذي وحسّنها بعضهم، ونقدها آخرون من أهل الحديث لعلل في إسنادها ولمخالفة بعض ألفاظها للمعروف (كذكر أبي بكر وبلال وكانا صغيرين). فالأولى ذكرها بتحفّظ وعدم بناء أصل عليها.",
+  g:"daif", src:"سنن الترمذي (المناقب)، وفي إسنادها مقال. ذكرها ابن إسحاق مطولاً.",
+  ben:[
+   {t:"أهل الكتاب كانوا يعرفون صفته ﷺ في كتبهم: {يَعْرِفُونَهُ كَمَا يَعْرِفُونَ أَبْنَاءَهُمْ}. المعرفة وحدها لا تُنجي بلا اتّباع.", tags:["mukhalif"]},
+   {t:"منهج نقد الروايات: نحن ننقل السيرة لا لنمجّد فقط بل لنتعلّم، والتعلّم من خبر ضعيف يُورث خللاً.", tags:["sidq"]},
+   {t:"اصطحاب الصغير في العمل والسفر تربية عملية. أبو طالب أخذه معه فرأى الدنيا وهو ابن اثنتي عشرة.", tags:["tarbiya","shabab"]}
+  ], ppl:["abutalib"]},
+
+ {id:"e15", t:"حرب الفِجار وحِلف الفُضول", d:"وعمره ﷺ نحو 15 و20 سنة",
+  s:"شهد حرباً بين قريش وهوازن يناول أعمامه النبل، ثم شهد حلفاً لنصرة المظلوم أثنى عليه بعد الإسلام.",
+  n:"شهد ﷺ <strong>حرب الفِجار</strong> بين قريش وكنانة من جهة وقيس عيلان من جهة، وسُمّيت فجاراً لأنها وقعت في الأشهر الحرم. وكان دوره محدوداً: يناول أعمامه النبل ويردّ عنهم، ولم يقتل أحداً.\n\nثم كان <strong>حلف الفضول</strong> في دار عبد الله بن جدعان، بعد أن ظُلم رجل من زبيد باع سلعة للعاص بن وائل فمنعه ثمنها ولم يجد ناصراً. فتعاقدت بطون من قريش على أن <strong>يكونوا مع المظلوم حتى يُردّ إليه حقه</strong> ما بلّ بحر صوفة.\n\nقال النبي ﷺ بعد الإسلام: «لقد شهدت في دار عبد الله بن جدعان حلفاً ما أحب أن لي به حمر النعم، ولو أُدعى به في الإسلام لأجبت».",
+  g:"hasan", src:"سيرة ابن هشام، مسند أحمد. وحديث حلف الفضول حسّنه جماعة.",
+  ben:[
+   {t:"الإسلام يُقرّ كل عمل خيّر ولو صدر من غير المسلمين. التعاون على البرّ لا يشترط اتفاق العقيدة.", tags:["mukhalif","adl"]},
+   {t:"نصرة المظلوم قيمة عابرة للأديان والأزمنة. مشروع خيري عادل يبقى محموداً بعد قرون.", tags:["adl","akhlaq"]},
+   {t:"شارك النبي ﷺ في حرب بدور محدود ولم يقتل فيها. المشاركة لا تعني الذوبان في كل تفاصيل ما يفعله القوم.", tags:["thabat","awlawiyat"]}
+  ], ppl:[]},
+
+ {id:"e16", t:"الزواج من خديجة رضي الله عنها", d:"وعمره ﷺ 25 سنة",
+  s:"عمل في تجارة خديجة فأعجبها أمانته، فعرضت عليه الزواج فتزوجها وبقي معها 25 سنة وفيّاً.",
+  n:"كانت <strong>خديجة بنت خويلد</strong> امرأة تاجرة ذات شرف ومال، تستأجر الرجال في تجارتها. فبلغها عن النبي ﷺ صدق حديثه وعظم أمانته وكرم أخلاقه، فعرضت عليه أن يخرج بمالها إلى الشام. فخرج ومعه غلامها <strong>ميسرة</strong>، فربحت التجارة ربحاً لم تربح مثله.\n\nفلما حدّثها ميسرة بما رأى من أمانته، رغبت فيه وعرضت عليه نفسها — بواسطة صديقتها نفيسة بنت منية — فتزوجها. وكان عمره ﷺ خمساً وعشرين. أما عمرها فالمشهور أنها كانت <strong>أربعين</strong>، وقيل ثمانياً وعشرين، والخلاف قديم.\n\nبقي معها <strong>خمساً وعشرين سنة لم يتزوّج عليها</strong>، ووُلد له منها كل أولاده إلا إبراهيم. وظلّ يذكرها بعد موتها ويكرم صديقاتها حتى غارت عائشة.",
+  g:"hasan", src:"سيرة ابن هشام، الطبقات، وأحاديث فضلها في الصحيحين.",
+  ben:[
+   {t:"السمعة رأس مال. لم يعرض عليه أحد شراكة لأنه ابن فلان، بل لأنه «الصادق الأمين». ابنِ سمعتك قبل أن تبني مشروعك.", tags:["sidq","mal"]},
+   {t:"شراكة العمل قد تتحول إلى شراكة عمر، إذا قامت على تقدير الخلق لا على المظهر.", tags:["akhlaq","maraa"]},
+   {t:"وفاؤه ﷺ لها بعد موتها بسنوات درس في أن العلاقة الحقيقية لا تنتهي بانتهاء المنفعة.", tags:["wafa","akhlaq"]},
+   {t:"خديجة ملكت مالاً وأدارت تجارة وبادرت بالخطبة. المرأة في السيرة صاحبة قرار ومبادرة لا تابعة صامتة.", tags:["maraa","mal"]}
+  ], ppl:["khadija"]},
+
+ {id:"e17", t:"تجديد بناء الكعبة وحكم الحجر الأسود", d:"وعمره ﷺ 35 سنة",
+  s:"اختلفت قريش من يضع الحجر الأسود حتى كادوا يقتتلون، فحكّموا أول داخل فكان النبي ﷺ ففصل بحكمة.",
+  n:"تصدّعت الكعبة من سيل، فأجمعت قريش على هدمها وبنائها، واشترطوا ألا يدخلوا فيها إلا مالاً طيباً — فقصر بهم المال فتركوا جزءاً من الأساس خارجها وهو <strong>الحِجر</strong>.\n\nفلما بلغ البناء موضع <strong>الحجر الأسود</strong>، اختلفوا أيّ القبائل تنال شرف وضعه، واشتدّ الخلاف أربع أو خمس ليال حتى تحالفوا وأعدّوا للقتال. ثم اتفقوا أن يحكّموا أول داخل من باب المسجد، فكان <strong>محمداً ﷺ</strong>، فقالوا: هذا الأمين، رضينا.\n\nفدعا بثوب وبسطه ووضع الحجر في وسطه، ثم قال: <strong>لتأخذ كل قبيلة بناحية من الثوب ثم ارفعوه جميعاً</strong>. فلما بلغوا موضعه أخذه بيده فوضعه. فحُقنت الدماء وأخذ كل واحد نصيبه من الشرف.",
+  g:"hasan", src:"سيرة ابن هشام، مسند أحمد، وذكره ابن حجر في الفتح.",
+  ben:[
+   {t:"الحلّ الوسط الذكي يُنهي أزمة استعصت على القوة. لا تختر بين الأطراف، اخترع طريقاً يشملهم جميعاً.", tags:["qiyada","siyasa"]},
+   {t:"لقب «الأمين» كان مقبولاً عند كل الأطراف. الحياد النزيه هو رأس مال الوسيط.", tags:["sidq","adl"]},
+   {t:"إشراك كل الأطراف في التنفيذ (كل قبيلة بناحية) يُذهب الشعور بالإقصاء — قاعدة إدارية ذهبية.", tags:["qiyada","shura"]},
+   {t:"قريش تركت جزءاً من البيت لعدم كفاية المال الطيّب. حتى في الجاهلية كان للمصدر الحلال اعتبار.", tags:["mal"]}
+  ], ppl:[]},
+
+ {id:"e18", t:"التحنّث في غار حراء", d:"قبيل الأربعين",
+  s:"حُبّب إليه الخلاء فكان يخلو بغار حراء الليالي ذوات العدد يتعبّد قبل نزول الوحي.",
+  n:"روى البخاري عن عائشة أن أول ما بُدئ به رسول الله ﷺ من الوحي <strong>الرؤيا الصادقة</strong>، فكان لا يرى رؤيا إلا جاءت مثل فلق الصبح. ثم <strong>حُبّب إليه الخلاء</strong>، فكان يخلو بغار حراء فيتحنّث فيه — أي يتعبّد — <strong>الليالي ذوات العدد</strong> قبل أن ينزع إلى أهله، ويتزوّد لذلك، ثم يرجع إلى خديجة فيتزوّد لمثلها.\n\nوغار حراء في جبل النور شمال شرق مكة، صغير ضيق، يستقبل الكعبة. وكان اختياره ﷺ للخلوة استعداداً فطرياً هيّأه الله له لمفارقة ضجيج المجتمع الوثني وتصفية القلب.\n\nوهذا كان في نحو <strong>السنة الأربعين</strong> من عمره، أي بعد خمسة عشر عاماً من الاستقرار الأسري والمهني.",
+  g:"sahih", src:"صحيح البخاري (بدء الوحي)، صحيح مسلم.",
+  ben:[
+   {t:"لا بد لكل مشروع كبير من فترة خلوة وتأمّل. الضجيج يُنتج ردود أفعال، والخلوة تُنتج رؤية.", tags:["takhtit","tarbiya"]},
+   {t:"تزوّد للخلوة وخطّط لها ولم يتركها للصدفة. حتى العزلة الروحية تحتاج تنظيماً.", tags:["takhtit"]},
+   {t:"خديجة كانت تجهّز له الزاد وتتحمّل غيابه. خلف كل مشروع عظيم بيت يحتضنه.", tags:["maraa","ukhuwa"]},
+   {t:"جاء الوحي في الأربعين بعد نضج تام. لا تستعجل الثمرة قبل اكتمال الإعداد.", tags:["tadarruj","ajal"]}
+  ], ppl:["khadija"]}
+]},
+
+{
+id:"secret", t:"الدعوة السرية", era:"السنة 1 — 3 من البعثة", c:"#5B9BD5",
+d:"ثلاث سنوات من البناء الصامت: لا لافتات ولا مواجهة، بل انتقاء دقيق للأفراد وتكوين نواة تحتمل ما هو قادم.",
+ev:[
+ {id:"e19", t:"بدء الوحي: اقرأ", d:"رمضان، السنة الأولى من البعثة",
+  s:"جاءه جبريل في الغار فقال: اقرأ. فقال: ما أنا بقارئ. ثلاثاً، ثم نزلت أول خمس آيات من العلق.",
+  n:"بينما هو في غار حراء جاءه <strong>جبريل</strong> فقال: اقرأ. قال: ما أنا بقارئ. قال ﷺ: <strong>فأخذني فغطّني حتى بلغ مني الجهد</strong>، ثم أرسلني فقال: اقرأ. قلت: ما أنا بقارئ. فغطّني الثانية والثالثة، ثم قال: {اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ. خَلَقَ الْإِنسَانَ مِنْ عَلَقٍ. اقْرَأْ وَرَبُّكَ الْأَكْرَمُ. الَّذِي عَلَّمَ بِالْقَلَمِ. عَلَّمَ الْإِنسَانَ مَا لَمْ يَعْلَمْ}.\n\nفرجع بها ﷺ <strong>يرجف فؤاده</strong> حتى دخل على خديجة فقال: زمّلوني زمّلوني، فزمّلوه حتى ذهب عنه الروع، ثم أخبرها الخبر وقال: <strong>لقد خشيت على نفسي</strong>.",
+  g:"sahih", src:"صحيح البخاري (بدء الوحي)، صحيح مسلم.",
+  ben:[
+   {t:"أول كلمة في الإسلام «اقرأ»، وأول ما ذُكر من الأدوات «القلم». أمة الرسالة أمة علم وتوثيق لا أمة انفعال.", tags:["tarbiya","ilam"]},
+   {t:"القراءة مقترنة بـ«باسم ربك» — العلم بلا مرجعية أخلاقية سلاح خطر. اقرن كل تعلّم بغايته.", tags:["awlawiyat"]},
+   {t:"خوفه ﷺ وارتجافه دليل صدق: لو كان متكلّفاً لادّعى الثبات. الصادق يعترف بضعفه.", tags:["sidq"]},
+   {t:"الرسالة نزلت ثقيلة من أول لحظة (الغطّ ثلاثاً). التكليف العظيم لا يأتي في صورة مريحة.", tags:["ibtila"]}
+  ], ppl:["khadija"]},
+
+ {id:"e20", t:"موقف خديجة وورقة بن نوفل", d:"عقب نزول الوحي مباشرة",
+  s:"ثبّتته خديجة بأعظم كلمة في تاريخ الدعم الأسري، ثم بشّره ورقة وحذّره من عداء قومه.",
+  n:"لما قال ﷺ: لقد خشيت على نفسي، قالت خديجة: <strong>«كلا والله ما يخزيك الله أبداً، إنك لتصل الرحم، وتحمل الكَلّ، وتكسب المعدوم، وتقري الضيف، وتعين على نوائب الحق»</strong>.\n\nلاحظ منهجها: لم تناقشه في الرؤيا، بل <strong>ذكّرته بسجلّه الأخلاقي</strong> واستدلّت به على أن الله لن يخذله. ثم لم تكتف بالعاطفة بل <strong>أخذته إلى أهل الخبرة</strong>: ابن عمها <strong>ورقة بن نوفل</strong> الذي تنصّر وقرأ الكتب.\n\nفقال ورقة: <strong>هذا الناموس الذي نزّل الله على موسى</strong>، يا ليتني فيها جذعاً، ليتني أكون حياً إذ يخرجك قومك. فقال ﷺ مستنكراً: أوَمُخرجيّ هم؟ قال: نعم، <strong>لم يأت رجل قط بمثل ما جئت به إلا عُودي</strong>. ثم لم ينشب ورقة أن تُوفي.",
+  g:"sahih", src:"صحيح البخاري (بدء الوحي)، صحيح مسلم.",
+  ben:[
+   {t:"أعظم دعم نفسي ليس «لا تقلق» بل تذكير الإنسان بحقيقته وسجلّه. خديجة استخدمت البرهان لا التهدئة.", tags:["maraa","akhlaq"]},
+   {t:"الجمع بين الاحتواء العاطفي والحل العملي: طمأنته ثم أخذته لمن يفهم. لا تكتفِ بأحدهما.", tags:["shura","maraa"]},
+   {t:"سنّة ثابتة: كل حامل حق يُعادى. توقّع العداء من أول يوم يوفّر عليك صدمة لاحقة.", tags:["sabr","ibtila"]},
+   {t:"ورقة تمنّى القوة وقت النصرة ثم مات قبلها. لا تؤجّل نصرة الحق إلى وقت تظنّه أنسب — قد لا تدركه.", tags:["ajal"]}
+  ], ppl:["khadija","waraqa"]},
+
+ {id:"e21", t:"فترة الوحي ثم استئنافه", d:"بعد اقرأ بمدة",
+  s:"انقطع الوحي مدة حتى حزن ﷺ، ثم نزل جبريل بسورة المدثر فبدأ عهد التكليف بالإنذار.",
+  n:"ثم <strong>فتر الوحي</strong> مدة اختُلف في طولها. وقد ذكر أهل السير أنه ﷺ حزن حزناً شديداً في هذه الفترة. والغرض من الفتور — كما ذكر المحققون — أن <strong>يذهب الروع</strong> ويشتاق القلب فيستقبل الوحي الثاني بشوق لا بفزع.\n\nثم بينا هو يمشي إذ سمع صوتاً من السماء، فرفع بصره فإذا <strong>الملك الذي جاءه بحراء</strong> جالس على كرسي بين السماء والأرض، فرُعب منه ورجع فقال: زمّلوني زمّلوني. فأنزل الله: {يَا أَيُّهَا الْمُدَّثِّرُ. قُمْ فَأَنذِرْ. وَرَبَّكَ فَكَبِّرْ. وَثِيَابَكَ فَطَهِّرْ. وَالرُّجْزَ فَاهْجُرْ}.\n\nفهنا انتقل من <strong>«اقرأ»</strong> — وهو التلقّي — إلى <strong>«قم فأنذر»</strong> — وهو التبليغ. وقال ﷺ: «ثم حمي الوحي وتتابع».",
+  g:"sahih", src:"صحيح البخاري (بدء الوحي، تفسير سورة المدثر)، صحيح مسلم.",
+  ben:[
+   {t:"فترات الجفاف الروحي أو الفتور في المشروع سنّة لا استثناء. لا تحكم على فشلك من انقطاع مؤقت.", tags:["sabr","ibtila"]},
+   {t:"ترتيب المهام: تلقٍّ («اقرأ») ثم تكليف («قم فأنذر»). من يبلّغ قبل أن يتعلّم يُفسد أكثر مما يُصلح.", tags:["awlawiyat","tarbiya"]},
+   {t:"«وثيابك فطهّر» جاءت مع أول أمر بالدعوة: المظهر والنظافة والطهارة جزء من رسالة الداعية لا شكليات.", tags:["akhlaq","ilam"]}
+  ], ppl:[]},
+
+ {id:"e22", t:"السابقون الأولون إلى الإسلام", d:"السنوات 1—3 من البعثة",
+  s:"بدأ ﷺ بمن يثق بهم: زوجه وصاحبه ومولاه وابن عمه، ثم دائرة أوسع بالانتقاء لا بالعموم.",
+  n:"بدأ ﷺ الدعوة بـ<strong>الدائرة الأقرب</strong>: <strong>خديجة</strong> أول من آمن مطلقاً، و<strong>علي بن أبي طالب</strong> أول من أسلم من الصبيان وهو ابن نحو عشر، و<strong>زيد بن حارثة</strong> أول من أسلم من الموالي، و<strong>أبو بكر</strong> أول من أسلم من الرجال الأحرار.\n\nثم كان أبو بكر مفتاحاً: أسلم على يديه <strong>عثمان بن عفان، والزبير بن العوام، وعبد الرحمن بن عوف، وسعد بن أبي وقاص، وطلحة بن عبيد الله</strong> — وهم من العشرة المبشّرين. ثم أسلم <strong>أبو عبيدة، وأبو ذر، وابن مسعود، وبلال، وصهيب، وخبّاب، وآل ياسر</strong> وغيرهم.\n\nولاحظ التنوّع المقصود: <strong>أشراف وموالٍ، أغنياء وفقراء، شيوخ وشباب</strong>، حتى لا تُختزل الدعوة في طبقة. وأكثرهم شباب دون الأربعين، بل كان أكثرهم في العشرينات.",
+  g:"sahih", src:"سيرة ابن هشام، الطبقات لابن سعد، وأصول ذلك في الصحيحين.",
+  ben:[
+   {t:"ابدأ بمن يعرفك ويثق بك. الدائرة القريبة أقلّ تكلفةً في الإقناع وأعلى عائداً في الولاء.", tags:["tadarruj","takhtit"]},
+   {t:"استثمر «العُقد الشبكية»: أبو بكر وحده أدخل ستة من العشرة. ابحث عن الشخص المؤثر لا عن العدد.", tags:["takhtit","tarbiya"]},
+   {t:"التنويع الطبقي المقصود يحصّن المشروع من أن يُوصم بأنه مشروع فئة واحدة.", tags:["tarbiya","ukhuwa"]},
+   {t:"الرسالة حملها شباب في العشرينات. سنّ الحماس إن وُجّه صار سنّ الإنجاز.", tags:["shabab"]}
+  ], ppl:["khadija","ali","zayd","abubakr","uthman","zubayr","abduRahman","saadwaqqas","talha","abuubayda","abudharr","ibnmasud","bilal","suhaib","khabbab","yasir"]},
+
+ {id:"e23", t:"دار الأرقم بن أبي الأرقم", d:"نحو السنة 3—6 من البعثة",
+  s:"اتخذ ﷺ دار الأرقم عند الصفا مقراً سرياً للتعليم والتربية — أول مركز دعوي في الإسلام.",
+  n:"اتّخذ النبي ﷺ <strong>دار الأرقم بن أبي الأرقم</strong> مقرّاً يجتمع فيه بأصحابه يعلّمهم القرآن ويربّيهم. والدار عند <strong>الصفا</strong> داخل مكة، ملتصقة بالحرم.\n\nوتأمّل عبقرية الاختيار من زوايا ثلاث:\n<strong>الأمنية:</strong> الأرقم من <strong>بني مخزوم</strong> — قبيلة أبي جهل نفسه — فلا يخطر ببال قريش أن تفتّش هناك.\n<strong>العملية:</strong> موقعها قرب الحرم يجعل تردّد الناس عليها غير لافت.\n<strong>السنّية:</strong> الأرقم كان شاباً صغيراً لا يُتوقّع منه ذلك.\n\nوفيها أسلم <strong>عمر بن الخطاب</strong> وكان تمام الأربعين. وبعد إسلامه خرجوا منها إلى العلن.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات، البداية والنهاية.",
+  ben:[
+   {t:"الأخذ بالأسباب الأمنية ليس ضعف يقين. النبي ﷺ أخفى مقره ثلاث سنين وهو المؤيد بالوحي.", tags:["takhtit","tawakkul"]},
+   {t:"المكان الأكثر أماناً هو الأقل توقعاً. فكّر كخصمك لتعرف أين لن يبحث.", tags:["takhtit","siyasa"]},
+   {t:"كل مشروع يحتاج «قاعدة» ثابتة يجتمع فيها الأفراد ويتلقون. الاجتماع العشوائي لا يبني هوية.", tags:["tarbiya","qiyada"]},
+   {t:"الأرقم بذل بيته للدعوة وهو شاب. أعظم ما يقدّمه الإنسان أحياناً ليس مالاً بل مساحة وتسهيلاً.", tags:["shabab","mal"]}
+  ], ppl:["arqam","umar"]}
+]},
+
+{
+id:"public", t:"الجهر بالدعوة والابتلاء", era:"السنة 4 — 10 من البعثة", c:"#C4697F",
+d:"من السرّ إلى العلن: مواجهة مفتوحة تتدرّج من السخرية إلى التعذيب إلى الحصار الاقتصادي الشامل.",
+ev:[
+ {id:"e24", t:"الإنذار على الصفا", d:"السنة الرابعة من البعثة",
+  s:"صعد ﷺ الصفا ونادى بطون قريش فأنذرهم، فردّ عليه أبو لهب فنزلت سورة المسد.",
+  n:"لما نزل قوله تعالى {وَأَنذِرْ عَشِيرَتَكَ الْأَقْرَبِينَ}، صعد ﷺ <strong>الصفا</strong> فجعل ينادي: يا بني فهر، يا بني عديّ — لبطون قريش — حتى اجتمعوا.\n\nفقال: <strong>«أرأيتكم لو أخبرتكم أن خيلاً بالوادي تريد أن تُغير عليكم، أكنتم مصدقيّ؟»</strong> قالوا: نعم، ما جرّبنا عليك إلا صدقاً. قال: <strong>«فإني نذير لكم بين يدي عذاب شديد»</strong>.\n\nفقال أبو لهب: <strong>تبّاً لك سائر اليوم، ألهذا جمعتنا؟</strong> فنزلت: {تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ}.\n\nولاحظ المنهج: بنى ﷺ على <strong>رصيد سابق من المصداقية</strong> ثم انتقل من المسلّم به إلى المطلوب — وهو أسلوب حجاجي محكم.",
+  g:"sahih", src:"صحيح البخاري (تفسير سورة المسد)، صحيح مسلم (الإيمان).",
+  ben:[
+   {t:"ابدأ من المتّفق عليه لتصل إلى المختلف فيه. «ما جرّبنا عليك إلا صدقاً» كانت أرضية مشتركة قبل الدعوة.", tags:["hiwar","ilam"]},
+   {t:"سنوات الأمانة الأربعون كانت هي «رأس المال» في لحظة الجهر. استثمر في مصداقيتك قبل أن تحتاجها.", tags:["sidq"]},
+   {t:"البدء بالأقربين أصعب لكنه أصدق. من لا يقنع أهله بمشروعه سيجد صعوبة في إقناع الغرباء.", tags:["tadarruj"]},
+   {t:"القرابة لا تشفع مع العناد؛ عمّه أبو لهب نزلت فيه سورة، وابن عمه علي كان أول الصبيان إسلاماً.", tags:["ukhuwa","thabat"]}
+  ], ppl:["abulahab"]},
+
+ {id:"e25", t:"أساليب قريش: من السخرية إلى الحرب النفسية", d:"السنوات 4—10",
+  s:"تدرّجت قريش: استهزاء، تشويه، تشكيك في القرآن، مساومة، إغراء، ثم تعذيب.",
+  n:"سلكت قريش سلّماً متدرّجاً من الأساليب:\n<strong>1. السخرية والاستهزاء:</strong> وصفوه بالساحر والشاعر والمجنون والكاهن، وكانوا يضحكون منه ومن أتباعه.\n<strong>2. التشويه والتنفير:</strong> بعثوا النضر بن الحارث يحدّث الناس بأخبار رستم وإسفنديار ليقول: حديثي أحسن من حديثه.\n<strong>3. الحرب الإعلامية الموسمية:</strong> في موسم الحج كانوا يجلسون على مداخل مكة يحذّرون الوفود منه، حتى قال الوليد بن المغيرة كلمته: قولوا ساحر يفرّق بين المرء وأهله.\n<strong>4. التشكيك في المصدر:</strong> ادّعوا أن بشراً يعلّمه، فردّ القرآن: {لِسَانُ الَّذِي يُلْحِدُونَ إِلَيْهِ أَعْجَمِيٌّ وَهَٰذَا لِسَانٌ عَرَبِيٌّ مُّبِينٌ}.\n<strong>5. الأذى الجسدي المباشر:</strong> وضع سلا الجزور على ظهره وهو ساجد، وطرح التراب على رأسه.\n\nولاحظ: <strong>الدعاية السلبية زادت انتشاره</strong> — من حذّروهم منه صاروا يسألون عنه.",
+  g:"sahih", src:"البخاري ومسلم (أذى قريش)، سيرة ابن هشام، تفسير الطبري.",
+  ben:[
+   {t:"الحملة المضادة قد تكون أفضل إعلان لك. تحذير قريش من محمد ﷺ جعل العرب يسألون عنه.", tags:["ilam","sabr"]},
+   {t:"لا تنشغل بالردّ على كل تهمة. النبي ﷺ استمر في البناء بينما هم يستهلكون طاقتهم في التشويه.", tags:["awlawiyat","sabr"]},
+   {t:"الخصم يعرف نقطة قوتك: اختاروا «ساحر يفرّق» لأنهم يعلمون أن القرآن يجذب. اقرأ اتهامهم لتعرف أين قوتك.", tags:["siyasa","ilam"]},
+   {t:"الأذى تدرّج من الكلمة إلى اليد. من سكت عن الظلم اللفظي مهّد للظلم المادي.", tags:["sabr","ibtila"]}
+  ], ppl:["abujahl","abulahab"]},
+
+ {id:"e26", t:"مساومة عتبة بن ربيعة", d:"السنوات الوسطى من العهد المكي",
+  s:"عرضت قريش المال والملك والزواج والطبّ مقابل ترك الدعوة، فردّ ﷺ بقراءة فصّلت.",
+  n:"جاء <strong>عتبة بن ربيعة</strong> ممثلاً عن قريش، فعرض عليه عرضاً متدرّجاً ذكياً: <strong>إن كنت تريد مالاً</strong> جمعنا لك حتى تكون أكثرنا مالاً، <strong>وإن كنت تريد شرفاً</strong> سوّدناك علينا، <strong>وإن كنت تريد ملكاً</strong> ملّكناك، <strong>وإن كان هذا رئيّاً</strong> — أي مسّاً — طلبنا لك الطبّ وبذلنا أموالنا حتى نبرئك.\n\nفلما فرغ قال ﷺ: <strong>«أفرغت يا أبا الوليد؟»</strong> قال: نعم. فقرأ عليه صدر سورة فصّلت حتى بلغ آية السجدة فسجد، ثم قال: «قد سمعت يا أبا الوليد، فأنت وذاك».\n\nفرجع عتبة إلى قومه بوجه متغيّر وقال: <strong>خلّوا بينه وبين الناس</strong>، فوالله ليكونن لقوله نبأ.",
+  g:"hasan", src:"سيرة ابن هشام، دلائل النبوة للبيهقي، ورواه ابن أبي حاتم.",
+  ben:[
+   {t:"«أفرغت يا أبا الوليد؟» — أنصت للخصم حتى يفرغ تماماً. الاستماع الكامل نزع سلاح المفاوض.", tags:["hiwar","akhlaq"]},
+   {t:"العروض المغرية اختبار المبدأ الحقيقي. من كان في مشروعه ثمن فهو تاجر لا صاحب رسالة.", tags:["thabat"]},
+   {t:"لم يجادله بمنطقه بل قرأ عليه القرآن. أحياناً أقوى ردّ هو عرض المحتوى نفسه لا الدفاع عنه.", tags:["ilam","hiwar"]},
+   {t:"ناداه بكنيته «أبا الوليد» تكريماً وهو خصم. أدب الخطاب لا يسقط باختلاف الموقف.", tags:["akhlaq","mukhalif"]}
+  ], ppl:["utba"]},
+
+ {id:"e27", t:"تعذيب المستضعفين", d:"السنوات 4—10",
+  s:"صبّت قريش عذابها على من لا عشيرة تحميه: بلال، آل ياسر، خبّاب، وغيرهم.",
+  n:"عجزت قريش عن النبي ﷺ لمكان أبي طالب، وعن أصحاب العشائر، فصبّت غضبها على <strong>من لا حِمى له</strong>:\n\n<strong>بلال:</strong> كان أمية بن خلف يخرجه في حرّ الظهيرة فيطرحه على ظهره في الرمضاء ويضع الصخرة العظيمة على صدره ويقول: لا تزال هكذا حتى تموت أو تكفر بمحمد. فيقول: <strong>أحدٌ أحد</strong>.\n\n<strong>آل ياسر:</strong> كانوا يُخرجون إذا حميت البطحاء فيُعذّبون بحرّها. فيمرّ بهم النبي ﷺ فيقول: <strong>«صبراً آل ياسر، فإنّ موعدكم الجنة»</strong>. وطعن أبو جهل <strong>سميّة</strong> فقتلها فكانت <strong>أول شهيدة في الإسلام</strong>.\n\n<strong>خبّاب:</strong> كُوي ظهره على الجمر حتى أطفأه ودك ظهره.\n\nولم يملك النبي ﷺ لهم دفعاً مادياً، فأعطاهم <strong>الأفق</strong> بدل الحل.",
+  g:"sahih", src:"صحيح البخاري (مناقب الأنصار)، مسلم، سيرة ابن هشام.",
+  ben:[
+   {t:"القائد الصادق لا يعد بما لا يملك. لم يقل ﷺ «سأنقذكم» بل «موعدكم الجنة» — ورفع سقف الرؤية بدل الوعد الكاذب.", tags:["qiyada","sidq"]},
+   {t:"الظلم يبدأ بالأضعف دائماً. حماية المستضعفين ليست فضلاً بل خط دفاع أول عن الجميع.", tags:["adl","ukhuwa"]},
+   {t:"«أحدٌ أحد» — كلمة واحدة قد تكون كل ما تملك. الثبات لا يحتاج بلاغة بل يقيناً.", tags:["thabat","sabr"]},
+   {t:"أول دم أُريق في الإسلام دم امرأة. الحضور النسائي في التضحية سابق ومقدَّم.", tags:["maraa","ibtila"]}
+  ], ppl:["bilal","yasir","khabbab","umayya","abujahl","abubakr"]},
+
+ {id:"e28", t:"إسلام حمزة بن عبد المطلب", d:"السنة السادسة من البعثة",
+  s:"أسلم حمزة غضباً حين علم أن أبا جهل شتم النبي ﷺ، فكان إسلامه قوة ومنعة للمسلمين.",
+  n:"مرّ <strong>أبو جهل</strong> بالنبي ﷺ عند الصفا فآذاه وشتمه، والنبي ﷺ لا يكلّمه. ورأت ذلك مولاة لعبد الله بن جدعان.\n\nفلما أقبل <strong>حمزة</strong> راجعاً من قنصه — وكان صاحب صيد يخرج بقوسه — أخبرته المولاة الخبر. فاحتمل حمزة الغضب، وكان أعزّ فتى في قريش، فأقبل يسرع حتى وجد أبا جهل جالساً في القوم، فرفع القوس فضربه بها ضربة شجّته شجّة منكرة، ثم قال: <strong>أتشتمه وأنا على دينه، أقول ما يقول؟ فرُدّ ذلك عليّ إن استطعت</strong>.\n\nفقامت رجال من بني مخزوم لنصرة أبي جهل، فقال أبو جهل: <strong>دعوا أبا عمارة، فإني والله قد سببت ابن أخيه سبّاً قبيحاً</strong>. ثم ثبّت الله حمزة على الإسلام.\n\nفكان في إسلامه <strong>عزّ للمسلمين</strong> وكفّ من أذى قريش.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات لابن سعد.",
+  ben:[
+   {t:"الله يهدي بأسباب لا تُحصى — حتى الغيرة القبلية كانت باباً. لا تحتقر بداية أحد.", tags:["tarbiya"]},
+   {t:"أبو جهل ابتلع الإهانة لحسابات المصلحة. الخصم الذكي قد يتراجع تكتيكياً — لا تظنّه تغيّر.", tags:["siyasa","mukhalif"]},
+   {t:"دخول شخصية قوية للصف يغيّر موازين القوى. استثمر في كسب المؤثرين لا في كثرة الأتباع.", tags:["takhtit","qiyada"]},
+   {t:"سكوت النبي ﷺ عن سبّ أبي جهل ثم نصرة الله له بحمزة: من ترك الانتصار لنفسه انتصر له الله.", tags:["sabr","tawakkul"]}
+  ], ppl:["hamza","abujahl"]},
+
+ {id:"e29", t:"الهجرة الأولى إلى الحبشة", d:"رجب، السنة الخامسة من البعثة",
+  s:"أذن ﷺ لطائفة بالهجرة إلى الحبشة عند ملك عادل لا يُظلم عنده أحد — أول هجرة في الإسلام.",
+  n:"لما اشتدّ البلاء قال لهم النبي ﷺ: <strong>«لو خرجتم إلى أرض الحبشة، فإن بها ملكاً لا يُظلم عنده أحد، وهي أرض صدق، حتى يجعل الله لكم فرجاً مما أنتم فيه»</strong>.\n\nفخرج نحو <strong>أحد عشر رجلاً وأربع نسوة</strong> — وقيل اثنا عشر وأربع — منهم <strong>عثمان بن عفان</strong> وزوجه <strong>رقية</strong> بنت النبي ﷺ، حتى قال ﷺ فيهما: إنهما أول من هاجر بعد لوط.\n\nخرجوا سرّاً متسلّلين إلى الشُّعيبة، فوجدوا سفينتين تجاريتين حملتاهم إلى الحبشة بنصف دينار. وأقاموا هناك في أمن.\n\nولاحظ عمق الاختيار: <strong>الحبشة دولة نصرانية</strong> — أي أقرب عقدياً من الوثنية — و<strong>خارج نفوذ قريش التجاري المباشر</strong>، و<strong>ملكها معروف بالعدل</strong>. قرار مبني على معلومات دقيقة لا على هروب عشوائي.",
+  g:"hasan", src:"سيرة ابن هشام، الطبقات، والبخاري في مواضع من قصة الحبشة.",
+  ben:[
+   {t:"«ملك لا يُظلم عنده أحد» — معيار الاختيار كان العدل لا الدين. العدل قيمة يُبنى عليها التحالف.", tags:["mukhalif","adl"]},
+   {t:"الانسحاب التكتيكي ليس هزيمة. حفظ النواة البشرية أهم من إثبات البطولة في مواجهة خاسرة.", tags:["awlawiyat","takhtit"]},
+   {t:"جمع معلومات دقيقة عن الوجهة قبل التحرك. القرار الصحيح ابن المعلومة الصحيحة.", tags:["takhtit","siyasa"]},
+   {t:"لم يهاجر النبي ﷺ معهم بل بقي في الميدان. القائد لا يخرج أولاً من الشدّة.", tags:["qiyada"]}
+  ], ppl:["uthman","najashi"]},
+
+ {id:"e30", t:"الهجرة الثانية وموقف النجاشي", d:"بعد الأولى",
+  s:"هاجر أكثر من ثمانين، فأرسلت قريش وفداً لاستردادهم، فأفشله جعفر بكلمته وقراءته.",
+  n:"هاجر بعد ذلك نحو <strong>ثلاثة وثمانين رجلاً وثماني عشرة امرأة</strong>. فأزعج ذلك قريشاً فبعثت <strong>عمرو بن العاص وعبد الله بن أبي ربيعة</strong> بالهدايا إلى النجاشي وبطارقته ليردّهم.\n\nفقالوا: إنهم سفهاء فارقوا دين قومهم. فأبى النجاشي أن يسلّمهم حتى يسمع منهم. فقام <strong>جعفر بن أبي طالب</strong> فقال كلمته الخالدة: <strong>«أيها الملك، كنا قوماً أهل جاهلية، نعبد الأصنام، ونأكل الميتة، ونأتي الفواحش، ونقطع الأرحام، ونسيء الجوار، ويأكل القوي منا الضعيف... فبعث الله إلينا رسولاً منّا نعرف نسبه وصدقه وأمانته وعفافه...»</strong> ثم عدّد ما أمرهم به.\n\nثم قرأ عليه صدر <strong>سورة مريم</strong>، فبكى النجاشي حتى أخضل لحيته، وبكت أساقفته، وقال: <strong>إن هذا والذي جاء به عيسى ليخرج من مشكاة واحدة</strong>. ثم قال لقريش: انطلقا، فلا والله لا أسلّمهم إليكما.",
+  g:"hasan", src:"مسند أحمد، سيرة ابن هشام، وصحّح إسنادها جماعة.",
+  ben:[
+   {t:"خطبة جعفر نموذج لتقديم الرسالة: ابدأ بالواقع المشترك (فساد الجاهلية)، ثم المصدر، ثم المحتوى. تسلسل إقناعي كامل.", tags:["ilam","hiwar"]},
+   {t:"اختيار سورة مريم أمام ملك نصراني — قمة فقه المخاطَب. تحدّث بلغة من تخاطبه لا بلغتك.", tags:["ilam","mukhalif"]},
+   {t:"النجاشي سمع من الطرفين قبل الحكم. أصل من أصول العدل لا يستقيم قضاء بدونه.", tags:["adl","hiwar"]},
+   {t:"قريش استخدمت المال والدبلوماسية لا السيف. الخصوم يطاردون في كل ميدان — كن مستعداً لكل الجبهات.", tags:["siyasa","mal"]},
+   {t:"جعفر صدق ولم يجامل ولم يخف موقفه من عيسى عليه السلام. الصدق أمام السلطان أفضل من كسب مؤقت بمداهنة.", tags:["sidq","thabat"]}
+  ], ppl:["jafar","najashi","amr","umsalama"]},
+
+ {id:"e31", t:"إسلام عمر بن الخطاب", d:"السنة السادسة من البعثة",
+  s:"خرج عمر متقلّداً سيفه يريد قتل النبي ﷺ، فانتهى ساجداً مسلماً، فخرج المسلمون للعلن.",
+  n:"خرج <strong>عمر</strong> متوشحاً سيفه يريد النبي ﷺ، فلقيه نعيم بن عبد الله فقال: أرجع إلى أهل بيتك، إن أختك وختنك قد أسلما. فرجع مغضباً إلى أخته <strong>فاطمة</strong> وزوجها سعيد بن زيد، وعندهما <strong>خبّاب</strong> يقرئهما صحيفة فيها <strong>سورة طه</strong>.\n\nفسمع الهمهمة، فدخل فضربهما، فسال الدم من أخته، فقالت: <strong>يا عمر، افعل ما بدا لك، فقد أسلمنا</strong>. فلما رأى الدم ندم، وطلب الصحيفة فأبت حتى يغتسل. فاغتسل ثم قرأ {طه. مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ لِتَشْقَىٰ} فقال: <strong>ما أحسن هذا الكلام وأكرمه!</strong>\n\nفدلّوه على النبي ﷺ في <strong>دار الأرقم</strong> فأسلم، وكان تمام الأربعين. فقال: يا رسول الله، ألسنا على الحق؟ قال: بلى. قال: <strong>ففيمَ الاختفاء؟</strong> فخرجوا في صفّين — حمزة على أحدهما وعمر على الآخر — حتى دخلوا المسجد وصلّوا عند الكعبة علانية. وسمّاه ﷺ <strong>الفاروق</strong>.",
+  g:"hasan", src:"سيرة ابن هشام، الطبقات، وأصله في مسند أحمد وسنن الدارقطني.",
+  ben:[
+   {t:"أشدّ الناس عليك اليوم قد يكون أنصرهم غداً. لا تُغلق باب الرجاء في أحد ولا تدعُ عليه.", tags:["afw","tarbiya"]},
+   {t:"القرآن هو السلاح الحقيقي: عمر خرج بسيف فهزمته صحيفة. أقوى ما تملك ليس ردّك بل نصّك.", tags:["ilam","hiwar"]},
+   {t:"ثبات المرأة (فاطمة بنت الخطاب) أمام أخيها المسلّح هو ما كسر عناده. الموقف الحازم من الضعيف أبلغ من مئة حجة.", tags:["maraa","thabat"]},
+   {t:"«ففيمَ الاختفاء؟» — كل مرحلة سرية لها سقف. الجرأة الرشيدة تفتح باباً أغلقه التردّد.", tags:["tadarruj","qiyada"]},
+   {t:"دعا النبي ﷺ بإسلام أحد العُمَرَين — دعاء مخصّص لشخص مؤثر. حدّد أهدافك حتى في الدعاء.", tags:["takhtit"]}
+  ], ppl:["umar","khabbab","arqam","hamza"]},
+
+ {id:"e32", t:"حصار الشِّعب: المقاطعة الشاملة", d:"السنة 7—10 من البعثة (نحو 3 سنوات)",
+  s:"كتبت قريش صحيفة بمقاطعة بني هاشم اقتصادياً واجتماعياً، فحُوصروا في الشعب ثلاث سنوات.",
+  n:"لما عجزت قريش، لجأت إلى <strong>سلاح الحصار الشامل</strong>. كتبوا صحيفة تعاقدوا فيها على: <strong>ألا يُنكحوا بني هاشم وبني المطلب، ولا يُنكحوا إليهم، ولا يبيعوهم، ولا يبتاعوا منهم، ولا يجالسوهم</strong> — حتى يسلّموا محمداً للقتل. وعلّقوا الصحيفة في جوف الكعبة تعظيماً لها.\n\nفانحاز بنو هاشم وبنو المطلب — مؤمنهم وكافرهم إلا أبا لهب — إلى <strong>شِعب أبي طالب</strong>، وحُوصروا نحو <strong>ثلاث سنين</strong>.\n\nبلغ منهم الجهد حتى <strong>أكلوا ورق الشجر والجلود</strong>، وكان يُسمع أصوات صبيانهم من وراء الشعب من الجوع. وكانوا لا يخرجون إلا في الأشهر الحرم، فإذا خرجوا للسوق أغلى عليهم أبو لهب السلعة حتى لا يقدروا.\n\nومع ذلك <strong>استمرّ ﷺ يعرض نفسه على القبائل في المواسم</strong> — لم يتوقف العمل الدعوي رغم الحصار.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات، البداية والنهاية.",
+  ben:[
+   {t:"الحصار الاقتصادي أخطر من السيف لأنه يستهدف الحاضنة كلها. تنويع مصادر الرزق حماية للمشروع.", tags:["mal","ibtila"]},
+   {t:"استمرّ ﷺ في عرض الدعوة في المواسم وهو محاصر. لا توقف مشروعك كلياً لأزمة — قلّص وواصل.", tags:["thabat","qiyada"]},
+   {t:"وقف مع النبي ﷺ أقاربه المشركون نصرةً للعصبية لا للدين. استثمر كل رابط شرعي متاح في حماية دعوتك.", tags:["siyasa","ukhuwa"]},
+   {t:"ثلاث سنوات جوع لم تُنتج تنازلاً واحداً. الثبات يُقاس بطول المدة لا بشدة اللحظة.", tags:["thabat","sabr"]},
+   {t:"العقاب الجماعي على النساء والأطفال أسلوب جاهلي قديم متجدد — ووجه قبحه لا يتغير بتغير العصر.", tags:["adl","ibtila"]}
+  ], ppl:["abutalib","abulahab","khadija","hamza"]},
+
+ {id:"e33", t:"نقض الصحيفة ونهاية الحصار", d:"السنة العاشرة من البعثة",
+  s:"سعى خمسة من قريش في نقض الصحيفة، وأخبر ﷺ أن الأرَضة أكلتها إلا اسم الله، فكان كما قال.",
+  n:"تحرّك في نقض الصحيفة خمسة من أشراف قريش، على رأسهم <strong>هشام بن عمرو</strong> و<strong>زهير بن أبي أمية</strong> و<strong>المُطعم بن عدي</strong> وأبو البختري وزمعة بن الأسود — وكلهم <strong>مشركون</strong> تحرّكهم الرحم والمروءة.\n\nفقام زهير في المسجد وقال: يا أهل مكة، أنأكل الطعام ونلبس الثياب وبنو هاشم هلكى لا يُباعون ولا يُبتاع منهم؟ والله لا أقعد حتى تُشقّ هذه الصحيفة. فعارضه أبو جهل فتتابع القوم عليه.\n\nوكان النبي ﷺ قد أخبر عمّه أبا طالب أن الله <strong>سلّط على صحيفتهم الأرَضة فأكلت ما فيها من جور وقطيعة، وبقي فيها كل ما ذُكر الله فيه</strong>. فذهب أبو طالب فأخبرهم، فقالوا: إن كان كاذباً أسلمناه، وإن كان صادقاً رجعتم. فوجدوها كما قال، فازداد أكثرهم عناداً — لكن الحصار انتهى.",
+  g:"mash", src:"سيرة ابن هشام، الطبقات. القصة مشهورة في كتب السير.",
+  ben:[
+   {t:"الظلم المفرط يولّد رفضاً من داخل صفّ الظالمين أنفسهم. لا تيأس من انشقاق في جبهة الخصم.", tags:["siyasa","ibtila"]},
+   {t:"استُخدمت المروءة والرحم كمدخل لنصرة الحق. خاطب الناس بالقيم التي يؤمنون بها هم.", tags:["hiwar","mukhalif"]},
+   {t:"رأوا المعجزة بأعينهم فازداد أكثرهم عناداً. المشكلة ليست في نقص الدليل بل في مرض الإرادة.", tags:["mukhalif","thabat"]},
+   {t:"بعد أشدّ ثلاث سنوات جاء الفرج من جهة لم تكن في الحسبان. {فَإِنَّ مَعَ الْعُسْرِ يُسْرًا}.", tags:["ibtila","tawakkul"]}
+  ], ppl:["mutim","abutalib","abujahl"]}
+]}
+];
+</script>
+<script>
+const PB2 = [
+{
+id:"grief", t:"عام الحزن والبحث عن النصير", era:"السنة 10 — 13 من البعثة", c:"#E0A458",
+d:"سقط السند الاجتماعي والعاطفي معاً، فبدأ ﷺ مرحلة جديدة: البحث عن قاعدة جغرافية خارج مكة تحتضن الرسالة.",
+ev:[
+ {id:"e34", t:"وفاة أبي طالب", d:"السنة العاشرة من البعثة",
+  s:"مات عمّه وحاميه على ملّة قومه رغم عرض النبي ﷺ عليه، فاجترأت قريش عليه بعده.",
+  n:"لما حضرت أبا طالب الوفاة، جاءه النبي ﷺ وعنده <strong>أبو جهل وعبد الله بن أبي أمية</strong>، فقال: <strong>«يا عمّ، قل لا إله إلا الله، كلمة أحاجّ لك بها عند الله»</strong>. فقالا: أترغب عن ملّة عبد المطلب؟ فأعاد ﷺ وأعادا، فكان آخر ما قال: <strong>هو على ملّة عبد المطلب</strong> وأبى أن يقول لا إله إلا الله.\n\nفقال ﷺ: <strong>«لأستغفرنّ لك ما لم أُنهَ عنك»</strong>، فنزلت {مَا كَانَ لِلنَّبِيِّ وَالَّذِينَ آمَنُوا أَن يَسْتَغْفِرُوا لِلْمُشْرِكِينَ}، ونزلت فيه {إِنَّكَ لَا تَهْدِي مَنْ أَحْبَبْتَ وَلَٰكِنَّ اللَّهَ يَهْدِي مَن يَشَاءُ}.\n\nفلما مات، <strong>نالت قريش من النبي ﷺ ما لم تكن تنال في حياته</strong>، حتى اعترضه سفيه فنثر التراب على رأسه.",
+  g:"sahih", src:"صحيح البخاري (الجنائز، تفسير القصص)، صحيح مسلم.",
+  ben:[
+   {t:"الهداية بيد الله وحده. بذل النبي ﷺ الغاية في عمّه ولم يُسلم — فلا تحمل ذنب من لم يستجب لك.", tags:["tawakkul","hiwar"]},
+   {t:"قرين السوء يقتل في اللحظة الحاسمة. أبو جهل حضر ليمنع كلمة واحدة، ونجح. راجع من تجالس.", tags:["ukhuwa","mukhalif"]},
+   {t:"عصبية «ملّة الآباء» أقوى حاجز أمام الحق عبر التاريخ. اكسر السؤال: هل الحق أن نتبع الآباء أم الدليل؟", tags:["thabat","hiwar"]},
+   {t:"وفاء النبي ﷺ لعمّه بالاستغفار حتى نُهي — الوفاء لصاحب المعروف لا يسقط باختلاف الدين، ولكن له حدود شرعية.", tags:["wafa","mukhalif"]},
+   {t:"كل حماية بشرية زائلة. زوال أبي طالب كشف أن السند الحقيقي هو الله وحده.", tags:["ajal","tawakkul"]}
+  ], ppl:["abutalib","abujahl"]},
+
+ {id:"e35", t:"وفاة خديجة رضي الله عنها", d:"بعد أبي طالب بأيام — السنة العاشرة",
+  s:"ماتت أم المؤمنين بعد خمس وعشرين سنة من الصحبة، فاجتمع على النبي ﷺ فقد السند والسكن.",
+  n:"ماتت <strong>خديجة</strong> بعد أبي طالب بمدة يسيرة — قيل ثلاثة أيام وقيل شهرين — وكانت في نحو الخامسة والستين. فسُمّي هذا العام <strong>عام الحزن</strong>.\n\nوكانت خديجة <strong>وزير صدق</strong>: تثبّته إذا اهتزّ، وتصدّقه إذا كذّبه الناس، وتواسيه بمالها. ولذلك بقي وفاؤه لها طول عمره: كان يذبح الشاة فيهديها إلى خلائلها، وقال حين غارت عائشة: <strong>«إنّي قد رُزقت حبّها»</strong>، وقال: «آمنت بي إذ كفر بي الناس، وصدّقتني إذ كذّبني الناس، وواستني بمالها إذ حرمني الناس، ورزقني الله ولدها إذ حرمني أولاد النساء».\n\nفاجتمع على النبي ﷺ في عام واحد: <strong>فقد الحماية الخارجية (أبو طالب) وفقد السكن الداخلي (خديجة)</strong>، ثم تلاه مباشرة قرار الخروج إلى الطائف.",
+  g:"sahih", src:"صحيح مسلم (فضائل خديجة)، مسند أحمد، سيرة ابن هشام.",
+  ben:[
+   {t:"البيت الداعم ركن في نجاح صاحب الرسالة. فقده أشدّ من فقد الحلفاء الخارجيين.", tags:["maraa","ukhuwa"]},
+   {t:"الوفاء لمن وقف معك وقت الشدة يبقى مهما طال الزمن. النبي ﷺ ظلّ يذكرها بعد عشر سنوات من موتها.", tags:["wafa","akhlaq"]},
+   {t:"المصائب تأتي مجتمعة أحياناً — سنّة إلهية في تمحيص أهل الرسالات لا علامة سخط.", tags:["ibtila","sabr"]},
+   {t:"خمس وعشرون سنة من الصحبة انتهت في يوم. مهما طالت العشرة فالفراق موعدها — فاجعل رصيدك عندهم خيراً.", tags:["ajal","akhlaq"]}
+  ], ppl:["khadija","aisha"]},
+
+ {id:"e36", t:"رحلة الطائف", d:"شوال، السنة العاشرة من البعثة",
+  s:"خرج ﷺ إلى ثقيف يدعوهم فردّوه أقبح ردّ وأغروا به سفهاءهم حتى أدموا عقبيه، فقال دعاءه المشهور.",
+  n:"خرج ﷺ ماشياً إلى <strong>الطائف</strong> ومعه <strong>زيد بن حارثة</strong> — نحو ستين ميلاً — يلتمس النصرة من ثقيف. فأقام عشرة أيام يكلّم أشرافهم، فردّوا عليه أقبح ردّ. قال أحدهم: أما وجد الله أحداً أرسله غيرك؟ وقال آخر: والله لا أكلّمك أبداً، إن كنت رسولاً فأنت أعظم خطراً من أن أردّ عليك الكلام.\n\nثم <strong>أغروا به سفهاءهم وعبيدهم</strong> فوقفوا له صفّين يرمونه بالحجارة حتى <strong>أدموا عقبيه</strong>، وزيد يقيه بنفسه حتى شُجّ رأسه.\n\nفلجأ إلى بستان لعتبة وشيبة، ثم قال دعاءه: <strong>«اللهم إليك أشكو ضعف قوتي، وقلة حيلتي، وهواني على الناس... إن لم يكن بك غضب عليّ فلا أبالي، ولكن عافيتك هي أوسع لي»</strong>.\n\nثم جاءه <strong>ملك الجبال</strong> يستأذنه أن يطبق عليهم الأخشبين، فقال ﷺ: <strong>«بل أرجو أن يخرج الله من أصلابهم من يعبد الله وحده لا يشرك به شيئاً»</strong>.",
+  g:"sahih", src:"البخاري ومسلم (حديث عائشة: هل أتى عليك يوم أشدّ من أُحد)، ودعاء الطائف عند الطبراني وابن إسحاق.",
+  ben:[
+   {t:"«بل أرجو» — أعظم عبارة رحمة في التاريخ. قُدّم له الانتقام الكامل فرفضه نظراً لأجيال لم تُولد بعد.", tags:["afw","akhlaq"]},
+   {t:"لم يشكُ إلا لله. الشكوى للخلق تُهين، والشكوى للخالق تُعين. ولاحظ: شكا ضعفه لا ظلمهم.", tags:["tawakkul","sabr"]},
+   {t:"«إن لم يكن بك غضب عليّ فلا أبالي» — معيار النجاح عنده رضا الله لا نتيجة الرحلة. أعد ضبط بوصلتك.", tags:["thabat","tawakkul"]},
+   {t:"سعى بأقصى ما يملك (مشى ستين ميلاً وأقام عشرة أيام) ثم فشل ظاهرياً. الفشل بعد بذل الوسع ليس تقصيراً.", tags:["takhtit","ibtila"]},
+   {t:"قال ﷺ إن الطائف كان أشدّ من أُحد. الجرح النفسي من الرفض قد يفوق الجرح الجسدي.", tags:["sabr","ibtila"]}
+  ], ppl:["zayd","adas","mutim"]},
+
+ {id:"e37", t:"إسلام عدّاس وجوار المُطعم", d:"عقب الطائف مباشرة",
+  s:"أسلم غلام نصراني في بستان الطائف، ثم دخل ﷺ مكة في جوار المطعم بن عدي المشرك.",
+  n:"في بستان عتبة وشيبة، أرسلا إليه غلامهما النصراني <strong>عدّاس</strong> بقطف عنب استهزاءً. فلما وضعه قال النبي ﷺ: <strong>«باسم الله»</strong> ثم أكل. فقال عدّاس: إن هذا الكلام ما يقوله أهل هذه البلاد. فسأله ﷺ: من أي البلاد أنت؟ قال: من أهل <strong>نينوى</strong>. قال: <strong>«من قرية الرجل الصالح يونس بن متّى؟»</strong> قال: وما يدريك؟ قال: <strong>«ذاك أخي، كان نبياً وأنا نبي»</strong>. فأكبّ عدّاس يقبّل رأسه ويديه وقدميه.\n\nثم رجع ﷺ نحو مكة، ولم يستطع الدخول لأن قريشاً قد بلغها الخبر. فأرسل إلى ثلاثة يطلب الجوار، فأبى اثنان، وأجابه <strong>المُطعم بن عدي</strong> — وهو مشرك — فلبس سلاحه هو وبنوه ووقفوا في المسجد وقال: يا معشر قريش، إني قد أجرت محمداً فلا يهجه أحد. فطاف ﷺ وصلّى ثم دخل بيته.",
+  g:"hasan", src:"سيرة ابن هشام، البخاري (طرف من جوار المطعم في باب الجوار).",
+  ben:[
+   {t:"ثمرة الرحلة كلها كانت رجلاً واحداً. لا تحتقر نتيجة صغيرة بعد جهد كبير — قد تكون هي المقصود.", tags:["ibtila","tarbiya"]},
+   {t:"تسمية الله على الطعام هي التي فتحت باب الحوار. السلوك اليومي الظاهر قد يكون أبلغ دعوة من خطبة.", tags:["akhlaq","ilam"]},
+   {t:"الاستعانة بغير المسلم في حماية مشروعة جائزة ومعمول بها. النبي ﷺ دخل مكة في جوار مشرك.", tags:["mukhalif","siyasa"]},
+   {t:"حفظ النبي ﷺ للمطعم صنيعه ولم ينسه بعد سنوات (يوم بدر). ردّ الجميل خُلق نبوي وليس مجاملة.", tags:["wafa","akhlaq"]}
+  ], ppl:["adas","mutim"]},
+
+ {id:"e38", t:"عرض النفس على القبائل", d:"من السنة 10 إلى 12 من البعثة",
+  s:"جال ﷺ في المواسم يعرض دعوته على القبائل يطلب من ينصره، فردّوه إلا بني عامر الذين اشترطوا الملك.",
+  n:"بدأ ﷺ استراتيجية جديدة: <strong>عرض نفسه على القبائل</strong> في مواسم الحج وأسواق عكاظ ومجنّة وذي المجاز. كان يقول: <strong>«يا بني فلان، إني رسول الله إليكم، آمركم أن تعبدوا الله ولا تشركوا به شيئاً... وأن تمنعوني حتى أبلّغ عن ربي»</strong>.\n\nوكان أبو لهب يتبعه فيقول: لا تطيعوه فإنه صابئ كذاب.\n\nعرض على: كندة، وكلب، وبني حنيفة (وكانوا أقبح ردّاً)، وبني عامر بن صعصعة. وقال له سيّد بني عامر: <strong>أرأيت إن نحن بايعناك ثم أظهرك الله، أيكون لنا الأمر من بعدك؟</strong> فقال ﷺ: <strong>«الأمر إلى الله يضعه حيث يشاء»</strong>. فقال: أفنهدف نحورنا للعرب دونك، فإذا أظهرك الله كان الأمر لغيرنا؟ لا حاجة لنا بأمرك.",
+  g:"hasan", src:"سيرة ابن هشام، مسند أحمد، سنن الترمذي.",
+  ben:[
+   {t:"رفض ﷺ تقديم تنازل واحد مقابل نصرة مضمونة. ثمن التمكين إذا كان تشويه الرسالة فهو غالٍ جداً.", tags:["thabat","siyasa"]},
+   {t:"المثابرة على الطرق بعد الرفض المتكرر: قبيلة بعد قبيلة وموسم بعد موسم. النجاح ابن التكرار لا الحظ.", tags:["sabr","takhtit"]},
+   {t:"طرح ﷺ عرضاً واضحاً محدداً: عقيدة + حماية. الوضوح في ما تطلبه يوفّر وقت الطرفين.", tags:["ilam","siyasa"]},
+   {t:"من يشترط المنصب قبل العمل لن يُفلح في العمل. بنو عامر خسروا شرف النصرة لأنهم ساوموا مبكراً.", tags:["ukhuwa","qiyada"]}
+  ], ppl:["abulahab"]},
+
+ {id:"e39", t:"الإسراء والمعراج", d:"قبل الهجرة بنحو سنة أو أكثر",
+  s:"أُسري به ﷺ من المسجد الحرام إلى الأقصى ثم عُرج به إلى السماوات، وفُرضت الصلوات الخمس.",
+  n:"أُسري به ﷺ ليلاً من <strong>المسجد الحرام</strong> إلى <strong>المسجد الأقصى</strong> على البراق، فصلّى بالأنبياء إماماً. ثم <strong>عُرج به</strong> إلى السماوات السبع فرأى الأنبياء، ثم إلى <strong>سدرة المنتهى</strong>، وفُرضت عليه <strong>الصلوات الخمس</strong> — خمسون في الميزان خمس في العمل بعد مراجعة موسى عليه السلام.\n\nفلما أصبح أخبر قريشاً فكذّبوه واستهزؤوا، وارتدّ من ارتدّ. فجاؤوا إلى <strong>أبي بكر</strong> فقال: <strong>«إن كان قال ذلك فقد صدق، إني لأصدّقه في أبعد من ذلك، في خبر السماء غدوّ وروحة»</strong> — فسُمّي الصدّيق.\n\nوسألوه عن وصف بيت المقدس فوُصف له فوصفه، وأخبرهم عن عيرهم في الطريق فصدق.\n\n<em>ملاحظة:</em> أصل الإسراء والمعراج ثابت بالقرآن والسنة المتواترة، لكن <strong>تحديد ليلة السابع والعشرين من رجب لم يثبت</strong>، والخلاف في السنة والشهر واسع.",
+  g:"sahih", src:"سورة الإسراء والنجم، صحيح البخاري ومسلم (حديث الإسراء).",
+  ben:[
+   {t:"جاءت التكرمة الإلهية العظمى عقب أشدّ سنوات الرفض. الله يعوّض عبده من حيث لا يحتسب.", tags:["ibtila","tawakkul"]},
+   {t:"الصلاة فُرضت في السماء لا في الأرض — إشارة إلى مكانتها. هي أول ما يُحاسب عليه العبد وأول ما يُترك عند الفتور.", tags:["awlawiyat"]},
+   {t:"الاختبار يُصفّي الصف. الحادثة كانت غربالاً أخرج المتردّدين قبل مرحلة الهجرة الحاسمة.", tags:["ibtila","tarbiya"]},
+   {t:"تصديق أبي بكر لم يكن عاطفة بل استدلال: من صدّقته في خبر السماء لا أكذّبه في خبر الأرض. الثقة المبنية على منطق أثبت.", tags:["ukhuwa","sidq"]},
+   {t:"ربط الأقصى بالحرام في رحلة واحدة أسّس ارتباطاً عقدياً دائماً بين المسجدين قبل أن يفتح المسلمون الشام بعقود.", tags:["takhtit"]}
+  ], ppl:["abubakr"]},
+
+ {id:"e40", t:"بيعة العقبة الأولى", d:"السنة 12 من البعثة",
+  s:"بايعه اثنا عشر رجلاً من الأنصار على أصول الإسلام والأخلاق — بيعة النساء، لا قتال فيها.",
+  n:"كان ﷺ قد لقي في الموسم السابق ستة نفر من <strong>الخزرج</strong> فأسلموا، وكانوا قد سمعوا من يهود يثرب بقرب مبعث نبيّ. فرجعوا فدعوا قومهم، حتى لم يبق دار من دور الأنصار إلا وفيها ذكر لرسول الله ﷺ.\n\nثم جاء في العام التالي <strong>اثنا عشر رجلاً</strong> — عشرة من الخزرج واثنان من الأوس — فبايعوه عند <strong>العقبة</strong> بمنى. وسُمّيت <strong>بيعة النساء</strong> لأنها كانت على مثل ما بايع عليه النساء لاحقاً، ولم يكن فيها ذكر قتال.\n\nبايعوه على: <strong>ألا يشركوا بالله شيئاً، ولا يسرقوا، ولا يزنوا، ولا يقتلوا أولادهم، ولا يأتوا ببهتان يفترونه، ولا يعصوه في معروف</strong>. فمن وفى فأجره على الله، ومن أصاب من ذلك شيئاً فعُوقب فهو كفارة، ومن ستره الله فأمره إلى الله.\n\nثم بعث معهم <strong>مصعب بن عمير</strong> معلّماً.",
+  g:"sahih", src:"صحيح البخاري (مناقب الأنصار، الإيمان)، سيرة ابن هشام.",
+  ben:[
+   {t:"بدأ العقد بالأخلاق قبل السلاح. البيعة الأولى بلا قتال — البناء الداخلي أولاً والمواجهة لاحقاً.", tags:["tadarruj","tarbiya"]},
+   {t:"«ومن ستره الله فأمره إلى الله» — منظومة لا تقوم على التجسس والتفتيش في النوايا. رحمة في صميم التشريع.", tags:["afw","adl"]},
+   {t:"اثنا عشر رجلاً غيّروا مدينة كاملة. لا تنتظر الأعداد الكبيرة لتبدأ.", tags:["tarbiya","qiyada"]},
+   {t:"كل بيعة تحتاج بنوداً واضحة مكتوبة الدلالة. الاتفاقات الغامضة تنهار عند أول أزمة.", tags:["siyasa","wafa"]}
+  ], ppl:["musab"]},
+
+ {id:"e41", t:"مصعب بن عمير: أول سفير", d:"بين البيعتين — السنة 12",
+  s:"بعثه ﷺ إلى المدينة معلّماً وداعية، فأسلم على يديه سعد بن معاذ فأسلمت الأوس كلها.",
+  n:"بعث ﷺ مع الوفد <strong>مصعب بن عمير</strong> — وكان فتى شاباً لم يبلغ الثلاثين — ليُقرئهم القرآن ويعلّمهم الإسلام. فكان يُسمّى <strong>«المُقرئ»</strong>.\n\nونزل على أسعد بن زرارة، فكان يدعو الناس. فبلغ ذلك <strong>سعد بن معاذ</strong> سيد الأوس فأرسل إليه <strong>أسيد بن حضير</strong> ينهاه شديداً. فقال مصعب بهدوء: <strong>«أوَ تجلس فتسمع؟ فإن رضيت أمراً قبلته، وإن كرهته كُففنا عنك»</strong>. قال: أنصفت. فجلس فقرأ عليه فأسلم.\n\nثم جاء سعد بن معاذ غاضباً، فقال له مصعب الكلمة نفسها، فجلس فأسلم. فقام سعد إلى قومه فقال: <strong>«يا بني عبد الأشهل، كيف تعلمون أمري فيكم؟»</strong> قالوا: سيدنا وأفضلنا. قال: <strong>«فإن كلام رجالكم ونسائكم عليّ حرام حتى تؤمنوا بالله ورسوله»</strong>. فما أمسى في دار بني عبد الأشهل رجل ولا امرأة إلا مسلماً.",
+  g:"hasan", src:"سيرة ابن هشام، الطبقات، ورواه ابن إسحاق بإسناد جيد.",
+  ben:[
+   {t:"«أوَ تجلس فتسمع؟» — منهج حواري كامل في ست كلمات: عرض عادل، حرية اختيار، احترام النتيجة.", tags:["hiwar","ilam"]},
+   {t:"استهداف رأس القبيلة وفّر جهد إقناع مئات الأفراد. حدّد نقاط التأثير في أي مجتمع تدخله.", tags:["takhtit","qiyada"]},
+   {t:"اختيار شاب صغير سفيراً في مهمة استراتيجية. الكفاءة معيار الاختيار لا السنّ.", tags:["shabab","tarbiya"]},
+   {t:"مصعب أمام غضب مسلّح ردّ بالهدوء لا بالمثل. من ملك أعصابه في الحوار ملك نتيجته.", tags:["hiwar","akhlaq"]},
+   {t:"سعد استخدم مكانته لصالح الحق فوراً. النفوذ أمانة تُصرف في لحظة القرار لا يُدّخر.", tags:["qiyada","thabat"]}
+  ], ppl:["musab","saadmuadh"]},
+
+ {id:"e42", t:"بيعة العقبة الثانية", d:"ذو الحجة، السنة 13 من البعثة",
+  s:"بايعه 73 رجلاً وامرأتان على المنع والحماية والحرب، واختار منهم اثني عشر نقيباً — الميلاد السياسي للدولة.",
+  n:"قدم في الموسم <strong>ثلاثة وسبعون رجلاً وامرأتان</strong> من الأنصار، فواعدهم النبي ﷺ العقبة في ثلث الليل الأوسط سرّاً. وحضر معه عمّه <strong>العباس</strong> — وكان على دين قومه — ليستوثق لابن أخيه.\n\nفتكلّم العباس محذّراً: إن محمداً في منعة من قومه، فإن كنتم ترون أنكم وافون له بما دعوتموه إليه ومانعوه ممن خالفه فأنتم وذاك، وإلا فدعوه.\n\nفقال البراء بن معرور: <strong>نبايعك على ما نبايع عليه نساءنا وأبناءنا</strong>. وقام أبو الهيثم بن التيهان فقال: إن بيننا وبين الرجال — يعني يهود — حبالاً وإنا قاطعوها، فهل عسيت إن فعلنا ثم أظهرك الله أن ترجع إلى قومك؟ فتبسّم ﷺ وقال: <strong>«بل الدم الدم والهدم الهدم، أنا منكم وأنتم مني»</strong>.\n\nثم بايعوه، واختار منهم <strong>اثني عشر نقيباً</strong> — تسعة من الخزرج وثلاثة من الأوس — وقال: <strong>«أنتم على قومكم كفلاء»</strong>.",
+  g:"hasan", src:"سيرة ابن هشام (إسناد ابن إسحاق)، مسند أحمد، البخاري في مواضع.",
+  ben:[
+   {t:"العباس عرض المخاطر بصراحة قبل التوقيع. الشراكة التي تُخفى مخاطرها تنهار عند أول اختبار.", tags:["siyasa","sidq"]},
+   {t:"«أنا منكم وأنتم مني» — طمأنة القلق المشروع قبل نشوئه. القائد يجيب على الأسئلة الصعبة لا يتهرب منها.", tags:["qiyada","wafa"]},
+   {t:"تعيين اثني عشر نقيباً: هيكل إداري وسيط قبل قيام الدولة بعام. التنظيم يسبق التمكين.", tags:["takhtit","qiyada"]},
+   {t:"البيعة سرّاً في ثلث الليل، بأعداد محدودة، وبمواعيد محكمة. السرية التامة في المراحل الحساسة.", tags:["takhtit","siyasa"]},
+   {t:"حضور امرأتين في أخطر اتفاق سياسي في تاريخ الدعوة. المشاركة النسائية أصيلة لا استثنائية.", tags:["maraa"]}
+  ], ppl:["saadubada","saadmuadh"]}
+]},
+
+{
+id:"hijrah", t:"الهجرة إلى المدينة", era:"صفر — ربيع الأول 1هـ / 622م", c:"#B98BC9",
+d:"أخطر مئة وخمسين ميلاً في التاريخ: عملية محكمة الترتيب من أدق ما يُدرَّس في التخطيط وإدارة المخاطر.",
+ev:[
+ {id:"e43", t:"مؤامرة دار الندوة", d:"صفر 1هـ",
+  s:"اجتمعت قريش تتشاور في قتله أو حبسه أو نفيه، فاستقروا على القتل بأيدي شباب من كل قبيلة.",
+  n:"لما علمت قريش ببيعة العقبة وخروج المسلمين إلى المدينة، أدركت الخطر فاجتمعت في <strong>دار الندوة</strong>، وحضرهم إبليس في صورة شيخ من نجد.\n\nطُرحت ثلاثة خيارات:\n<strong>الحبس:</strong> نحبسه في الحديد حتى يموت. فرُدّ: يخرج أمره إلى أصحابه فيقاتلونكم.\n<strong>النفي:</strong> نخرجه من بلادنا. فرُدّ: يستميل قلوب العرب بحلاوة منطقه ثم يعود عليكم.\n<strong>القتل:</strong> اقترح أبو جهل: <strong>نأخذ من كل قبيلة فتى شاباً جليداً، ونعطي كل واحد سيفاً، فيضربونه ضربة رجل واحد</strong>، فيتفرّق دمه في القبائل فلا يقوى بنو عبد مناف على حرب الجميع فيرضون بالدية.\n\nفأجمعوا عليه. فنزل جبريل يخبر النبيَّ ﷺ ويأذن له بالهجرة. ونزلت: {وَإِذْ يَمْكُرُ بِكَ الَّذِينَ كَفَرُوا لِيُثْبِتُوكَ أَوْ يَقْتُلُوكَ أَوْ يُخْرِجُوكَ ۚ وَيَمْكُرُونَ وَيَمْكُرُ اللَّهُ ۖ وَاللَّهُ خَيْرُ الْمَاكِرِينَ}.",
+  g:"sahih", src:"سورة الأنفال آية 30، سيرة ابن هشام، تفسير الطبري.",
+  ben:[
+   {t:"الخصم يخطط بجدية ويدرس البدائل. لا تستهن بخطط من يعاديك ولا تفترض غباءه.", tags:["siyasa","takhtit"]},
+   {t:"القرآن سمّى تدبير الله «مكراً» مقابلةً لهم. حين يخطط الناس ضدك وأنت على حق، فالله يخطط لك.", tags:["tawakkul"]},
+   {t:"فكرة توزيع المسؤولية لتمييع المحاسبة قديمة جداً. أسلوب معروف في التهرّب من العدالة.", tags:["adl","siyasa"]},
+   {t:"وصلته المعلومة قبل التنفيذ. الاستخبارات والمعلومة المبكرة جزء من الأخذ بالأسباب.", tags:["takhtit"]}
+  ], ppl:["abujahl","abusufyan"]},
+
+ {id:"e44", t:"ليلة الهجرة وفراش عليّ", d:"ليلة 27 صفر 1هـ تقريباً",
+  s:"نام عليّ في فراش النبي ﷺ، وخرج ﷺ من بين الحصار يذرّ التراب على رؤوسهم، وذهب إلى أبي بكر.",
+  n:"أحاطوا بالبيت ينتظرون الصباح. فأمر ﷺ <strong>علي بن أبي طالب</strong> أن ينام في فراشه ويتغطّى ببُرده الحضرمي الأخضر، وأخبره أنه <strong>لن يخلص إليه شيء يكرهه</strong>، وأمره أن يبقى ليردّ <strong>الودائع</strong> التي كانت عند النبي ﷺ لأهل مكة.\n\n<em>وتأمّل هذه:</em> قريش تريد قتله، وودائعها محفوظة عنده — حتى في ذروة العداء بقي <strong>الأمين</strong>.\n\nثم خرج ﷺ عليهم وهو يقرأ {وَجَعَلْنَا مِن بَيْنِ أَيْدِيهِمْ سَدًّا وَمِنْ خَلْفِهِمْ سَدًّا فَأَغْشَيْنَاهُمْ فَهُمْ لَا يُبْصِرُونَ}، وأخذ حفنة من تراب فذرّها على رؤوسهم فلم يره أحد.\n\nثم أتى بيت <strong>أبي بكر</strong>، وكان أبو بكر قد جهّز راحلتين قبل ذلك بأربعة أشهر واستأذن في الصحبة، فأذن له، <strong>فبكى أبو بكر من الفرح</strong>. قالت عائشة: ما كنت أظن أن أحداً يبكي من الفرح حتى رأيت أبي يبكي يومئذ.",
+  g:"sahih", src:"صحيح البخاري (مناقب الأنصار، باب الهجرة)، سيرة ابن هشام.",
+  ben:[
+   {t:"ردّ الأمانات لمن يريدون قتلك — أعلى قمة أخلاقية في التاريخ. الحق لا يُؤخذ بالباطل ولو مع عدو.", tags:["sidq","adl","akhlaq"]},
+   {t:"علي قبل مهمة موت شبه محقق وهو شاب في نحو الثالثة والعشرين. الشباب يُختبرون بالمواقف لا بالكلام.", tags:["shabab","ukhuwa"]},
+   {t:"أبو بكر جهّز الرواحل قبل أربعة أشهر. الاستعداد المسبق للفرصة هو ما يجعلك جاهزاً حين تُنادى.", tags:["takhtit"]},
+   {t:"البكاء من الفرح لشرف الصحبة — مقياس لما كانت تعنيه هذه الرسالة عندهم. اسأل: ما الذي يُبكيني فرحاً؟", tags:["ukhuwa"]}
+  ], ppl:["ali","abubakr","aisha"]},
+
+ {id:"e45", t:"الغار: ثلاث ليالٍ في ثور", d:"ثلاث ليالٍ",
+  s:"اختبآ في غار ثور جنوب مكة عكس اتجاه المدينة، بمنظومة دعم متكاملة من ثلاثة أشخاص.",
+  n:"خرجا إلى <strong>غار ثور</strong> — <strong>جنوب مكة</strong>، أي في <strong>الاتجاه المعاكس</strong> تماماً للمدينة — فمكثا فيه ثلاث ليال.\n\nوتأمّل منظومة الدعم المحكمة:\n<strong>عبد الله بن أبي بكر:</strong> شاب لقن ثقف، يبيت عندهما ويدّلج قبل الفجر فيصبح مع قريش كأنه بات بمكة، ينقل الأخبار.\n<strong>عامر بن فُهيرة:</strong> راعي غنم، يرعى ثم يريحها عليهما فيشربان، ثم يسرح بها فيعفّي على آثار عبد الله.\n<strong>أسماء بنت أبي بكر:</strong> تحمل الطعام، وشقّت نطاقها نصفين لتربط به السفرة فسُمّيت <strong>ذات النطاقين</strong>.\n<strong>عبد الله بن أريقط:</strong> دليل خبير <strong>مشرك</strong>، استُؤجر لخبرته وأُمن على السرّ، ووُوعد بعد ثلاث عند الغار.\n\nوجاء المشركون حتى وقفوا على فم الغار، فقال أبو بكر: لو أن أحدهم نظر تحت قدميه لأبصرنا. فقال ﷺ: <strong>«ما ظنّك باثنين الله ثالثهما؟»</strong> ونزلت {ثَانِيَ اثْنَيْنِ إِذْ هُمَا فِي الْغَارِ}.",
+  g:"sahih", src:"صحيح البخاري (باب هجرة النبي ﷺ)، سورة التوبة آية 40.",
+  ben:[
+   {t:"الاتجاه المعاكس أولاً: أذكى خدعة تكتيكية. فكّر عكس المتوقع حين يكون المتوقع مكشوفاً.", tags:["takhtit","siyasa"]},
+   {t:"أربعة أدوار متكاملة: معلومات، تمويه، تموين، خبرة فنية. أي عملية ناجحة تحتاج فريقاً بأدوار محددة.", tags:["takhtit","qiyada"]},
+   {t:"استئجار دليل مشرك في أخطر عملية — الكفاءة والأمانة معياران، والمعاملة الدنيوية تجوز مع المخالف.", tags:["mukhalif","siyasa"]},
+   {t:"«ما ظنك باثنين الله ثالثهما؟» — أعلى درجات التوكل بعد استنفاد كل سبب ممكن. لا توكّل بلا سبب، ولا سبب بلا توكل.", tags:["tawakkul","takhtit"]},
+   {t:"كل أفراد الفريق من عائلة واحدة تقريباً + شخص خارجي. الدائرة الصغيرة الموثوقة أأمن من الجمهور الواسع.", tags:["takhtit","ukhuwa"]}
+  ], ppl:["abubakr","asmaa"]},
+
+ {id:"e46", t:"سراقة بن مالك وسِوارا كسرى", d:"في طريق الهجرة",
+  s:"لحق بهما طمعاً في جائزة قريش فساخت فرسه، فطلب الأمان ووعده ﷺ بسواري كسرى.",
+  n:"جعلت قريش <strong>مئة ناقة</strong> لمن يردّ محمداً ﷺ أو أبا بكر. فبلغ <strong>سراقة بن مالك</strong> خبرهما فركب فرسه يطلبهما طمعاً في الجائزة، وكتم الخبر عن قومه ليفوز به وحده.\n\nفلما دنا منهما <strong>ساخت يدا فرسه في الأرض</strong> حتى بلغتا الركبتين، فخرّ عنها. ثم استقسم بالأزلام فخرج ما يكره، فركب فلحق ثانية فساخت، ثم ثالثة، فعلم أنه ممنوع، فناداهم بالأمان وسألهم أن يكتبوا له كتاب أمان.\n\nفقال له النبي ﷺ: <strong>«كيف بك إذا لُبّست سِوارَي كسرى؟»</strong> فقال سراقة مندهشاً: كسرى بن هرمز؟! قال: نعم.\n\nثم رجع سراقة <strong>يردّ الناس عنهما</strong> ويقول: قد كُفيتم ما ههنا. فكان أوّل النهار جاهداً عليهما وآخره حارساً لهما. وأسلم بعد ذلك، ولبس السوارين في خلافة <strong>عمر</strong> بعد فتح فارس.",
+  g:"sahih", src:"صحيح البخاري (باب هجرة النبي ﷺ، حديث سراقة الطويل).",
+  ben:[
+   {t:"وعد بسواري كسرى وهو مطارد لا يملك شيئاً. من كان يقينه بالمستقبل صادقاً تحدّث عنه بثقة في أحلك لحظاته.", tags:["tawakkul","qiyada"]},
+   {t:"الطمع أعمى سراقة عن مشاركة قومه فخسر، ثم كان الطمع نفسه سبب نجاته. تقلّب النوايا لا يفوت الله.", tags:["mal"]},
+   {t:"لم ينتقم منه ﷺ ولم يهدّده، بل أعطاه أماناً ووعداً. صناعة الحليف من العدو المُقبل أذكى من كسره.", tags:["afw","siyasa"]},
+   {t:"عمر نفّذ الوعد النبوي بعد عشرين سنة. الأمانة في المؤسسة تعني تنفيذ التزامات القيادة السابقة.", tags:["wafa","qiyada"]}
+  ], ppl:["suraqa","umar","abubakr"]},
+
+ {id:"e47", t:"قباء وأول مسجد في الإسلام", d:"الاثنين 12 ربيع الأول 1هـ",
+  s:"نزل ﷺ بقباء فمكث أياماً وأسّس أول مسجد بُني على التقوى.",
+  n:"وصل ﷺ <strong>قباء</strong> — على بعد أميال جنوب المدينة — يوم الاثنين، فنزل على كلثوم بن الهدم. وكان الأنصار يخرجون كل يوم إلى الحرّة ينتظرونه حتى يردّهم حرّ الظهيرة.\n\nفلما رآه رجل من يهود صاح بأعلى صوته: يا بني قيلة، هذا جدّكم الذي تنتظرون! فخرجوا بالسلاح فرحين. قال البراء بن عازب: <strong>ما رأيت أهل المدينة فرحوا بشيء فرحهم برسول الله ﷺ</strong>.\n\nوأقام بقباء أياماً — قيل أربعة عشر يوماً — فأسّس فيها <strong>مسجد قباء</strong>، وهو أول مسجد بُني في الإسلام، وفيه نزل {لَّمَسْجِدٌ أُسِّسَ عَلَى التَّقْوَىٰ مِنْ أَوَّلِ يَوْمٍ أَحَقُّ أَن تَقُومَ فِيهِ}. وكان ﷺ يأتيه كل سبت راكباً وماشياً.\n\nثم لحق به <strong>علي</strong> بعد أن ردّ الودائع، فخرجوا جميعاً إلى المدينة.",
+  g:"sahih", src:"صحيح البخاري (مناقب الأنصار)، سورة التوبة آية 108.",
+  ben:[
+   {t:"أول عمل مؤسسي في الدولة الجديدة كان بناء مسجد. حدّد المركز الروحي قبل المركز الإداري.", tags:["awlawiyat","qiyada"]},
+   {t:"لم ينتظر الوصول للعاصمة ليبدأ. ابدأ من أول محطة تصلها ولا تؤجّل لظروف مثالية.", tags:["takhtit"]},
+   {t:"مواظبته ﷺ على زيارة قباء كل سبت — الوفاء للبدايات وتعاهد المشاريع الصغيرة بعد الكبر.", tags:["wafa","akhlaq"]}
+  ], ppl:["ali"]},
+
+ {id:"e48", t:"دخول المدينة ومبرك الناقة", d:"الجمعة، ربيع الأول 1هـ",
+  s:"تنازع الأنصار شرف استضافته، فحكّم ناقته حتى بركت في موضع المسجد النبوي.",
+  n:"دخل ﷺ المدينة فكان يوماً مشهوداً، خرج الناس والجواري ينشدن. وجعل <strong>لا يمرّ ببطن من الأنصار إلا أخذوا بخطام ناقته</strong>: هلمّ إلينا يا رسول الله، إلى العدد والعُدّة والمَنَعة.\n\nفكان يقول لهم: <strong>«خلّوا سبيلها فإنها مأمورة»</strong>. حتى وصلت إلى موضع في بني النجار — وهم أخواله — فبركت، ثم نهضت وسارت قليلاً ثم رجعت إلى مبركها الأول فبركت.\n\nفنزل ﷺ. وكان الموضع <strong>مِربداً</strong> — موضع تجفيف التمر — لغلامين يتيمين من بني النجار. فأراد أن يهبوه له فأبى إلا الشراء، فاشتراه ليبني فيه المسجد.\n\nونزل ﷺ في بيت <strong>أبي أيوب الأنصاري</strong> شهراً حتى بُني المسجد وبيوته. وسُمّيت المدينة بعدها <strong>«طيبة»</strong> و<strong>«المدينة»</strong> بعد أن كانت يثرب.",
+  g:"sahih", src:"صحيح البخاري (مقدم النبي ﷺ المدينة)، سيرة ابن هشام.",
+  ben:[
+   {t:"حكّم الناقة ليحسم تنافساً كاد يفسد الودّ. أحياناً أفضل قرار هو ما لا يُنسب لأحد من الأطراف.", tags:["qiyada","siyasa"]},
+   {t:"رفض أن يأخذ أرض اليتيمين هبةً وأصرّ على الشراء. لا تبنِ مشروعك على حق ضعيف حتى لو تنازل عنه طوعاً.", tags:["adl","mal"]},
+   {t:"لم يستغل الحماس الجماهيري في تفضيل فريق على فريق. القائد يدخل حيادياً ليقود الجميع.", tags:["qiyada","adl"]},
+   {t:"تغيير الاسم من يثرب إلى المدينة: إعادة تعريف الهوية جزء من بناء الكيان الجديد.", tags:["ilam","qiyada"]}
+  ], ppl:["saadubada"]}
+]},
+
+{
+id:"found", t:"تأسيس الدولة", era:"1 — 2 هـ", c:"#6FA98C",
+d:"سنة واحدة بنى فيها ﷺ: مسجداً، ومجتمعاً، ووثيقة دستورية، واقتصاداً، وهوية مستقلة.",
+ev:[
+ {id:"e49", t:"بناء المسجد النبوي", d:"ربيع الأول 1هـ",
+  s:"أول مشروع في الدولة: مسجد بسيط من اللبن والجريد، عمل فيه النبي ﷺ بيده مع أصحابه.",
+  n:"اشترى ﷺ المِربد وبنى فيه المسجد. وكان بناؤه غاية في البساطة: <strong>جدرانه من اللبن، وسقفه من جريد النخل، وعمده جذوع النخل، وأرضه رمل وحصباء</strong>. وجعل قبلته إلى بيت المقدس أولاً، وله ثلاثة أبواب.\n\nوعمل ﷺ فيه بيده ينقل اللبن مع أصحابه، وهم يرتجزون: <strong>«اللهم لا عيش إلا عيش الآخرة، فاغفر للأنصار والمهاجرة»</strong>.\n\nولم يكن المسجد مكان صلاة فحسب، بل كان:\n<strong>البرلمان:</strong> فيه تُتّخذ القرارات وتُعقد الشورى.\n<strong>المدرسة:</strong> فيه <strong>الصُّفّة</strong> — مأوى وسكن لفقراء المهاجرين، وأول مدرسة داخلية في الإسلام.\n<strong>المحكمة والديوان:</strong> فيه يُقضى بين الناس وتُستقبل الوفود.\n<strong>مركز التعبئة:</strong> منه تنطلق السرايا.\n\nوبُنيت بجواره حجرات أزواجه ﷺ ملاصقة، بيوت صغيرة من طين وجريد.",
+  g:"sahih", src:"صحيح البخاري (كتاب الصلاة، باب بنيان المسجد).",
+  ben:[
+   {t:"المؤسسة متعددة الوظائف أكفأ في مرحلة التأسيس. مركز واحد يخدم خمسة أدوار بدل خمسة مبانٍ فارغة.", tags:["qiyada","mal","takhtit"]},
+   {t:"القائد ينقل اللبن مع الجميع. القيادة بالقدوة تصنع ولاءً لا تصنعه الأوامر.", tags:["qiyada","akhlaq"]},
+   {t:"البساطة المتعمّدة: أعظم مسجد في التاريخ بُني من طين وجريد. لا تؤجّل الانطلاق انتظاراً لإمكانات فخمة.", tags:["mal","takhtit"]},
+   {t:"«لا عيش إلا عيش الآخرة» يُردّد أثناء العمل. ربط العمل الدنيوي بالغاية الأخروية يجعل التعب عبادة.", tags:["ajal","tarbiya"]},
+   {t:"أهل الصُّفّة: نظام رعاية اجتماعية وتعليم مجاني من اليوم الأول. الدولة تبدأ برعاية أضعف فئاتها.", tags:["adl","tarbiya"]}
+  ], ppl:[]},
+
+ {id:"e50", t:"المؤاخاة بين المهاجرين والأنصار", d:"السنة الأولى",
+  s:"آخى ﷺ بين تسعين رجلاً — مهاجر وأنصاري — على المواساة والتوارث، فكان نموذجاً بلا نظير.",
+  n:"آخى ﷺ بين المهاجرين والأنصار في دار أنس بن مالك، على <strong>المواساة والتوارث بعد الموت</strong> — وبقي التوارث حتى نُسخ بعد بدر بقوله {وَأُولُو الْأَرْحَامِ بَعْضُهُمْ أَوْلَىٰ بِبَعْضٍ}.\n\nوكان الأنصار قد بلغوا في الإيثار مبلغاً عجيباً، حتى قالوا: يا رسول الله، اقسم بيننا وبين إخواننا النخيل. فقال: لا. فقالوا: تكفوننا المؤونة ونشرككم في الثمرة. قالوا: سمعنا وأطعنا. ونزل فيهم: {وَيُؤْثِرُونَ عَلَىٰ أَنفُسِهِمْ وَلَوْ كَانَ بِهِمْ خَصَاصَةٌ}.\n\nوآخى بين <strong>عبد الرحمن بن عوف</strong> و<strong>سعد بن الربيع</strong>، فقال سعد: أنا أكثر الأنصار مالاً، فانظر شطر مالي فخذه، ولي امرأتان فانظر أعجبهما إليك فأطلّقها حتى تتزوجها. فقال عبد الرحمن: <strong>«بارك الله لك في أهلك ومالك، دلّوني على السوق»</strong>. فذهب فتاجر حتى أثرى.",
+  g:"sahih", src:"صحيح البخاري (مناقب الأنصار، البيوع)، صحيح مسلم.",
+  ben:[
+   {t:"حلّ ﷺ أزمة اللاجئين بأمرين: كرم المضيف وعزّة الوافد. أي حل يغفل أحدهما ينتج تبعية أو ضغينة.", tags:["ukhuwa","mal"]},
+   {t:"«دلّوني على السوق» — أعظم درس اقتصادي في السيرة. الكرامة في الكسب لا في العطاء.", tags:["mal","akhlaq"]},
+   {t:"رباط الإيمان تفوّق على رباط الدم حتى في الميراث مرحلياً. الأخوّة تُبنى بقرار وتنظيم لا بالشعارات.", tags:["ukhuwa","tarbiya"]},
+   {t:"المؤاخاة كانت مقرونة بأسماء محددة لا نداءً عاماً. المسؤولية المشخّصة تُنفَّذ، والعامة تضيع.", tags:["qiyada","takhtit"]}
+  ], ppl:["abduRahman","saadmuadh"]},
+
+ {id:"e51", t:"صحيفة المدينة: أول وثيقة دستورية", d:"السنة الأولى",
+  s:"كتب ﷺ وثيقة تنظّم علاقة المسلمين ببعضهم وباليهود وسائر السكان — نصّ سياسي مبكر بالغ التقدم.",
+  n:"كتب ﷺ كتاباً بين المهاجرين والأنصار، ووادع فيه <strong>يهود المدينة</strong> وأقرّهم على دينهم وأموالهم. ومن أهم بنودها:\n\n• <strong>«إنهم أمة واحدة من دون الناس»</strong> — تأسيس هوية جامعة فوق القبيلة.\n• <strong>«وإن يهود ينفقون مع المؤمنين ما داموا محاربين»</strong> — تشارك في أعباء الدفاع.\n• <strong>«لليهود دينهم وللمسلمين دينهم»</strong> — حرية اعتقاد صريحة.\n• <strong>«وإن بينهم النصر على من حارب أهل هذه الصحيفة»</strong> — تحالف دفاعي.\n• <strong>«وإنه ما كان بين أهل هذه الصحيفة من حدث أو اشتجار يُخاف فساده، فإن مردّه إلى الله وإلى محمد رسول الله»</strong> — مرجعية قضائية عليا واحدة.\n• <strong>«ولا يأثم امرؤ بحليفه»</strong> — المسؤولية الجنائية فردية لا جماعية.\n\nفكانت هذه الوثيقة تأسيساً لمفهوم <strong>الدولة</strong> بحدود ومواطنة ومرجعية، في زمن لم تكن العرب تعرف فيه إلا القبيلة.",
+  g:"hasan", src:"سيرة ابن هشام (نصّ الصحيفة كاملاً)، الأموال لأبي عبيد.",
+  ben:[
+   {t:"وثّق العلاقات كتابةً من أول يوم. الاتفاق الشفهي يُنسى ويُؤوَّل، والمكتوب يُحتكم إليه.", tags:["siyasa","wafa","takhtit"]},
+   {t:"«لليهود دينهم وللمسلمين دينهم» في وثيقة رسمية قبل أربعة عشر قرناً. التعايش نصّ مُلزِم لا شعار.", tags:["mukhalif","adl"]},
+   {t:"مرجعية واحدة لفضّ النزاع شرط بقاء أي كيان. تعدد المرجعيات يعني الحرب الأهلية.", tags:["qiyada","adl"]},
+   {t:"«لا يأثم امرؤ بحليفه» — إلغاء المسؤولية الجماعية التي بُني عليها الثأر الجاهلي كله.", tags:["adl"]},
+   {t:"الحقوق قُرنت بالواجبات (ينفقون مع المؤمنين). المواطنة عقد متبادل لا امتياز أحادي.", tags:["adl","siyasa"]}
+  ], ppl:["ibnubayy"]},
+
+ {id:"e52", t:"بناء السوق والاقتصاد المستقل", d:"السنة الأولى",
+  s:"أنشأ ﷺ سوقاً للمسلمين مستقلاً عن سوق يهود، بلا ضرائب ولا احتكار للأماكن.",
+  n:"كانت الأسواق في المدينة بيد <strong>يهود بني قينقاع</strong> وغيرهم، فيها الربا والاحتكار. فذهب ﷺ إلى موضع فخطّه وقال: <strong>«هذا سوقكم، فلا يُضيَّق فيه ولا يُضرب عليه خراج»</strong>.\n\nوطبّق فيه قواعد واضحة: <strong>لا خراج (ضريبة موقع)، ولا احتكار للأماكن</strong> — من سبق إلى مكان فهو له يومه، <strong>ومنع تلقّي الركبان</strong> (اعتراض البضائع قبل دخول السوق)، <strong>ومنع النجش</strong> (رفع السعر صورياً)، <strong>ومنع الغشّ</strong>: «من غشّ فليس منا» بعد أن أدخل يده في صُبرة طعام فوجد بللاً.\n\nوكان يمشي في السوق بنفسه يراقب. فهذا أول <strong>نظام رقابة على السوق</strong> — أصل ولاية الحسبة لاحقاً.\n\nوهكذا استقلّ اقتصاد المسلمين تدريجياً عن السيطرة الخارجية.",
+  g:"sahih", src:"سنن ابن ماجه (الأسواق)، صحيح مسلم (حديث الغشّ)، الطبقات لابن سعد.",
+  ben:[
+   {t:"الاستقلال الاقتصادي شرط الاستقلال السياسي. من يشتري قوته من عدوّه لا يملك قراره.", tags:["mal","siyasa"]},
+   {t:"إلغاء الضريبة على السوق في مرحلة التأسيس — تحفيز للتجارة قبل جبايتها. تنشيط أولاً ثم تحصيل.", tags:["mal","takhtit"]},
+   {t:"الرقابة الميدانية المباشرة من أعلى سلطة. القائد الذي لا ينزل للسوق يُدار بالتقارير المزوّرة.", tags:["qiyada","adl"]},
+   {t:"«من غشّ فليس منا» — الغشّ التجاري مسألة عقدية لا مخالفة إدارية. راجع مواصفات منتجك بهذا الميزان.", tags:["sidq","mal"]}
+  ], ppl:[]},
+
+ {id:"e53", t:"ظهور النفاق وأهل الكتاب", d:"من السنة الأولى فصاعداً",
+  s:"ظهرت طائفة تُبطن الكفر وتُظهر الإسلام بقيادة ابن أُبيّ، وبدأ التوتر مع بعض يهود المدينة.",
+  n:"لم يُعرف النفاق في مكة لأن المسلمين كانوا مستضعفين فلا مصلحة في التظاهر. فلما قامت الدولة ظهرت <strong>ظاهرة النفاق</strong>.\n\nوكان رأسهم <strong>عبد الله بن أبيّ بن سلول</strong>، وكان قومه قد اجتمعوا على أن يُتوّجوه ملكاً قبل الهجرة، فلما جاء الإسلام ذهب ملكه فأضمر الحقد.\n\nوأما اليهود، فقد كانوا ينتظرون نبياً ويستفتحون به على الأوس والخزرج، فلما جاء من غيرهم كفروا به حسداً: {فَلَمَّا جَاءَهُم مَّا عَرَفُوا كَفَرُوا بِهِ}. فبدؤوا حرباً فكرية: أسئلة تعجيزية، وتشكيك، ومحاولة تفريق بين الأوس والخزرج بتذكيرهم بحرب بُعاث — حتى تنادوا بالسلاح، فخرج ﷺ فذكّرهم فبكوا واعتنقوا.\n\nوصبر النبي ﷺ على المنافقين ولم يقتلهم، وقال: <strong>«لا يتحدث الناس أن محمداً يقتل أصحابه»</strong>.",
+  g:"sahih", src:"صحيح البخاري ومسلم (قصة ابن أبيّ)، تفسير الطبري.",
+  ben:[
+   {t:"النفاق ظاهرة نجاح لا فشل — لا يُنافق إلا القوي. ظهور المتسلقين علامة أن مشروعك صار مؤثراً.", tags:["qiyada","siyasa"]},
+   {t:"«لا يتحدث الناس أن محمداً يقتل أصحابه» — اعتبار السمعة والأثر الإعلامي في القرار. المكسب اللحظي قد يكلّف صورة المشروع.", tags:["siyasa","ilam","awlawiyat"]},
+   {t:"من فقد امتيازاً بسبب مشروعك سيعاديه ولو تظاهر بالتأييد. اقرأ خريطة المصالح المتضررة.", tags:["siyasa","mukhalif"]},
+   {t:"إثارة الخلافات القديمة سلاح دائم لتفتيت الصف. عالج الجراح القديمة قبل أن يستخدمها غيرك.", tags:["ukhuwa","qiyada"]}
+  ], ppl:["ibnubayy","huyayy"]},
+
+ {id:"e54", t:"تحويل القبلة وفرض الصيام", d:"شعبان 2هـ",
+  s:"حُوّلت القبلة من بيت المقدس إلى الكعبة، وفُرض صيام رمضان والزكاة — استكمال الهوية.",
+  n:"كان ﷺ يصلي نحو <strong>بيت المقدس</strong> ستة عشر أو سبعة عشر شهراً، وكان يحبّ أن يُوجّه إلى الكعبة، فجعل يقلّب وجهه في السماء. فنزلت: {قَدْ نَرَىٰ تَقَلُّبَ وَجْهِكَ فِي السَّمَاءِ ۖ فَلَنُوَلِّيَنَّكَ قِبْلَةً تَرْضَاهَا ۚ فَوَلِّ وَجْهَكَ شَطْرَ الْمَسْجِدِ الْحَرَامِ}.\n\nونزلت والناس في صلاة العصر في مسجد بني سلمة، فاستداروا في الصلاة نفسها — فسُمّي <strong>مسجد القبلتين</strong>.\n\nفضجّ السفهاء واليهود: {مَا وَلَّاهُمْ عَن قِبْلَتِهِمُ الَّتِي كَانُوا عَلَيْهَا}. فكان تمحيصاً: {وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنتَ عَلَيْهَا إِلَّا لِنَعْلَمَ مَن يَتَّبِعُ الرَّسُولَ مِمَّن يَنقَلِبُ عَلَىٰ عَقِبَيْهِ}.\n\nوفي شعبان من السنة الثانية فُرض <strong>صيام رمضان</strong>، وشُرعت <strong>زكاة الفطر</strong> ثم زكاة الأموال. فاكتملت للأمة معالم هويتها المستقلة: قبلة، وصوم، ومال، وقانون.",
+  g:"sahih", src:"صحيح البخاري (كتاب الصلاة، التفسير)، صحيح مسلم.",
+  ben:[
+   {t:"الهوية المستقلة تُبنى بالتدريج لا بالقطيعة المفاجئة. سنة ونصف من التوافق ثم التمايز.", tags:["tadarruj","takhtit"]},
+   {t:"الاستدارة في وسط الصلاة نموذج للطاعة الفورية. سرعة التنفيذ عند وضوح الأمر علامة نضج الصف.", tags:["tarbiya","qiyada"]},
+   {t:"كل قرار تغييري يُنتج معارضة صاخبة. توقّع الضجيج ولا تجعله معياراً لصواب القرار.", tags:["qiyada","ibtila"]},
+   {t:"التغيير الكبير يكشف من يتبع الفكرة ومن يتبع الشكل. الأزمات غربال طبيعي للفرق والمؤسسات.", tags:["ibtila","tarbiya"]}
+  ], ppl:[]}
+]}
+];
+</script>
+<script>
+const PB3 = [
+{
+id:"battles", t:"المواجهة الكبرى", era:"2 — 5 هـ", c:"#C4697F",
+d:"أربع سنوات من الاختبار الوجودي: نصرٌ يفتح الطريق، وهزيمةٌ تكشف الخلل، وحصارٌ كاد يقتلع الدولة.",
+ev:[
+ {id:"e55", t:"السرايا الأولى والإذن بالقتال", d:"1 — 2 هـ",
+  s:"نزل الإذن بالقتال بعد ثلاثة عشر عاماً من الكفّ، وبدأت سرايا استطلاعية على طريق تجارة قريش.",
+  n:"بعد ثلاثة عشر عاماً من الأمر بكفّ اليد، نزل الإذن: {أُذِنَ لِلَّذِينَ يُقَاتَلُونَ بِأَنَّهُمْ ظُلِمُوا}. ولاحظ التعليل: <strong>«بأنهم ظُلموا»</strong> — القتال ردّ للظلم لا ابتداء عدوان.\n\nفبدأ ﷺ سرايا صغيرة استكشافية باتجاه <strong>الطريق التجاري لقريش</strong> بين مكة والشام. وأهدافها كانت متعددة:\n<strong>1. الضغط الاقتصادي:</strong> شريان قريش الرئيس هو التجارة، وقريش صادرت أموال المهاجرين في مكة.\n<strong>2. الاستطلاع:</strong> معرفة الطرق والقبائل.\n<strong>3. التحالفات:</strong> موادعة قبائل الطريق (بني ضمرة، بني مدلج).\n<strong>4. إعلان الوجود:</strong> إشعار العرب أن للمسلمين دولة قادرة.\n\nومن هذه السرايا: سيف البحر، ورابغ، والخرّار، وغزوات الأبواء وبواط والعشيرة. ولم يقع فيها قتال يُذكر إلا في <strong>سرية عبد الله بن جحش</strong> في نخلة، حيث وقع قتل في آخر رجب — وهو من الأشهر الحرم — فأرجف المشركون، فنزلت {يَسْأَلُونَكَ عَنِ الشَّهْرِ الْحَرَامِ قِتَالٍ فِيهِ ۖ قُلْ قِتَالٌ فِيهِ كَبِيرٌ ۖ وَصَدٌّ عَن سَبِيلِ اللَّهِ... أَكْبَرُ عِندَ اللَّهِ}.",
+  g:"sahih", src:"سورة الحج 39، البقرة 217، سيرة ابن هشام، الرحيق المختوم.",
+  ben:[
+   {t:"ثلاثة عشر عاماً من الصبر قبل أول إذن بالمواجهة. الاستعجال في تغيير الوسيلة قبل نضج الظرف يقتل المشاريع.", tags:["tadarruj","sabr","awlawiyat"]},
+   {t:"استهداف الشريان الاقتصادي للخصم أذكى وأقلّ تكلفة من مواجهة عسكرية مباشرة.", tags:["siyasa","mal","takhtit"]},
+   {t:"الموازنة بين مفسدتين: القتل في الشهر الحرام كبير، لكن الصدّ عن سبيل الله والإخراج أكبر. فقه الموازنات.", tags:["awlawiyat","adl"]},
+   {t:"عدة أهداف من عملية واحدة (استطلاع + ضغط + تحالف + إعلام). لا تصمّم خطوة لهدف واحد فقط.", tags:["takhtit","qiyada"]}
+  ], ppl:[]},
+
+ {id:"e56", t:"غزوة بدر الكبرى", d:"17 رمضان 2هـ",
+  s:"313 مقابل نحو ألف، فكان النصر الفاصل: قُتل سبعون من صناديد قريش وأُسر سبعون.",
+  n:"خرج ﷺ في <strong>ثلاثمئة وثلاثة عشر</strong> ومعهم فرسان وسبعون بعيراً يتعاقبونها، يعترضون قافلة <strong>أبي سفيان</strong>. فأفلتت القافلة وأقبل جيش قريش <strong>نحو ألف</strong> مقاتل بالسلاح والخيل.\n\nفاستشار ﷺ الناس، فتكلّم المهاجرون فأحسنوا، ثم قال: «أشيروا عليّ أيها الناس» — يريد الأنصار لأن بيعتهم على الدفاع لا الهجوم. فقام <strong>سعد بن معاذ</strong> فقال: <strong>«فوالذي بعثك بالحق، لو استعرضت بنا هذا البحر فخضته لخضناه معك... امض لما أردت فنحن معك»</strong>.\n\nوأشار <strong>الحُباب بن المنذر</strong> بتغيير موضع النزول إلى أدنى ماء من القوم وتغويره، ففعل ﷺ — نموذج على قبول الرأي الفني من صاحب الخبرة.\n\nوبات ﷺ يدعو حتى سقط رداؤه: <strong>«اللهم إن تهلك هذه العصابة لا تُعبد في الأرض»</strong>، فقال أبو بكر: بعض مناشدتك ربك.\n\nفكان النصر: <strong>قُتل سبعون</strong> منهم أبو جهل وأمية بن خلف وعتبة، <strong>وأُسر سبعون</strong>، واستُشهد <strong>أربعة عشر</strong> من المسلمين.",
+  g:"sahih", src:"صحيح البخاري ومسلم (كتاب المغازي، غزوة بدر)، سورة الأنفال.",
+  ben:[
+   {t:"استشار الأنصار رغم أنه القائد المؤيَّد بالوحي، لأن بيعتهم لم تشمل هذا. احترام حدود الاتفاق أساس الثقة.", tags:["shura","wafa","qiyada"]},
+   {t:"قبِل رأي الحُباب في الموقع وتراجع عن اجتهاده. القائد الذي لا يتراجع أمام الخبرة يخسر معركته.", tags:["shura","qiyada"]},
+   {t:"دعا حتى سقط رداؤه بعد أن أعدّ كل ما يستطيع. الدعاء تتويج للأخذ بالأسباب لا بديل عنه.", tags:["tawakkul","takhtit"]},
+   {t:"سبعون من ألف هم قادة الصف الأول لقريش. ضربة واحدة في العمق أنفع من عشر ضربات في الأطراف.", tags:["takhtit","siyasa"]},
+   {t:"«لا تُعبد في الأرض» — همّه كان الرسالة لا شخصه ولا النصر ذاته. راجع: ما الذي أخاف عليه حقاً؟", tags:["thabat","ajal"]}
+  ], ppl:["saadmuadh","abubakr","abujahl","hamza","ali","abusufyan","umayya","bilal","utba"]},
+
+ {id:"e57", t:"مصير أسرى بدر", d:"عقب بدر",
+  s:"استشار ﷺ في الأسرى فأشار أبو بكر بالفداء وعمر بالقتل، فأخذ برأي أبي بكر فعُوتب.",
+  n:"استشار ﷺ أصحابه في <strong>سبعين أسيراً</strong>. فقال <strong>أبو بكر</strong>: قومك وأهلك، استبقهم واستأنِ بهم لعل الله يتوب عليهم، وخذ منهم فدية تكون قوة لنا. وقال <strong>عمر</strong>: كذّبوك وأخرجوك، قدّمهم فاضرب أعناقهم، ومكّن علياً من عقيل وحمزة من أخيه.\n\nفهوي ﷺ ما قال أبو بكر، فأخذ منهم الفداء. فنزل: {مَا كَانَ لِنَبِيٍّ أَن يَكُونَ لَهُ أَسْرَىٰ حَتَّىٰ يُثْخِنَ فِي الْأَرْضِ ۚ تُرِيدُونَ عَرَضَ الدُّنْيَا وَاللَّهُ يُرِيدُ الْآخِرَةَ}. فوجد ﷺ وأبو بكر يبكيان، فقال عمر: أخبرني فإن وجدت بكاءً بكيت وإلا تباكيت.\n\nوكان الفداء أربعة آلاف درهم للموسر، ومن لم يكن له مال ويحسن الكتابة <strong>يعلّم عشرة من صبيان الأنصار الكتابة</strong> فيكون ذلك فداءه.\n\nوأوصى ﷺ بالأسرى خيراً، حتى قال أبو عزيز: كانوا يقدّمون لنا الخبز ويأكلون التمر.",
+  g:"sahih", src:"صحيح مسلم (الجهاد، أسرى بدر)، سورة الأنفال 67، سيرة ابن هشام.",
+  ben:[
+   {t:"فداء الأسير بتعليم عشرة أطفال — أعظم تسعير للعلم في التاريخ. حوّل خصمك إلى مورد نافع.", tags:["tarbiya","mal","ilam"]},
+   {t:"عوتب النبي ﷺ نفسه في اجتهاد. القرآن يوثّق العتاب ولا يخفيه — أعظم دليل على صدق المصدر.", tags:["sidq","shura"]},
+   {t:"الشورى قد تُفضي إلى اجتهاد مرجوح، وتبقى الشورى واجبة. لا تُلغِ نظاماً صحيحاً بسبب نتيجة واحدة.", tags:["shura","qiyada"]},
+   {t:"الإحسان للأسرى في ذروة النصر. الأخلاق ليست ترفاً وقت القوة بل هي أشدّ ما تظهر فيه.", tags:["afw","akhlaq","adl"]}
+  ], ppl:["abubakr","umar"]},
+
+ {id:"e58", t:"إجلاء بني قينقاع", d:"شوال 2هـ",
+  s:"نقضوا العهد وأهانوا امرأة مسلمة، فحاصرهم ﷺ خمسة عشر ليلة فأجلاهم عن المدينة.",
+  n:"كان <strong>بنو قينقاع</strong> أشجع يهود المدينة وأصحاب صناعة وتجارة. فلما انتصر المسلمون في بدر حسدوا وأظهروا البغي، وقالوا: لا يغرّنك أنك قتلت نفراً من قريش أغماراً، لو قاتلتنا لعرفت أنّا نحن الناس.\n\nثم كانت الحادثة: جلست <strong>امرأة مسلمة</strong> إلى صائغ منهم في سوقهم، فأرادوها على كشف وجهها فأبت، فعقد أحدهم طرف ثوبها إلى ظهرها فلما قامت انكشفت فضحكوا. فصاحت، فوثب رجل مسلم على الصائغ فقتله، فاجتمع اليهود على المسلم فقتلوه، فاستصرخ أهله المسلمين.\n\nفحاصرهم ﷺ <strong>خمس عشرة ليلة</strong> حتى نزلوا على حكمه. فألحّ <strong>عبد الله بن أبيّ</strong> — وكانوا حلفاءه — في العفو عنهم، فتركهم النبي ﷺ لكن <strong>أجلاهم عن المدينة</strong> إلى أذرعات بالشام، وأخذ سلاحهم وأدوات صناعتهم.",
+  g:"hasan", src:"سيرة ابن هشام، الطبقات، الدلائل للبيهقي.",
+  ben:[
+   {t:"انتهاك عرض امرأة واحدة كان كافياً لتحريك الدولة كلها. حماية الأعراض ليست شأناً فردياً.", tags:["maraa","adl"]},
+   {t:"نقض العهد له ثمن حتمي وإلا صار العهد بلا قيمة. التسامح مع خرق الاتفاق يشجّع على تكراره.", tags:["wafa","siyasa"]},
+   {t:"الإجلاء لا القتل، مع مصادرة السلاح. عقوبة تُنهي الخطر دون إسراف — تناسب العقوبة مع الجرم.", tags:["adl","afw"]},
+   {t:"احتمل ﷺ إلحاح ابن أبيّ ولم يصطدم به في تلك اللحظة. القائد يختار توقيت معاركه الداخلية.", tags:["siyasa","awlawiyat"]}
+  ], ppl:["ibnubayy"]},
+
+ {id:"e59", t:"غزوة أُحد", d:"شوال 3هـ",
+  s:"خرج ألف فرجع ثلثهم، وانتصر المسلمون أولاً ثم انقلب الحال بمخالفة الرماة، فاستُشهد سبعون.",
+  n:"جاءت قريش في <strong>ثلاثة آلاف</strong> تطلب الثأر لبدر. فاستشار ﷺ فكان رأيه البقاء بالمدينة، ورأي الشباب المتحمّس الخروج، فنزل على رأي الأكثرية. فلما لبس لأمته ندموا، فقال: <strong>«ما ينبغي لنبي إذا لبس لأمته أن يضعها حتى يحكم الله»</strong>.\n\nخرج في ألف، فانخذل <strong>عبد الله بن أبيّ بثلث الجيش</strong> فبقي سبعمئة. فعسكر ﷺ وظهره إلى جبل أُحد، وأقام <strong>خمسين رامياً</strong> على الجبل بقيادة عبد الله بن جبير وقال: <strong>«لا تبرحوا وإن رأيتمونا تخطّفنا الطير»</strong>.\n\nفانتصر المسلمون أولاً وانهزمت قريش. فلما رأى الرماة الغنائم <strong>نزل أكثرهم مخالفين</strong>، فالتفّ <strong>خالد بن الوليد</strong> بالخيل من خلف الجبل، فانقلب النصر.\n\nوشيع أن النبي ﷺ قُتل، وشُجّ وجهه وكُسرت رباعيته، ووقاه <strong>طلحة</strong> بيده حتى شُلّت، واستُشهد <strong>حمزة</strong> و<strong>مصعب</strong> وسبعون. ونزل في ذلك ستون آية من آل عمران تحلّل الهزيمة تحليلاً كاملاً.",
+  g:"sahih", src:"صحيح البخاري ومسلم (المغازي، أُحد)، سورة آل عمران 121-180.",
+  ben:[
+   {t:"نزل ﷺ على رأي الأغلبية وهو يخالفه. الشورى ملزمة أخلاقياً وإلا صارت استطلاعاً شكلياً.", tags:["shura","qiyada"]},
+   {t:"مخالفة أمر واحد من خمسين رجلاً قلبت نصراً إلى هزيمة. الانضباط التنفيذي أهم من الحماس.", tags:["qiyada","tarbiya"]},
+   {t:"الغنيمة أخطر من السيف. كثير من المشاريع تنهار في لحظة النجاح لا في لحظة الأزمة.", tags:["mal","ibtila"]},
+   {t:"القرآن حلّل الهزيمة بصراحة ونسبها لأسبابها {قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ}. المراجعة الصادقة شرط عدم التكرار.", tags:["qiyada","sidq"]},
+   {t:"انسحاب ثلث الجيش قبل المعركة اختبار كشف المنافقين مبكراً. الأزمة تُنقّي الصف بلا تكلفة إضافية.", tags:["ibtila","tarbiya"]}
+  ], ppl:["hamza","musab","khalid","ibnubayy","talha","saadwaqqas","abuubayda","hind","abusufyan"]},
+
+ {id:"e60", t:"حمراء الأسد: الردّ النفسي", d:"اليوم التالي لأُحد",
+  s:"خرج ﷺ بجرحى أُحد يطارد قريشاً لإظهار القوة، فأثنى القرآن على من استجاب رغم القرح.",
+  n:"في صبيحة اليوم التالي لأُحد — والجراح لم تُضمّد بعد — نادى ﷺ في الناس بطلب العدو، و<strong>أذن ألا يخرج معه إلا من شهد أُحداً</strong>. فخرجوا على ما بهم من الألم والإرهاق والحزن حتى بلغوا <strong>حمراء الأسد</strong> على ثمانية أميال من المدينة.\n\nوأمر ﷺ بإيقاد <strong>خمسمئة نار</strong> ليلاً حتى تُرى من بعيد فيُظنّ الجيش كثيراً.\n\nوكان أبو سفيان قد همّ بالرجوع لاستئصال المسلمين، فبلغه الخبر ومرّ به معبد الخزاعي فهوّل عليه الأمر، فانصرف إلى مكة.\n\nفنزل: {الَّذِينَ اسْتَجَابُوا لِلَّهِ وَالرَّسُولِ مِن بَعْدِ مَا أَصَابَهُمُ الْقَرْحُ ۚ لِلَّذِينَ أَحْسَنُوا مِنْهُمْ وَاتَّقَوْا أَجْرٌ عَظِيمٌ}.",
+  g:"sahih", src:"صحيح البخاري (المغازي)، سورة آل عمران 172، سيرة ابن هشام.",
+  ben:[
+   {t:"الردّ الفوري بعد النكسة يمنع الخصم من استثمار انتصاره. لا تترك فجوة زمنية بعد الفشل.", tags:["qiyada","siyasa"]},
+   {t:"إيقاد خمسمئة نار: الحرب النفسية والإيحاء بالقوة سلاح مشروع وفعّال ورخيص.", tags:["takhtit","ilam","siyasa"]},
+   {t:"اشتراط أن يخرج من شهد أُحد فقط: إعادة بناء ثقة المهزوم بنفسه فوراً. لا تستبدل فريقك بعد فشل واحد.", tags:["qiyada","tarbiya"]},
+   {t:"الخروج بالجراح النازفة درس في أن أخطر ما بعد الهزيمة هو الاستسلام النفسي لا الخسارة المادية.", tags:["sabr","ibtila"]}
+  ], ppl:["abusufyan"]},
+
+ {id:"e61", t:"الرجيع وبئر معونة", d:"صفر 4هـ",
+  s:"غُدر بستة من القرّاء في الرجيع، ثم قُتل سبعون من خيار الصحابة غدراً في بئر معونة.",
+  n:"جاء نفر من عضل والقارة يطلبون من يعلّمهم الإسلام، فبعث ﷺ ستة — وقيل عشرة — فلما بلغوا <strong>الرجيع</strong> غدروا بهم واستصرخوا هذيلاً، فقُتل أكثرهم، وأُسر <strong>خبيب بن عدي</strong> و<strong>زيد بن الدثنة</strong> فبيعا بمكة وصُلبا. وحين سُئل خبيب: أتحبّ أن محمداً مكانك؟ قال: <strong>والله ما أحبّ أن محمداً في مكانه الذي هو فيه تصيبه شوكة وأنا جالس في أهلي</strong>. وهو أول من سنّ الركعتين عند القتل.\n\nوفي الشهر نفسه، جاء <strong>أبو براء</strong> عامر بن مالك يطلب من يدعو أهل نجد وأعطى الجوار. فبعث ﷺ <strong>سبعين</strong> من خيار أصحابه من أهل الصُّفّة والقرّاء. فلما نزلوا <strong>بئر معونة</strong> غدر بهم <strong>عامر بن الطفيل</strong> واستنفر بني سليم، فقُتلوا جميعاً إلا كعب بن زيد.\n\nفقنت ﷺ شهراً يدعو على قاتليهم. قال أنس: <strong>ما رأيت رسول الله ﷺ وجد على شيء ما وجد عليهم</strong>.",
+  g:"sahih", src:"صحيح البخاري (المغازي، الجهاد)، صحيح مسلم.",
+  ben:[
+   {t:"أشدّ الضربات جاءت من طلب تعليم لا من ساحة قتال. حسن الظن المفرط في التعامل الأمني مكلف جداً.", tags:["takhtit","siyasa"]},
+   {t:"كلمة خبيب على خشبة الصلب أعلى تعبير عن الحب في التاريخ. الولاء الحقيقي يظهر حين لا يبقى ما يُكسب.", tags:["thabat","ukhuwa","ajal"]},
+   {t:"حزن النبي ﷺ الشديد وقنوته شهراً: القائد ينبغي أن يظهر ألمه على من فقد لا أن يتصنّع الجلد.", tags:["qiyada","akhlaq"]},
+   {t:"سبعون من حَمَلة القرآن في يوم. الخسارة البشرية في الكفاءات أفدح من أي خسارة مادية.", tags:["tarbiya","ibtila"]}
+  ], ppl:[]},
+
+ {id:"e62", t:"إجلاء بني النضير", d:"ربيع الأول 4هـ",
+  s:"همّوا بقتل النبي ﷺ غدراً بإلقاء رحى عليه، فحاصرهم فأجلاهم، ونزلت فيهم سورة الحشر.",
+  n:"خرج ﷺ إلى <strong>بني النضير</strong> يستعينهم في دية قتيلين. فقالوا: نعم، اجلس هنا حتى نعطيك. ثم خلا بعضهم ببعض وقالوا: من يعلو على هذا البيت <strong>فيلقي عليه صخرة</strong> فيريحنا منه؟ فانتدب عمرو بن جحّاش.\n\nفأتاه الخبر من السماء، فقام ﷺ مسرعاً كأنه يريد حاجة ورجع إلى المدينة، ثم أمر بحربهم.\n\nفتحصّنوا، وحاصرهم <strong>ستّ ليال</strong> — وقيل خمس عشرة — وأمر بقطع بعض نخلهم وتحريقه للضغط، فقالوا: يا محمد، قد كنت تنهى عن الفساد! فنزلت: {مَا قَطَعْتُم مِّن لِّينَةٍ أَوْ تَرَكْتُمُوهَا قَائِمَةً عَلَىٰ أُصُولِهَا فَبِإِذْنِ اللَّهِ}.\n\nوقد وعدهم <strong>ابن أبيّ</strong> بالنصرة فخذلهم. فنزلوا على الجلاء بشرط أن يحملوا ما استقلّت به الإبل إلا السلاح، فخرجوا إلى <strong>خيبر</strong> وأذرعات. ونزلت فيهم <strong>سورة الحشر</strong> كاملة.",
+  g:"sahih", src:"صحيح البخاري ومسلم، سورة الحشر، سيرة ابن هشام.",
+  ben:[
+   {t:"محاولة الاغتيال الغادرة بعد قبول المساعدة ظاهرياً. احذر من يوافق بسرعة مبالغة ويطلب منك الانتظار.", tags:["siyasa","takhtit"]},
+   {t:"الضغط بقطع النخل خطوة محسوبة لتقصير الحصار وتقليل الدماء. أخفّ الضررين في الحسابات العسكرية.", tags:["awlawiyat","adl"]},
+   {t:"وعد المنافقون بالنصرة وخذلوا: {كَمَثَلِ الشَّيْطَانِ إِذْ قَالَ لِلْإِنسَانِ اكْفُرْ}. من يحرّضك على الصدام غالباً لن يقف معك فيه.", tags:["mukhalif","siyasa"]},
+   {t:"سمح لهم بحمل أموالهم. حتى في لحظة الحسم بقيت العقوبة محدودة الهدف — إنهاء التهديد لا الانتقام.", tags:["afw","adl"]}
+  ], ppl:["ibnubayy","huyayy"]},
+
+ {id:"e63", t:"غزوة الخندق (الأحزاب)", d:"شوال 5هـ",
+  s:"تحالف عشرة آلاف لاستئصال المدينة، فحفر المسلمون خندقاً غير مسبوق، وحاصروا شهراً حتى فرّج الله بريح.",
+  n:"ذهب <strong>حيي بن أخطب</strong> وزعماء بني النضير إلى قريش وغطفان يحرّضونهم، فاجتمع <strong>عشرة آلاف</strong> — أكبر حشد عرفته العرب — لاستئصال المسلمين نهائياً.\n\nفاستشار ﷺ، فأشار <strong>سلمان الفارسي</strong> بـ<strong>حفر خندق</strong> — أسلوب فارسي لم تعرفه العرب. فحفروا خندقاً حول الجهة المكشوفة من المدينة في نحو ستة أيام، والنبي ﷺ يحفر معهم ويحمل التراب حتى وارى التراب بياض بطنه، وهم جوعى قد ربطوا الحجر على بطونهم وربط ﷺ حجرين.\n\nثم اشتدّ البلاء بـ<strong>نقض بني قريظة العهد</strong> من الداخل، فصار المسلمون بين فكّي كمّاشة: {إِذْ جَاءُوكُم مِّن فَوْقِكُمْ وَمِنْ أَسْفَلَ مِنكُمْ وَإِذْ زَاغَتِ الْأَبْصَارُ وَبَلَغَتِ الْقُلُوبُ الْحَنَاجِرَ}.\n\nفاستخدم ﷺ سلاحاً آخر: بعث <strong>نُعيم بن مسعود</strong> — وقد أسلم سرّاً — <strong>ليفرّق بين الأحزاب</strong> بالإشاعة، فنجح في زرع الشك بين قريظة وقريش وغطفان.\n\nثم أرسل الله <strong>ريحاً</strong> قلعت خيامهم، فرحلوا. فقال ﷺ: <strong>«الآن نغزوهم ولا يغزوننا»</strong>.",
+  g:"sahih", src:"صحيح البخاري ومسلم (غزوة الخندق)، سورة الأحزاب 9-27.",
+  ben:[
+   {t:"أخذ ﷺ بفكرة أجنبية عن ثقافة العرب. الحكمة ضالة المؤمن — استورد الحلول الناجعة أينما وُجدت.", tags:["shura","takhtit","mukhalif"]},
+   {t:"سلمان كان مولى عجمياً وصاحب الفكرة التي أنقذت الدولة. لا تحصر الاستشارة في دائرة النخبة الاجتماعية.", tags:["shura","ukhuwa"]},
+   {t:"الحلّ الدفاعي (الخندق) وفّر مواجهة انتحارية مع فارق عددي 1:3. أحياناً أفضل هجوم دفاع مبتكر.", tags:["takhtit","awlawiyat"]},
+   {t:"«الحرب خدعة»: تفكيك التحالف بالمعلومة أرخص وأسرع من كسره بالسلاح. اضرب اللحمة لا الجسد.", tags:["siyasa","takhtit"]},
+   {t:"جاع القائد كما جاع الجندي وربط حجرين لا حجراً. المشاركة في الحرمان تصنع طاعة لا يشتريها راتب.", tags:["qiyada","akhlaq"]},
+   {t:"«الآن نغزوهم ولا يغزوننا» — قراءة صحيحة لتحوّل ميزان القوى. اعرف متى تنتقل من الدفاع للمبادرة.", tags:["siyasa","qiyada"]}
+  ], ppl:["salman","huyayy","abusufyan","saadmuadh","saadubada"]},
+
+ {id:"e64", t:"بنو قريظة وحكم سعد بن معاذ", d:"ذو القعدة 5هـ",
+  s:"نقضوا العهد في أحرج لحظة، فحاصرهم ﷺ فنزلوا على حكم سعد بن معاذ فحكم بقتل المقاتلة.",
+  n:"لما انصرف الأحزاب، جاء جبريل يأمر بالتوجّه إلى <strong>بني قريظة</strong> الذين نقضوا العهد في أحلك لحظة. فحاصرهم ﷺ <strong>خمساً وعشرين ليلة</strong> حتى نزلوا على حكم <strong>سعد بن معاذ</strong> — وكانوا حلفاء الأوس وسعد سيّد الأوس، فرجوا أن يحابيهم.\n\nفجيء بسعد وهو جريح، فقال: <strong>«لقد آن لي أن لا أخاف في الله لومة لائم»</strong>. ثم حكم: <strong>أن تُقتل مقاتلتهم، وتُسبى ذراريهم ونساؤهم، وتُقسم أموالهم</strong>. فقال ﷺ: «لقد حكمت فيهم بحكم الله من فوق سبعة أرقعة».\n\nوهذا الحكم موافق لما في <strong>التوراة نفسها</strong> (سفر التثنية 20) في شأن المدينة الناقضة — أي حُوكموا بشريعتهم.\n\nوعدد من قُتل مختلف فيه، والروايات بين أربعمئة وسبعمئة، وأكثرها في كتب السير لا في الصحيحين. ثم دعا سعد ربه أن يبقيه إن بقي من حرب قريش شيء، فانفجر جرحه فمات.",
+  g:"sahih", src:"صحيح البخاري ومسلم (غزوة بني قريظة، حديث حكم سعد).",
+  ben:[
+   {t:"الخيانة في لحظة الخطر الوجودي أشدّ من العداء المعلن. الغدر من الداخل يُعامل معاملة مختلفة.", tags:["wafa","adl"]},
+   {t:"حُكّم فيهم من ظنّوا أنه سيحابيهم، فحكم بالعدل. القاضي النزيه لا تحرّكه القرابة ولا الحلف.", tags:["adl","thabat"]},
+   {t:"«آن لي ألّا أخاف في الله لومة لائم» — لحظة اختيار بين رضا العشيرة ورضا الله. اللحظة التي تُصنع فيها الرجال.", tags:["thabat","adl"]},
+   {t:"تفويض الحكم لطرف مقبول من الخصم نفسه: ذكاء في إغلاق باب الاعتراض على النتيجة.", tags:["qiyada","siyasa"]}
+  ], ppl:["saadmuadh","huyayy"]},
+
+ {id:"e65", t:"حديث الإفك", d:"شعبان 5 أو 6هـ",
+  s:"اتُّهمت عائشة زوراً فمكث الوحي شهراً، ثم نزلت براءتها في عشر آيات من سورة النور.",
+  n:"في مرجع النبي ﷺ من غزوة بني المصطلق، تخلّفت <strong>عائشة</strong> عن الركب تبحث عن عقد لها، فوجدها <strong>صفوان بن المعطّل</strong> فأركبها ناقته وقادها حتى لحقوا بالجيش.\n\nفتلقّفها <strong>عبد الله بن أُبيّ</strong> فأشاعها وتولّى كِبرها، وخاض معه ناس من المسلمين منهم <strong>حسّان بن ثابت</strong> و<strong>مسطح بن أثاثة</strong> و<strong>حمنة بنت جحش</strong>.\n\nفمرضت عائشة شهراً لا تعلم بشيء، ثم علمت فبكت ليلتين ويوماً لا يرقأ لها دمع. واحتُبس الوحي نحو شهر — وهي مدة قاسية على الجميع.\n\nثم قالت كلمتها: <strong>«والله لا أجد لي ولكم مثلاً إلا أبا يوسف حين قال: فصبر جميل والله المستعان على ما تصفون»</strong>.\n\nفنزلت عشر آيات من <strong>سورة النور</strong> ببراءتها. وحُدّ من خاض بحدّ القذف. وحلف أبو بكر ألا ينفق على مسطح — وكان قريبه وفقيراً — فنزل: {وَلْيَعْفُوا وَلْيَصْفَحُوا ۗ أَلَا تُحِبُّونَ أَن يَغْفِرَ اللَّهُ لَكُمْ}، فقال أبو بكر: بلى والله، وأعاد عليه النفقة.",
+  g:"sahih", src:"صحيح البخاري ومسلم (حديث الإفك المطوّل)، سورة النور 11-20.",
+  ben:[
+   {t:"شهر كامل من الصمت الإلهي رغم قدرة الله على البراءة الفورية. الابتلاء له مدة مقصودة تُستخرج فيها الدروس.", tags:["ibtila","sabr"]},
+   {t:"الشائعة سلاح فتّاك يخترق أحصن البيوت. تشريع حدّ القذف وأدب {لَوْلَا إِذْ سَمِعْتُمُوهُ ظَنَّ الْمُؤْمِنُونَ} علاج جذري.", tags:["ilam","adl","akhlaq"]},
+   {t:"أبو بكر أعاد النفقة لمن آذى ابنته لأجل آية واحدة. العفو عن المسيء أعلى مقامات الإيمان العملي.", tags:["afw","akhlaq"]},
+   {t:"شارك في الإشاعة مسلمون صادقون. حسن النية لا يعفي من مسؤولية النقل بلا تثبّت.", tags:["ilam","sidq"]},
+   {t:"عائشة لجأت للصبر الجميل ولم تدافع بانفعال. حين تُتّهم ظلماً ولا دليل بيدك، اصمت واصبر ودع الحق يتكلم.", tags:["sabr","maraa"]}
+  ], ppl:["aisha","abubakr","ibnubayy"]}
+]},
+
+{
+id:"expand", t:"التمكين والانتشار", era:"6 — 8 هـ", c:"#D8A93F",
+d:"من صلح ظنّه الناس هزيمة إلى فتح مكة: ثلاث سنوات غيّرت خريطة الجزيرة العربية كلها.",
+ev:[
+ {id:"e66", t:"صلح الحديبية", d:"ذو القعدة 6هـ",
+  s:"خرج ﷺ معتمراً فصدّته قريش، فعقد صلحاً بدت شروطه مجحفة، فسمّاه القرآن فتحاً مبيناً.",
+  n:"رأى ﷺ في المنام أنه يدخل المسجد الحرام، فخرج في <strong>ألف وأربعمئة</strong> معتمرين لا محاربين، ساقوا الهدي وأحرموا ليعلم الناس أنهم لا يريدون قتالاً.\n\nفصدّتهم قريش. فتفاوض <strong>سهيل بن عمرو</strong> واتُّفق على صلح بنود ظاهرها مجحف:\n<strong>1.</strong> يرجعون هذا العام ويعتمرون في القابل ثلاثة أيام.\n<strong>2.</strong> <strong>هدنة عشر سنين</strong>.\n<strong>3.</strong> <strong>من أتى محمداً من قريش بغير إذن وليّه ردّه، ومن أتى قريشاً من المسلمين لم يُردّ</strong>.\n<strong>4.</strong> من أحبّ أن يدخل في عهد محمد دخل، ومن أحبّ عهد قريش دخل.\n\nواعترض <strong>سهيل</strong> على كتابة «بسم الله الرحمن الرحيم» فكُتب «باسمك اللهم»، وعلى «محمد رسول الله» فمحاها النبي ﷺ بيده وكتب «محمد بن عبد الله».\n\nفكرب الصحابة كرباً شديداً، وراجع <strong>عمر</strong> النبيَّ ﷺ بشدة. ولما أمرهم بالنحر والحلق لم يقم أحد ثلاثاً، فأشارت <strong>أم سلمة</strong>: اخرج ثم لا تكلّم أحداً حتى تنحر وتحلق. ففعل، فقاموا يتبعونه.\n\nثم نزلت: {إِنَّا فَتَحْنَا لَكَ فَتْحًا مُّبِينًا}. ودخل في الإسلام في السنتين التاليتين أكثر ممن دخل في العشرين سنة السابقة.",
+  g:"sahih", src:"صحيح البخاري ومسلم (كتاب الشروط، غزوة الحديبية)، سورة الفتح.",
+  ben:[
+   {t:"البند الذي بدا أشدّ إجحافاً (ردّ من أسلم) صار سبب انتشار الإسلام في مكة نفسها. لا تحكم على بند بمعزل عن الصورة الكاملة.", tags:["siyasa","awlawiyat"]},
+   {t:"تنازل عن الشكليات (البسملة، وصف الرسالة) وتمسّك بالجوهر (الهدنة والاعتراف). فرّق بين الرمز والمكسب.", tags:["awlawiyat","siyasa","thabat"]},
+   {t:"مشورة أم سلمة أنقذت الموقف كله. حين يستعصي أمرك على منطقك، اسأل من هو خارج ضغط اللحظة.", tags:["shura","maraa"]},
+   {t:"غيّر ﷺ الأسلوب من الأمر إلى القدوة الصامتة حين لم يستجب الناس. القائد يبدّل أدواته لا مبادئه.", tags:["qiyada","tarbiya"]},
+   {t:"الهدنة حرّرت الجبهة الجنوبية فتفرّغ لخيبر والشمال. الصلح مع طرف يعني تركيز القوة على آخر.", tags:["siyasa","takhtit"]},
+   {t:"عمر راجع بشدة ثم ندم وكفّر عن ذلك. الاعتراض المخلص ليس عيباً، والإصرار عليه بعد التبيّن هو العيب.", tags:["shura","sidq"]}
+  ], ppl:["suhayl","umar","umsalama","uthman","abubakr"]},
+
+ {id:"e67", t:"بيعة الرضوان", d:"ذو القعدة 6هـ — قبل الصلح",
+  s:"شاع مقتل عثمان في مكة فبايع النبيُّ ﷺ أصحابَه تحت الشجرة على الموت، فنزل رضا الله عنهم.",
+  n:"بعث ﷺ <strong>عثمان بن عفان</strong> إلى مكة يخبر قريشاً أنهم جاؤوا معتمرين، فاحتبسته قريش. <strong>فشاع أنه قُتل</strong>.\n\nفدعا ﷺ الناس إلى البيعة تحت <strong>شجرة سَمُرة</strong>، فبايعوه على ألا يفرّوا — وقال جابر: بايعناه على الموت. فبايعهم جميعاً، ثم <strong>ضرب بإحدى يديه على الأخرى</strong> وقال: «هذه عن عثمان».\n\nفبلغ قريشاً الخبر <strong>فرعبوا</strong>، وأرسلوا عثمان سالماً وسارعوا إلى الصلح.\n\nفنزلت: {لَّقَدْ رَضِيَ اللَّهُ عَنِ الْمُؤْمِنِينَ إِذْ يُبَايِعُونَكَ تَحْتَ الشَّجَرَةِ فَعَلِمَ مَا فِي قُلُوبِهِمْ فَأَنزَلَ السَّكِينَةَ عَلَيْهِمْ}. وقال ﷺ: <strong>«لا يدخل النار أحد ممن بايع تحت الشجرة»</strong>. وكانوا نحو ألف وأربعمئة.\n\nولاحظ: قُطعت الشجرة بعد ذلك في عهد عمر لما رأى الناس يتبرّكون بها — سدّاً لذريعة الشرك.",
+  g:"sahih", src:"صحيح البخاري ومسلم (المغازي، فضائل أصحاب الشجرة)، سورة الفتح 18.",
+  ben:[
+   {t:"استثمار لحظة الغضب الجماعي في بيعة منظمة بدل انفجار عشوائي. القائد يوجّه الطاقة لا يكبتها.", tags:["qiyada","siyasa"]},
+   {t:"البيعة نفسها كانت رسالة ردع فحقّقت الهدف دون قتال. أحياناً إظهار الاستعداد يُغني عن الاستخدام.", tags:["siyasa","ilam"]},
+   {t:"«هذه عن عثمان» — القائد يمثّل الغائب ولا ينساه. الوفاء لمن يُضحّي في مهمة بعيدة.", tags:["wafa","ukhuwa"]},
+   {t:"قطع عمر للشجرة: إغلاق باب الغلوّ ولو في رمز مقدّس. حماية التوحيد أولى من حفظ الأثر.", tags:["awlawiyat","thabat"]}
+  ], ppl:["uthman"]},
+
+ {id:"e68", t:"الرسائل إلى الملوك", d:"محرم 7هـ",
+  s:"أرسل ﷺ كتباً إلى هرقل وكسرى والمقوقس والنجاشي وغيرهم يدعوهم للإسلام — نقلة في التفكير الاستراتيجي.",
+  n:"بعد أن أمّن الجبهة الداخلية بالحديبية، أرسل ﷺ <strong>ستة أو ثمانية رسل</strong> في يوم واحد إلى ملوك الأرض. واتُّخذ <strong>خاتم من فضة</strong> نقشه «محمد رسول الله» لأنهم لا يقرؤون كتاباً غير مختوم.\n\nومن أشهرها كتابه إلى <strong>هرقل</strong> عظيم الروم: «بسم الله الرحمن الرحيم، من محمد عبد الله ورسوله إلى هرقل عظيم الروم، سلام على من اتّبع الهدى... أسلم تسلم، يؤتك الله أجرك مرتين...» وفيه: {يَا أَهْلَ الْكِتَابِ تَعَالَوْا إِلَىٰ كَلِمَةٍ سَوَاءٍ بَيْنَنَا وَبَيْنَكُمْ}.\n\nوقد سأل هرقل <strong>أبا سفيان</strong> — وكان تاجراً بالشام حينها — أسئلة دقيقة عن النبي ﷺ، فشهد أبو سفيان بالحق وهو عدوّ، فقال هرقل: <strong>إن كان ما تقول حقاً فسيملك موضع قدميّ هاتين</strong>.\n\nأما <strong>كسرى</strong> فمزّق الكتاب، فقال ﷺ: «مزّق الله ملكه». والمقوقس ردّ رداً حسناً وأهدى، والنجاشي أسلم.",
+  g:"sahih", src:"صحيح البخاري (بدء الوحي، حديث هرقل وأبي سفيان)، صحيح مسلم.",
+  ben:[
+   {t:"الانتقال من الدفاع المحلي إلى الخطاب العالمي في اللحظة المناسبة. وسّع أفقك حين تستقرّ قاعدتك.", tags:["ilam","takhtit","siyasa"]},
+   {t:"«أسلم تسلم» — رسالة قصيرة محدّدة بلا حشو. الخطاب الرسمي الموجز أوقع من الطويل.", tags:["ilam"]},
+   {t:"صنع خاتماً لأن العرف الدولي يقتضيه. احترام أعراف من تخاطبه شرط لوصول رسالتك.", tags:["ilam","mukhalif"]},
+   {t:"أبو سفيان شهد بالحق وهو عدوّ خوفاً من وصمة الكذب. المروءة تُلجم أحياناً حتى الخصم.", tags:["sidq","mukhalif"]},
+   {t:"وجّه الدعوة لأصحاب القرار مباشرة. رأس الهرم إن استجاب اختصر عليك سنوات.", tags:["takhtit","qiyada"]}
+  ], ppl:["abusufyan","najashi"]},
+
+ {id:"e69", t:"غزوة خيبر", d:"محرم 7هـ",
+  s:"فتح ﷺ حصون خيبر معقل التآمر اليهودي، وأقرّ أهلها على العمل في الأرض بنصف الثمر.",
+  n:"كانت <strong>خيبر</strong> — على نحو مئة ميل شمال المدينة — مركز التآمر بعد إجلاء بني النضير إليها، وفيها حصون منيعة وسلاح ومال.\n\nخرج ﷺ في <strong>ألف وأربعمئة</strong> — من شهد الحديبية فقط، وفاءً بوعد الله لهم بالمغانم. وسار ليلاً <strong>ليحول بين خيبر وحلفائهم من غطفان</strong>. وصل فجراً فوجدهم خارجين بمساحيهم إلى مزارعهم.\n\nوقال يوم الحصار: <strong>«لأعطينّ الراية غداً رجلاً يحب الله ورسوله ويحبه الله ورسوله»</strong>، فبات الناس يدوكون أيهم يُعطاها، فأعطاها <strong>علي بن أبي طالب</strong> وكان أرمد فبصق في عينه فبرأ. وفُتح على يديه حصن القموص.\n\nثم سأل يهود خيبر أن يُقرّهم على الأرض <strong>يعملون فيها بنصف الثمر</strong> فقبل — وهي أصل <strong>المزارعة</strong>.\n\nوفيها حاولت <strong>امرأة</strong> تسميمه ﷺ في شاة مصلية، فأخبره الذراع، وقد أثّر السمّ فيه حتى قال في مرض موته: «ما زلت أجد ألم الطعام الذي أكلت بخيبر».",
+  g:"sahih", src:"صحيح البخاري ومسلم (غزوة خيبر، فضائل علي، المزارعة).",
+  ben:[
+   {t:"العزل الاستراتيجي: قطع الطريق بين خيبر وغطفان قبل الهجوم. افصل خصمك عن حلفائه أولاً.", tags:["takhtit","siyasa"]},
+   {t:"«يحبّ الله ورسوله ويحبّه الله ورسوله» — المعيار في الاختيار للمنصب هو الصلة بالله لا الحماس وحده.", tags:["qiyada","tarbiya"]},
+   {t:"الإبقاء على أهل الأرض عاملين فيها بنصف الثمر: حل اقتصادي عملي يحفظ الإنتاج ولا يفرّغ الأرض.", tags:["mal","adl","mukhalif"]},
+   {t:"أثر السم بقي في جسده الشريف سنوات. أثقال المسؤولية تترك آثاراً لا تراها العيون.", tags:["ajal","sabr"]}
+  ], ppl:["ali","abubakr","umar"]},
+
+ {id:"e70", t:"عمرة القضاء", d:"ذو القعدة 7هـ",
+  s:"دخل ﷺ مكة معتمراً بموجب صلح الحديبية، فرأت قريش قوة المسلمين وانضباطهم بأعينها.",
+  n:"لما حلّ الأجل خرج ﷺ في <strong>ألفين</strong> يقضون عمرتهم بموجب بنود الحديبية. فخلت مكة منهم — صعدوا الجبال ينظرون — وكانوا قد قالوا: يقدم عليكم قوم قد وهنتهم حُمّى يثرب.\n\nفأمر ﷺ أصحابه أن <strong>يرملوا</strong> — أي يسرعوا في المشي مع تقارب الخطى مظهرين الجَلَد — في الأشواط الثلاثة الأولى، وأن يضطبعوا بأرديتهم كاشفين المناكب الأيمن. فقالت قريش: <strong>هؤلاء الذين زعمتم أن الحمّى وهنتهم؟ هؤلاء أجلد من كذا وكذا</strong>.\n\nوأقام ثلاثة أيام. وتزوّج فيها <strong>ميمونة بنت الحارث</strong>. وأمر بلالاً فأذّن فوق الكعبة.\n\nوكان لهذه العمرة أثر نفسي هائل: رأت قريش <strong>الانضباط والقوة والوقار</strong>. وأسلم بعدها بأشهر <strong>خالد بن الوليد وعمرو بن العاص وعثمان بن طلحة</strong> — ثلاثة من أهم قادة قريش.",
+  g:"sahih", src:"صحيح البخاري ومسلم (كتاب الحج، باب الرمل، عمرة القضاء).",
+  ben:[
+   {t:"إظهار القوة بلا استفزاز أو دماء: رسالة كاملة أوصلها الرمل في الطواف. الصورة أبلغ من الخطبة.", tags:["ilam","siyasa"]},
+   {t:"الالتزام الحرفي بالاتفاق (ثلاثة أيام ثم الخروج) بنى ثقة أثمرت لاحقاً. الوفاء استثمار طويل الأجل.", tags:["wafa","siyasa"]},
+   {t:"ثلاثة من أعظم قادة قريش أسلموا بعد أن رأوا لا بعد أن سمعوا. المشاهدة تُقنع ما لا يُقنعه الجدل.", tags:["ilam","hiwar"]},
+   {t:"الرد على الحرب النفسية بحرب نفسية مضادة — لا بالغضب ولا بالتبرير.", tags:["ilam","siyasa"]}
+  ], ppl:["bilal","khalid","amr"]},
+
+ {id:"e71", t:"غزوة مؤتة", d:"جمادى الأولى 8هـ",
+  s:"ثلاثة آلاف في مواجهة جيش رومي هائل، استُشهد الأمراء الثلاثة فأنقذ خالد الجيش بانسحاب بارع.",
+  n:"قُتل رسول النبي ﷺ إلى بُصرى — <strong>الحارث بن عمير</strong> — على يد عامل الغساسنة، وقتل الرسل من أفظع نقض الأعراف. فبعث ﷺ <strong>ثلاثة آلاف</strong> إلى <strong>مؤتة</strong> بأرض الشام.\n\nوأمّر عليهم <strong>زيد بن حارثة</strong>، وقال: <strong>«فإن أُصيب زيد فجعفر، فإن أُصيب جعفر فعبد الله بن رواحة»</strong> — تخطيط للتعاقب القيادي غير مسبوق.\n\nفلما بلغوا الشام علموا أن الروم وحلفاءهم من العرب في جيش عظيم تذكر الروايات أنه بلغ عشرات الألوف (وبعض الأرقام المذكورة مبالغ فيها عند المحققين). فتشاوروا، فحمّسهم ابن رواحة: <strong>«ما نقاتل الناس بعدد ولا قوة، إنما نقاتلهم بهذا الدين... فإما ظهور وإما شهادة»</strong>.\n\nفاستُشهد <strong>زيد</strong> ثم <strong>جعفر</strong> — وقُطعت يداه فسُمّي ذا الجناحين — ثم <strong>ابن رواحة</strong>. فاصطلح الناس على <strong>خالد بن الوليد</strong>، فغيّر ترتيب الجيش ليوهم العدو بمدد جديد، ثم انسحب بالجيش سالماً. فسمّاه ﷺ <strong>سيف الله</strong>.\n\nوأخبر ﷺ أصحابه بالمدينة بالخبر قبل أن يصل الرسول، وعيناه تذرفان.",
+  g:"sahih", src:"صحيح البخاري (غزوة مؤتة، مناقب خالد)، سيرة ابن هشام.",
+  ben:[
+   {t:"تحديد ثلاثة قادة بالتسلسل قبل المعركة — خطة تعاقب (Succession Plan) قبل أربعة عشر قرناً. من يخلفك في مشروعك؟", tags:["takhtit","qiyada"]},
+   {t:"الانسحاب المنظّم بجيش كامل نصر لا هزيمة. حفظ الأرواح والموارد قرار شجاع يحتاج ثقة أكبر من الاندفاع.", tags:["qiyada","awlawiyat"]},
+   {t:"«إنما نقاتلهم بهذا الدين» — الفارق العددي 1:20 لم يمنع الإقدام لأن الميزان مختلف. لا تُقاس المشاريع بالموارد وحدها.", tags:["tawakkul","thabat"]},
+   {t:"خالد ابتكر تكتيك تبديل الميمنة والميسرة لإيهام العدو بالمدد. الابتكار الميداني يعوّض النقص العددي.", tags:["takhtit"]},
+   {t:"قتل الرسول والسفير خرق لكل الأعراف — والدولة التي لا تحمي مبعوثيها تفقد هيبتها.", tags:["siyasa","adl"]}
+  ], ppl:["zayd","jafar","khalid"]},
+
+ {id:"e72", t:"فتح مكة", d:"20 رمضان 8هـ",
+  s:"نقضت قريش الصلح فزحف ﷺ بعشرة آلاف، ودخل مكة بلا قتال يُذكر، وقال: اذهبوا فأنتم الطلقاء.",
+  n:"أعانت قريش حلفاءها <strong>بني بكر</strong> على <strong>خزاعة</strong> حلفاء النبي ﷺ فقتلوهم في الحرم — نقضاً صريحاً للصلح. فاستصرخ عمرو بن سالم الخزاعي النبيَّ ﷺ فقال: <strong>«نُصرت يا عمرو بن سالم»</strong>.\n\nفتجهّز في <strong>سرّية تامة</strong> ودعا: «اللهم خذ العيون والأخبار عن قريش». وحين كتب <strong>حاطب بن أبي بلتعة</strong> كتاباً ينذرهم، أُدرك الكتاب مع امرأة في ظعينتها، فاعتذر حاطب بأنه أراد يداً عند القوم يحمي بها أهله، فصدّقه ﷺ لأنه شهد بدراً.\n\nخرج في <strong>عشرة آلاف</strong>، ونزل بمرّ الظهران فأمر بإيقاد <strong>عشرة آلاف نار</strong>. فجاء <strong>أبو سفيان</strong> فأسلم، فقال ﷺ: <strong>«من دخل دار أبي سفيان فهو آمن، ومن أغلق بابه فهو آمن، ومن دخل المسجد فهو آمن»</strong>.\n\nودخل مكة <strong>مطأطئاً رأسه تواضعاً</strong> حتى كادت لحيته تمسّ رحله، يقرأ سورة الفتح. وطاف وكسر الأصنام وهو يقول {جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ}.\n\nثم قال لقريش: <strong>«ما تظنّون أني فاعل بكم؟»</strong> قالوا: أخ كريم وابن أخ كريم. قال: <strong>«اذهبوا فأنتم الطلقاء»</strong>.",
+  g:"sahih", src:"صحيح البخاري ومسلم (كتاب المغازي، فتح مكة).",
+  ben:[
+   {t:"«اذهبوا فأنتم الطلقاء» — أعظم عفو عام في التاريخ عن من قتلوا وعذّبوا وحاصروا عشرين سنة. العفو عند القدرة قمة القوة.", tags:["afw","qiyada","akhlaq"]},
+   {t:"نصرة الحليف فوراً وبلا تردد. من لا ينصر حلفاءه يفقدهم ويفقد كل حليف محتمل.", tags:["wafa","siyasa"]},
+   {t:"عفا عن حاطب ونظر إلى سجلّه كله لا إلى زلّته. حاسب الناس بمجموع تاريخهم لا بلحظة واحدة.", tags:["afw","qiyada"]},
+   {t:"دخل مطأطئاً في أعظم لحظات نصره. النصر أخطر اختبار للتواضع من الهزيمة.", tags:["akhlaq","qiyada"]},
+   {t:"«من أغلق بابه فهو آمن» — تخفيض التصعيد بمنح مخارج آمنة للجميع. لا تحاصر خصمك بلا باب خروج.", tags:["siyasa","afw"]},
+   {t:"السرية التامة وعشرة آلاف نار: خدعة عسكرية وحرب نفسية حقّقتا الفتح بأقل الدماء.", tags:["takhtit","ilam"]}
+  ], ppl:["abusufyan","khalid","bilal","ali","hind","suhayl"]},
+
+ {id:"e73", t:"غزوة حنين وحصار الطائف", d:"شوال 8هـ",
+  s:"أعجب المسلمون بكثرتهم فانهزموا أول الأمر، ثم ثبت النبي ﷺ فردّ الله النصر.",
+  n:"بعد الفتح جمعت <strong>هوازن وثقيف</strong> نحو عشرين ألفاً بقيادة <strong>مالك بن عوف</strong>، وأخرجوا معهم الأموال والنساء والذراري ليقاتل كل عن أهله.\n\nخرج ﷺ في <strong>اثني عشر ألفاً</strong> — أكبر جيش للمسلمين حتى ذلك اليوم — فقال بعضهم: <strong>لن نُغلب اليوم من قلّة</strong>. فساءت الكلمة.\n\nوكمنت هوازن في وادي <strong>حنين</strong>، فلما انحدر المسلمون في الغَلَس رشقوهم بالنبل فجأة، فانهزم الناس هزيمة منكرة. وثبت النبي ﷺ على بغلته يقول: <strong>«أنا النبي لا كذب، أنا ابن عبد المطلب»</strong>، ومعه نفر قليل، والعباس آخذ بلجامه.\n\nفأمر العباس أن ينادي: يا أصحاب السمرة! فرجعوا وكرّوا، فأنزل الله سكينته ونصره: {وَيَوْمَ حُنَيْنٍ إِذْ أَعْجَبَتْكُمْ كَثْرَتُكُمْ فَلَمْ تُغْنِ عَنكُمْ شَيْئًا}.\n\nثم حاصر <strong>الطائف</strong> بضعة عشر يوماً ولم تُفتح، فرفع الحصار ودعا لثقيف بالهداية — <strong>فأسلمت بعد عام طوعاً</strong>.",
+  g:"sahih", src:"صحيح البخاري ومسلم (غزوة حنين)، سورة التوبة 25-26.",
+  ben:[
+   {t:"الإعجاب بالعدد والقوة سبب مباشر للهزيمة — والقرآن نصّ على ذلك. الغرور بالموارد أخطر من قلّتها.", tags:["ibtila","tawakkul"]},
+   {t:"ثبات القائد وحده أعاد الجيش المنهزم. حين ينهار الجميع، وجود شخص واحد ثابت يكفي لإعادة البناء.", tags:["qiyada","thabat"]},
+   {t:"«يا أصحاب السمرة» — النداء بالذكرى المشتركة أسرع من الأمر العسكري. ذكّر فريقك بلحظة التزامهم الأولى.", tags:["qiyada","ukhuwa"]},
+   {t:"رفع الحصار عن الطائف ثم أسلمت طوعاً بعد عام. الانسحاب من معركة متعثّرة قد يكون طريق الفوز بها.", tags:["awlawiyat","siyasa","sabr"]}
+  ], ppl:["khalid","abubakr"]},
+
+ {id:"e74", t:"قسمة غنائم حنين وعتاب الأنصار", d:"عقب حنين",
+  s:"أعطى ﷺ المؤلفة قلوبهم عطايا ضخمة فوجد بعض الأنصار، فخطب فيهم خطبة أبكتهم.",
+  n:"قسم ﷺ الغنائم فأعطى <strong>المؤلفة قلوبهم</strong> من طلقاء قريش عطايا ضخمة: أعطى أبا سفيان مئة من الإبل، وصفوان بن أمية وادياً مملوءاً نعماً، ولم يُعطِ <strong>الأنصار</strong> شيئاً.\n\nفوجد في أنفس بعض شبابهم وقالوا: يغفر الله لرسول الله، يعطي قريشاً ويتركنا وسيوفنا تقطر من دمائهم!\n\nفجمعهم ﷺ وخطب فيهم: <strong>«يا معشر الأنصار، ما قالة بلغتني عنكم؟ ألم آتكم ضلّالاً فهداكم الله، وعالة فأغناكم الله، وأعداء فألّف الله بين قلوبكم؟»</strong> قالوا: بل الله ورسوله أمنّ وأفضل.\n\nثم قال: <strong>«أما ترضون أن يذهب الناس بالشاة والبعير وترجعون برسول الله إلى رحالكم؟ فوالذي نفسي بيده لولا الهجرة لكنت امرأً من الأنصار... اللهم ارحم الأنصار وأبناء الأنصار وأبناء أبناء الأنصار»</strong>.\n\nفبكوا حتى أخضلوا لحاهم وقالوا: رضينا برسول الله قَسْماً وحظاً.",
+  g:"sahih", src:"صحيح البخاري ومسلم (غزوة حنين، مناقب الأنصار).",
+  ben:[
+   {t:"وزّع المال على من يحتاج ترغيباً، وأعطى أهل الإيمان ما هو أثمن منه. العدل ليس التساوي بل وضع كل شيء موضعه.", tags:["adl","mal","qiyada"]},
+   {t:"واجه الشائعة الداخلية مباشرة ولم يتجاهلها. الامتعاض المكتوم يتحوّل انشقاقاً إن أُهمل.", tags:["qiyada","ilam"]},
+   {t:"بدأ بالتذكير بالفضل قبل العتاب، ثم انتهى بالدعاء لهم. هندسة كاملة لخطاب معالجة الأزمة الداخلية.", tags:["hiwar","qiyada"]},
+   {t:"استخدام المال في كسب القلوب أثمر: صار كثير من المؤلَّفة من خيار المسلمين. الاستثمار في الإنسان أعلى عائداً.", tags:["mal","siyasa","afw"]}
+  ], ppl:["abusufyan","saadubada"]}
+]},
+
+{
+id:"complete", t:"اكتمال الدين والرحيل", era:"9 — 11 هـ", c:"#8FA8C4",
+d:"عامان من التمكين الكامل، ثم خطبة وداع تختصر الرسالة، ثم رحيل هادئ في بيت عائشة.",
+ev:[
+ {id:"e75", t:"غزوة تبوك: جيش العسرة", d:"رجب 9هـ",
+  s:"خرج ﷺ في ثلاثين ألفاً في قيظ شديد وعسرة إلى تخوم الروم، فلم يلقَ قتالاً وعاد بمكاسب سياسية.",
+  n:"بلغه ﷺ أن الروم تجمع لغزو المدينة. فدعا الناس للخروج وهو <strong>وقت قيظ شديد وعسرة ومجاعة وطيب الثمار</strong>. وخلافاً لعادته صرّح بالوجهة لبُعد المسافة وشدّة الأمر.\n\nفحثّ على النفقة، فجهّز <strong>عثمان</strong> ثلث الجيش وقيل أكثر، وجاء <strong>أبو بكر</strong> بماله كله فقال ﷺ: ما أبقيت لأهلك؟ قال: أبقيت لهم الله ورسوله. وجاء <strong>عمر</strong> بنصف ماله. وجاء الفقراء يبكون ألا يجدوا ما يحملهم فنزل فيهم {تَوَلَّوا وَّأَعْيُنُهُمْ تَفِيضُ مِنَ الدَّمْعِ}.\n\nخرج في <strong>ثلاثين ألفاً</strong> وتخلّف المنافقون واعتذروا بالأعذار الكاذبة، وبُني <strong>مسجد الضرار</strong> فأمر بهدمه عند الرجوع.\n\nفلما بلغ تبوك لم يجد جمعاً، فأقام نحو عشرين ليلة. وجاءه <strong>يُحنّة بن رؤبة</strong> صاحب أيلة فصالحه على الجزية، وكذلك أهل جَرْباء وأذرح ودومة الجندل.\n\nفكانت النتيجة: <strong>هيبة سياسية على حدود الروم دون قتال</strong>، وبها انتهى عصر الغزوات.",
+  g:"sahih", src:"صحيح البخاري ومسلم (غزوة تبوك، حديث كعب بن مالك)، سورة التوبة.",
+  ben:[
+   {t:"أشدّ اختبار كان في أصعب الظروف لا أيسرها. الاستنفار وقت الرخاء لا يكشف شيئاً.", tags:["ibtila","tarbiya"]},
+   {t:"«أبقيت لهم الله ورسوله» — سقف البذل ليس له حدّ عند من عرف حقيقة الملك. راجع سقف عطائك.", tags:["mal","thabat"]},
+   {t:"بكاء من عجز عن المشاركة: الحماس للمشروع يُقاس بحزنك حين تُمنع منه لا بفرحك حين تُدعى إليه.", tags:["ukhuwa","ibtila"]},
+   {t:"تحقيق الهدف الاستراتيجي (الهيبة والمعاهدات) دون معركة واحدة. النصر ليس بالضرورة قتالاً.", tags:["siyasa","takhtit"]},
+   {t:"هدم مسجد الضرار: المبنى الذي يُتّخذ أداةً للتفريق لا حرمة له مهما كان اسمه.", tags:["qiyada","mukhalif"]}
+  ], ppl:["uthman","abubakr","umar","kaabmalik"]},
+
+ {id:"e76", t:"الثلاثة الذين خُلِّفوا", d:"عقب تبوك — 9هـ",
+  s:"صدق ثلاثة فلم يعتذروا بكذب، فهُجروا خمسين ليلة حتى نزلت توبتهم في القرآن.",
+  n:"لما رجع ﷺ جاء المنافقون يعتذرون ويحلفون، فقبل ﷺ علانيتهم ووكل سرائرهم إلى الله. وتخلّف ثلاثة من المؤمنين الصادقين بلا عذر: <strong>كعب بن مالك، ومرارة بن الربيع، وهلال بن أمية</strong>.\n\nفقال كعب: <strong>«والله ما كان لي عذر، والله ما كنت قط أقوى ولا أيسر مني حين تخلّفت عنه»</strong>. ثم قال: <strong>«والله لئن حدّثته اليوم حديث كذب يرضى به عني ليوشكنّ الله أن يُسخطك عليّ»</strong>.\n\nفأمر ﷺ المسلمين <strong>بمقاطعتهم خمسين ليلة</strong>: لا يكلّمهم أحد. حتى تنكّرت لهم الأرض، وسلّم كعب على النبي ﷺ فلم يردّ. وبعد أربعين أُمروا باعتزال نسائهم. وجاءه كتاب من ملك غسّان يستميله، فأحرقه في التنور.\n\nحتى <strong>ضاقت عليهم الأرض بما رحبت</strong>، ثم نزلت توبتهم: {وَعَلَى الثَّلَاثَةِ الَّذِينَ خُلِّفُوا حَتَّىٰ إِذَا ضَاقَتْ عَلَيْهِمُ الْأَرْضُ بِمَا رَحُبَتْ...}.\n\nفقال كعب: <strong>«ما أنعم الله عليّ نعمة قط بعد أن هداني للإسلام أعظم في نفسي من صدقي لرسول الله ﷺ»</strong>.",
+  g:"sahih", src:"صحيح البخاري ومسلم (حديث كعب بن مالك الطويل)، سورة التوبة 118.",
+  ben:[
+   {t:"العقوبة نالت الصادق ونجا منها الكاذب مؤقتاً — ثم كانت العاقبة عكسية تماماً. الصدق مُرّ عاجلاً حلوٌ آجلاً.", tags:["sidq","ibtila"]},
+   {t:"رفض عرض ملك غسّان في أضعف لحظاته. من ثبت وقت الطرد من الجماعة فهو صادق الانتماء حقاً.", tags:["thabat","wafa"]},
+   {t:"المقاطعة كأداة تربوية مؤقتة لا انتقامية، وانتهت بالعفو الكامل والاحتفاء. العقوبة وسيلة لا غاية.", tags:["tarbiya","qiyada","afw"]},
+   {t:"كعب اعتبر صدقه أعظم نعمة بعد الإسلام. قيّم قراراتك بمعيار: ماذا سيبقى منها بعد عشرين سنة؟", tags:["sidq","ajal"]}
+  ], ppl:["kaabmalik"]},
+
+ {id:"e77", t:"عام الوفود", d:"9 — 10 هـ",
+  s:"بعد الفتح تدفّقت وفود القبائل من كل الجزيرة معلنة إسلامها، فدخل الناس في دين الله أفواجاً.",
+  n:"لما فُتحت مكة — وكانت العرب تنتظر ما تصنع قريش — <strong>تدفّقت الوفود</strong> من كل الجزيرة. قال عمرو بن سلمة: كانت العرب تلوّم بإسلامهم الفتح، فلما فُتحت مكة قالوا: <strong>دعوه وقومه، فإن ظهر عليهم فهو نبي صادق</strong>.\n\nفوفد أكثر من <strong>سبعين وفداً</strong>: عبد القيس، وبنو تميم، وطيّئ، وثقيف، وهمْدان، ونجران، وكندة، وغيرها. ونزلت {إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ * وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا}.\n\nومن أشهرها: <strong>وفد نجران</strong> النصارى، حاجّوه في عيسى عليه السلام، فدعاهم إلى <strong>المباهلة</strong>، فأبوا وصالحوه على الجزية. ووفد <strong>ثقيف</strong> اشترطوا ألا يكسروا صنمهم اللات بأيديهم وألا يصلّوا، فأبى ﷺ الصلاة وقال: «لا خير في دين لا صلاة فيه»، وسامح في هدم الصنم بيد غيرهم.\n\nوكان ﷺ يُكرم الوفود ويأمر بإنزالهم، ويبعث معهم معلّمين وأمراء وجباة.",
+  g:"sahih", src:"صحيح البخاري (كتاب المغازي، باب الوفود)، سورة النصر، سيرة ابن هشام.",
+  ben:[
+   {t:"العرب انتظرت عشرين سنة ثم أسلمت في عامين. الثمرة تنضج دفعة واحدة بعد عمر طويل من السقي.", tags:["sabr","tadarruj","tawakkul"]},
+   {t:"رفض التنازل عن الصلاة وتساهل في طريقة هدم الصنم. اعرف الفارق بين أصل لا يُمسّ وشكل يُتفاوض فيه.", tags:["thabat","awlawiyat","siyasa"]},
+   {t:"بعث معلّمين مع كل وفد. الاتفاق بلا متابعة ميدانية يتحوّل ورقاً — التمكين يحتاج بنية تحتية بشرية.", tags:["tarbiya","qiyada","takhtit"]},
+   {t:"إكرام الوفود وحسن الاستقبال كان جزءاً من الرسالة. أول انطباع يصنع نصف القرار.", tags:["akhlaq","ilam"]}
+  ], ppl:[]},
+
+ {id:"e78", t:"حجة الوداع", d:"ذو الحجة 10هـ",
+  s:"حجّ ﷺ حجته الوحيدة مع أكثر من مئة ألف، وخطب خطبة جمعت أصول الدين وحقوق الإنسان.",
+  n:"حجّ ﷺ حجته الوحيدة بعد الهجرة، وخرج معه <strong>أكثر من مئة ألف</strong>. وقال: <strong>«لتأخذوا عني مناسككم، فإني لا أدري لعلّي لا ألقاكم بعد عامي هذا»</strong> — إشارة إلى دنوّ الأجل.\n\nوخطب يوم عرفة بـ<strong>خطبة الوداع</strong> ومنها:\n• <strong>«إن دماءكم وأموالكم وأعراضكم عليكم حرام، كحرمة يومكم هذا في شهركم هذا في بلدكم هذا»</strong>.\n• <strong>«وإن ربا الجاهلية موضوع، وأول ربا أضع ربانا: ربا العباس بن عبد المطلب»</strong> — بدأ بأهله.\n• <strong>«وكل دم من دم الجاهلية موضوع، وأول دم أضع دم ابن ربيعة بن الحارث»</strong>.\n• <strong>«فاتقوا الله في النساء، فإنكم أخذتموهن بأمان الله»</strong>.\n• <strong>«وقد تركت فيكم ما لن تضلّوا بعده إن اعتصمتم به: كتاب الله»</strong>.\n• <strong>«ألا لا فضل لعربي على أعجمي إلا بالتقوى»</strong> (في خطبة أيام التشريق).\n\nثم قال: <strong>«وأنتم تُسألون عني فما أنتم قائلون؟»</strong> قالوا: نشهد أنك قد بلّغت وأدّيت ونصحت. فرفع إصبعه إلى السماء: <strong>«اللهم اشهد، اللهم اشهد»</strong>.\n\nوفيها نزلت: {الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِي}. فبكى عمر لأنه علم أنه نعي.",
+  g:"sahih", src:"صحيح مسلم (حديث جابر في صفة الحج)، صحيح البخاري، سورة المائدة 3.",
+  ben:[
+   {t:"بدأ بإلغاء ربا عمّه ودم ابن عمه. التطبيق يبدأ من الأقربين وإلا فهو خطاب بلا مصداقية.", tags:["adl","sidq","qiyada"]},
+   {t:"«لا فضل لعربي على أعجمي إلا بالتقوى» — تفكيك العنصرية من جذرها في وثيقة عامة أمام مئة ألف شاهد.", tags:["adl","ukhuwa"]},
+   {t:"«لعلي لا ألقاكم بعد عامي هذا» — القائد الذي يستشعر أجله يكثّف الوصايا ويوثّق. ماذا لو كان هذا عامك الأخير؟", tags:["ajal","qiyada"]},
+   {t:"«اللهم اشهد» — إشهاد على أداء الأمانة أمام الخلق. اسأل نفسك: لو سُئل من حولي عني اليوم، بماذا يشهدون؟", tags:["ajal","sidq"]},
+   {t:"صياغة المبادئ في جمل قصيرة محفوظة، أمام أكبر تجمّع ممكن، في أقدس توقيت. هندسة إعلامية كاملة.", tags:["ilam","takhtit"]}
+  ], ppl:["umar","abubakr"]},
+
+ {id:"e79", t:"المرض وآخر الوصايا", d:"صفر — ربيع الأول 11هـ",
+  s:"اشتكى ﷺ نحو أسبوعين، وجهّز جيش أسامة، وأمر أبا بكر بالصلاة، وأوصى بالصلاة والأرقّاء.",
+  n:"بدأ الوجع في أواخر صفر بصداع شديد. ومع ذلك أنفذ <strong>بعث أسامة بن زيد</strong> إلى الشام وهو ابن نحو ثمانية عشر، وفيه كبار المهاجرين والأنصار. فطعن ناس في إمارته، فخطب ﷺ: <strong>«إن تطعنوا في إمارته فقد كنتم تطعنون في إمارة أبيه من قبل»</strong>.\n\nواشتدّ به المرض فاستأذن نساءه أن يُمرّض في بيت <strong>عائشة</strong> فأذنّ له، فخرج بين رجلين تخطّ قدماه الأرض.\n\nثم أمر: <strong>«مروا أبا بكر فليصلّ بالناس»</strong> — فصلّى أبو بكر بالناس نحو سبعة عشر صلاة، وهي إشارة قوية إلى ترشيحه للخلافة.\n\nوكان من آخر وصاياه:\n• <strong>«الصلاة الصلاة، وما ملكت أيمانكم»</strong> يردّدها وهو يغرغر.\n• <strong>«لعن الله اليهود والنصارى، اتخذوا قبور أنبيائهم مساجد»</strong> يحذّر أمته أن تفعل بقبره ذلك.\n• «لا تُطروني كما أطرت النصارى ابن مريم».\n• أخرج ﷺ في آخر أيامه فرأى الناس صفوفاً خلف أبي بكر فتبسّم — <strong>وكان آخر نظرة نظرها إليهم</strong>.",
+  g:"sahih", src:"صحيح البخاري ومسلم (كتاب المغازي، باب مرض النبي ﷺ ووفاته).",
+  ben:[
+   {t:"أنفذ بعث أسامة وهو في سكرات المرض. المشروع لا يتوقف بمرض القائد إن كان مبنياً على مؤسسة.", tags:["qiyada","takhtit"]},
+   {t:"دافع عن قائد شاب أمام اعتراض الكبار. حماية من تولّيه من التشويش جزء من التمكين له.", tags:["shabab","qiyada"]},
+   {t:"آخر الوصايا: الصلة بالله (الصلاة) وحقوق الأضعف (ما ملكت أيمانكم). أولويات من عرف أنه راحل.", tags:["awlawiyat","adl","ajal"]},
+   {t:"حذّر من الغلوّ في شخصه وهو على فراش الموت. حماية الفكرة من أن تتحوّل لعبادة شخص.", tags:["thabat","tarbiya"]},
+   {t:"آخر ما رآه صفوف تُصلّي خلف خليفة. من أراد أثراً بعده فليبنِ نظاماً لا يقوم عليه وحده.", tags:["ajal","qiyada","takhtit"]}
+  ], ppl:["usama","abubakr","aisha","umar"]},
+
+ {id:"e80", t:"الوفاة وموقف الصدّيق", d:"الاثنين 12 ربيع الأول 11هـ",
+  s:"تُوفي ﷺ ضحى الاثنين في بيت عائشة وعمره 63، فذُهل الناس حتى ثبّتهم أبو بكر بكلمته الخالدة.",
+  n:"في ضحى يوم <strong>الاثنين</strong>، وهو في حِجر <strong>عائشة</strong>، جعل يدخل يده في ركوة فيها ماء فيمسح وجهه ويقول: <strong>«لا إله إلا الله، إن للموت سكرات»</strong>. ثم رفع يده وجعل يقول: <strong>«في الرفيق الأعلى»</strong> — ثلاثاً — ثم قُبضت. وكان عمره <strong>ثلاثاً وستين سنة</strong>.\n\nفاضطرب المسلمون اضطراباً شديداً. <strong>عمر</strong> قام يقول: إن رجالاً من المنافقين يزعمون أن رسول الله ﷺ مات، وإنه والله ما مات ولكن ذهب إلى ربه كما ذهب موسى.\n\nفأقبل <strong>أبو بكر</strong> من السُّنح، فدخل فكشف عن وجهه ﷺ فقبّله وقال: <strong>«طبت حياً وميتاً»</strong>. ثم خرج فقال: أما بعد، <strong>«من كان يعبد محمداً فإن محمداً قد مات، ومن كان يعبد الله فإن الله حيّ لا يموت»</strong>، ثم تلا: {وَمَا مُحَمَّدٌ إِلَّا رَسُولٌ قَدْ خَلَتْ مِن قَبْلِهِ الرُّسُلُ ۚ أَفَإِن مَّاتَ أَوْ قُتِلَ انقَلَبْتُمْ عَلَىٰ أَعْقَابِكُمْ}.\n\nقال عمر: <strong>فوالله ما هو إلا أن سمعت أبا بكر تلاها فعقرت حتى ما تُقلّني رجلاي، وحتى أهويت إلى الأرض</strong>. وقال ابن عباس: كأنّ الناس لم يعلموا أن هذه الآية نزلت حتى تلاها أبو بكر.\n\nودُفن ﷺ في بيت عائشة في الموضع الذي قُبض فيه. وقالت أنس: ما نفضنا أيدينا من تراب قبره حتى أنكرنا قلوبنا.",
+  g:"sahih", src:"صحيح البخاري (باب مرض النبي ﷺ ووفاته)، سورة آل عمران 144.",
+  ben:[
+   {t:"«من كان يعبد محمداً...» — أعظم لحظة ثبات في التاريخ. في الأزمات الكبرى، من يعود إلى النصّ ينجو ومن يعود إلى العاطفة يضلّ.", tags:["thabat","qiyada","tawakkul"]},
+   {t:"ذاق ﷺ سكرات الموت وهو سيد الخلق. لا أحد معفى من هذه اللحظة — فاستعدّ لها قبل أن تأتيك.", tags:["ajal"]},
+   {t:"«في الرفيق الأعلى» — آخر ما نطق به اختيار واعٍ. الخاتمة انعكاس لما عاش عليه المرء لا مصادفة.", tags:["ajal","thabat"]},
+   {t:"دُفن في بيته لا في مقبرة، منعاً لاتخاذ قبره مسجداً. حسم شرعي حتى في تفاصيل جنازته.", tags:["thabat"]},
+   {t:"الرسالة استمرت بعده لأنه بنى رجالاً لا أتباعاً. المشروع الذي يموت بموت صاحبه لم يكن مشروعاً.", tags:["tarbiya","qiyada","ajal"]}
+  ], ppl:["abubakr","umar","aisha","ali"]}
+]}
+];
+
+const PERIODS = [...PB1, ...PB2, ...PB3];
+</script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+<script>
+/* ============================================================
+   منطق التطبيق
+   ============================================================ */
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const GRADES = {
+  sahih:{n:"ثابت في الصحيحين أو ما في حكمهما", i:"✓"},
+  hasan:{n:"إسناده حسن أو جيّد",               i:"✓"},
+  mash: {n:"مشهور في كتب السير — لا يصحّ إسناده تماماً", i:"~"},
+  daif: {n:"ضعيف — يُذكر للعلم لا للاستدلال",   i:"!"}
+};
+
+/* ---------- فهارس ---------- */
+const EV = {}, EV_PERIOD = {}, PER = {}, TAG = {};
+PERIODS.forEach(p => p.ev.forEach(e => { EV[e.id]=e; EV_PERIOD[e.id]=p; }));
+PEOPLE.forEach(p => PER[p.id]=p);
+TAGS.forEach(t => TAG[t.id]=t);
+
+/* كل الفوائد مسطّحة مع مصدرها */
+function allBenefits(){
+  const out=[];
+  PERIODS.forEach(p=>p.ev.forEach(e=>(e.ben||[]).forEach((b,i)=>{
+    out.push({...b, ev:e.id, evT:e.t, per:p.id, perC:p.c, key:e.id+'-'+i});
+  })));
+  (USER.ben||[]).forEach((b,i)=>out.push({...b, ev:b.ev||null, evT:b.ev?(EV[b.ev]?.t||''):'إضافة شخصية', mine:true, key:'u'+i}));
+  return out;
+}
+
+/* ---------- التخزين ---------- */
+const KEY='seerah_v1';
+let mem={};
+const store={
+  get(){
+    try{ return JSON.parse(localStorage.getItem(KEY)||'null') || mem; }
+    catch(e){ return mem; }
+  },
+  set(o){
+    mem=o;
+    try{ localStorage.setItem(KEY, JSON.stringify(o)); }catch(e){}
+  }
+};
+let USER = Object.assign({notes:{}, marks:[], ben:[], theme:'dark', fb:null, code:''}, store.get());
+const save = () => { store.set(USER); cloudPush(); };
+
+/* ---------- أدوات ---------- */
+let tmr;
+function toast(m){
+  const t=$('#toast'); t.textContent=m; t.classList.add('on');
+  clearTimeout(tmr); tmr=setTimeout(()=>t.classList.remove('on'),2400);
+}
+const nf = n => n.toLocaleString('ar-EG');
+
+/* ============================================================
+   التنقّل
+   ============================================================ */
+const VIEWS=[
+  {id:'timeline', n:'الخط الزمني'},
+  {id:'benefits', n:'الفوائد'},
+  {id:'people',   n:'الشخصيات'},
+  {id:'mine',     n:'ملاحظاتي'},
+  {id:'search',   n:'بحث'}
+];
+function go(id){
+  $$('.view').forEach(v=>v.classList.toggle('on', v.id==='v-'+id));
+  $$('.tab').forEach(t=>t.classList.toggle('on', t.dataset.v===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='benefits') renderBenefits();
+  if(id==='people')   renderPeople();
+  if(id==='mine')     renderMine();
+  if(id==='search')   setTimeout(()=>$('#q')?.focus(),120);
+}
+$('#nav').innerHTML = VIEWS.map((v,i)=>
+  `<button class="tab${i?'':' on'}" data-v="${v.id}">${v.n}</button>`).join('');
+$$('.tab').forEach(t=>t.onclick=()=>go(t.dataset.v));
+
+/* ============================================================
+   الخط الزمني
+   ============================================================ */
+function renderTimeline(){
+  const totalEv = PERIODS.reduce((a,p)=>a+p.ev.length,0);
+  const totalBen = allBenefits().length;
+  $('#v-timeline').innerHTML = `
+  <div class="vhead">
+    <div class="eyebrow">من عام الفيل إلى سنة إحدى عشرة</div>
+    <h2>الخط الزمني للسيرة</h2>
+    <p>عشر فترات مرتّبة، وداخل كل فترة أحداثها. اضغط على أي حدث لتقرأ سرده وفوائده والشخصيات المرتبطة به.</p>
+  </div>
+  <div class="stat">
+    <div><b>${nf(PERIODS.length)}</b><span>فترة</span></div>
+    <div><b>${nf(totalEv)}</b><span>حدثاً</span></div>
+    <div><b>${nf(totalBen)}</b><span>فائدة</span></div>
+    <div><b>${nf(TAGS.length)}</b><span>محوراً</span></div>
+    <div><b>${nf(PEOPLE.length)}</b><span>شخصية</span></div>
+  </div>
+  <div class="spine">${PERIODS.map((p,pi)=>`
+    <div class="stratum" style="--pcol:${p.c}" data-p="${p.id}">
+      <div class="pcard">
+        <button class="phead" data-toggle="${p.id}">
+          <span class="pnum">${nf(pi+1)}</span>
+          <span class="pmeta">
+            <h3>${esc(p.t)}</h3>
+            <div class="pera">${esc(p.era)}</div>
+            <div class="pdesc">${esc(p.d)}</div>
+          </span>
+          <span class="pcount">${nf(p.ev.length)} أحداث</span>
+          <span class="chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="pbody">
+          ${p.ev.map((e,ei)=>`
+            <button class="ev" data-e="${e.id}">
+              <span class="evno">${nf(ei+1)}</span>
+              <span class="evmeta">
+                <h4>${esc(e.t)}</h4>
+                <div class="evdate">${esc(e.d)}</div>
+                <div class="evsum">${esc(e.s)}</div>
+                <div class="evbadges">
+                  <span class="mini g">${nf((e.ben||[]).length)} فوائد</span>
+                  ${(e.ppl||[]).length?`<span class="mini">${nf(e.ppl.length)} شخصيات</span>`:''}
+                  <span class="mini${e.g==='sahih'||e.g==='hasan'?' s':''}">${GRADES[e.g].i} ${e.g==='sahih'?'صحيح':e.g==='hasan'?'حسن':e.g==='mash'?'مشهور':'ضعيف'}</span>
+                </div>
+              </span>
+              ${USER.notes[e.id]?'<span class="dot-note" title="لك ملاحظة"></span>':''}
+            </button>`).join('')}
+        </div>
+      </div>
+    </div>`).join('')}
+  </div>`;
+  $$('[data-toggle]').forEach(b=>b.onclick=()=>b.closest('.stratum').classList.toggle('open'));
+  $$('.ev').forEach(b=>b.onclick=()=>openEvent(b.dataset.e));
+}
+
+/* ============================================================
+   نافذة الحدث
+   ============================================================ */
+function openEvent(id){
+  const e=EV[id]; if(!e) return;
+  const p=EV_PERIOD[id];
+  const gr=GRADES[e.g];
+  $('#sheet').style.setProperty('--pcol', p.c);
+  $('#sheet').innerHTML=`
+  <div class="shead">
+    <button class="xbtn" onclick="closeOvl()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div class="eyebrow">${esc(p.t)} · ${esc(e.d)}</div>
+    <h3>${esc(e.t)}</h3>
+  </div>
+  <div class="sbody">
+    <div class="sec">
+      <h5>السرد</h5>
+      <div class="narr">${e.n.split('\n\n').map(x=>`<p style="margin-bottom:14px">${x}</p>`).join('')}</div>
+    </div>
+
+    <div class="sec">
+      <h5>درجة الثبوت والمصدر</h5>
+      <span class="grade ${e.g}">${gr.i} ${esc(gr.n)}</span>
+      <div class="srcbox" style="margin-top:10px">${esc(e.src)}</div>
+    </div>
+
+    ${(e.ben||[]).length?`<div class="sec">
+      <h5>الفوائد المستخلصة</h5>
+      ${e.ben.map((b,i)=>`
+        <div class="ben">
+          <span class="bn">${nf(i+1)}</span>
+          <span class="bt">${esc(b.t)}
+            <span class="btags" style="margin-top:8px">${(b.tags||[]).map(t=>
+              `<button class="btag" onclick="jumpTag('${t}')"><span class="hash">#</span>${esc(TAG[t]?.n||t)}</button>`).join('')}</span>
+          </span>
+        </div>`).join('')}
+    </div>`:''}
+
+    ${(e.ppl||[]).length?`<div class="sec">
+      <h5>الشخصيات في هذا الحدث</h5>
+      <div class="chipline">${e.ppl.map(pid=>{
+        const pr=PER[pid]; if(!pr) return '';
+        return `<button class="plink" style="--kcol:${KINDS[pr.k].c}" onclick="openPerson('${pid}')"><i></i>${esc(pr.n)}</button>`;
+      }).join('')}</div>
+    </div>`:''}
+
+    <div class="sec">
+      <h5>ملاحظتي</h5>
+      <textarea class="note" id="nt" placeholder="اكتب تدبّرك أو ربطك بواقعك هنا… يُحفظ تلقائياً.">${esc(USER.notes[id]||'')}</textarea>
+      <div class="row">
+        <button class="btn pri" onclick="saveNote('${id}')">حفظ الملاحظة</button>
+        ${USER.notes[id]?`<button class="btn dgr" onclick="delNote('${id}')">حذف الملاحظة</button>`:''}
+        <button class="btn" onclick="toggleMark('${id}')">${USER.marks.includes(id)?'إزالة من المختارات':'أضف للمختارات'}</button>
+      </div>
+    </div>
+  </div>`;
+  $('#ovl').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function saveNote(id){
+  const v=$('#nt').value.trim();
+  if(v) USER.notes[id]=v; else delete USER.notes[id];
+  save(); toast('حُفظت الملاحظة'); renderTimeline();
+}
+function delNote(id){ delete USER.notes[id]; save(); toast('حُذفت الملاحظة'); openEvent(id); renderTimeline(); }
+function toggleMark(id){
+  const i=USER.marks.indexOf(id);
+  if(i<0){USER.marks.push(id); toast('أُضيف للمختارات');} else {USER.marks.splice(i,1); toast('أُزيل من المختارات');}
+  save(); openEvent(id);
+}
+function closeOvl(){ $('#ovl').classList.remove('on'); document.body.style.overflow=''; }
+$('#ovl').onclick=e=>{ if(e.target.id==='ovl') closeOvl(); };
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeOvl(); });
+
+/* ============================================================
+   الفوائد حسب المحاور
+   ============================================================ */
+let curTag=null;
+function renderBenefits(){
+  const all=allBenefits();
+  const counts={}; TAGS.forEach(t=>counts[t.id]=0);
+  all.forEach(b=>(b.tags||[]).forEach(t=>{ if(counts[t]!=null) counts[t]++; }));
+  const list = curTag ? all.filter(b=>(b.tags||[]).includes(curTag)) : [];
+
+  $('#v-benefits').innerHTML=`
+  <div class="vhead">
+    <div class="eyebrow">${nf(all.length)} فائدة موزّعة على ${nf(TAGS.length)} محوراً</div>
+    <h2>الفوائد حسب المحاور</h2>
+    <p>كل فائدة في السيرة مربوطة بمحور موضوعي. اختر محوراً لترى كل ما ورد فيه عبر الفترات كلها — هنا تظهر الشبكة.</p>
+  </div>
+  <div class="tagbar">${TAGS.map(t=>
+    `<button class="tagchip${curTag===t.id?' on':''}" data-t="${t.id}"><span class="hash">#</span>${esc(t.n)} <b>${nf(counts[t.id])}</b></button>`).join('')}</div>
+  ${curTag?`
+    <div style="margin-bottom:18px;padding:14px 18px;border:1px solid var(--line);border-radius:11px;background:var(--lapis-850)">
+      <div style="font-family:'Aref Ruqaa',serif;font-size:19px;color:var(--gold);margin-bottom:5px">${esc(TAG[curTag].n)}</div>
+      <div style="font-size:13.5px;color:var(--muted);line-height:1.8">${esc(TAG[curTag].d)}</div>
+    </div>
+    <div class="grid g2">${list.map(b=>`
+      <div class="bcard">
+        <p>${esc(b.t)}</p>
+        <div class="btags">${(b.tags||[]).filter(t=>t!==curTag).map(t=>
+          `<button class="btag" onclick="jumpTag('${t}')"><span class="hash">#</span>${esc(TAG[t]?.n||t)}</button>`).join('')}</div>
+        <div class="bsrc">
+          <span>من:</span>
+          ${b.ev?`<a href="#" onclick="openEvent('${b.ev}');return false">${esc(b.evT)}</a>`:`<span>${esc(b.evT)}</span>`}
+          ${b.mine?'<span class="mini g">إضافتي</span>':''}
+        </div>
+      </div>`).join('')}</div>`
+  :`<div class="empty"><div class="big">اختر محوراً</div><p>اضغط على أي محور بالأعلى لتجميع كل فوائده من السيرة كلها في مكان واحد.</p></div>`}`;
+  $$('.tagchip').forEach(c=>c.onclick=()=>{ curTag = curTag===c.dataset.t?null:c.dataset.t; renderBenefits(); });
+}
+function jumpTag(t){ closeOvl(); curTag=t; go('benefits'); }
+
+/* ============================================================
+   الشخصيات
+   ============================================================ */
+function eventsOf(pid){
+  const out=[];
+  PERIODS.forEach(p=>p.ev.forEach(e=>{ if((e.ppl||[]).includes(pid)) out.push({e,p}); }));
+  return out;
+}
+let curKind=null;
+function renderPeople(){
+  const list = curKind ? PEOPLE.filter(p=>p.k===curKind) : PEOPLE;
+  $('#v-people').innerHTML=`
+  <div class="vhead">
+    <div class="eyebrow">${nf(PEOPLE.length)} شخصية</div>
+    <h2>رجال السيرة ونساؤها</h2>
+    <p>لكل شخصية ملفّ تعريفي والأحداث التي ظهرت فيها. من هنا تقرأ السيرة عبر الأشخاص بدل الترتيب الزمني.</p>
+  </div>
+  <div class="tagbar">
+    <button class="tagchip${curKind?'':' on'}" data-k="">الكل <b>${nf(PEOPLE.length)}</b></button>
+    ${Object.entries(KINDS).map(([k,v])=>{
+      const c=PEOPLE.filter(p=>p.k===k).length;
+      return c?`<button class="tagchip${curKind===k?' on':''}" data-k="${k}">${esc(v.n)} <b>${nf(c)}</b></button>`:'';
+    }).join('')}
+  </div>
+  <div class="grid g3">${list.map(p=>`
+    <button class="pers" style="--kcol:${KINDS[p.k].c}" data-p="${p.id}">
+      <span class="kind">${esc(KINDS[p.k].n)}</span>
+      <div class="init">${esc(p.n.replace(/^(أبو|أم|آل|ذو)\s+/,'').trim()[0]||'؟')}</div>
+      <h4>${esc(p.n)}</h4>
+      <div class="role">${esc(p.r)}</div>
+    </button>`).join('')}</div>`;
+  $$('[data-k]').forEach(b=>b.onclick=()=>{ curKind=b.dataset.k||null; renderPeople(); });
+  $$('.pers').forEach(b=>b.onclick=()=>openPerson(b.dataset.p));
+}
+function openPerson(pid){
+  const p=PER[pid]; if(!p) return;
+  const evs=eventsOf(pid);
+  $('#sheet').style.setProperty('--pcol', KINDS[p.k].c);
+  $('#sheet').innerHTML=`
+  <div class="shead">
+    <button class="xbtn" onclick="closeOvl()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div class="eyebrow">${esc(KINDS[p.k].n)}</div>
+    <h3>${esc(p.n)}</h3>
+    <div style="color:var(--muted);font-size:14px;margin-top:4px">${esc(p.r)}</div>
+  </div>
+  <div class="sbody">
+    <div class="sec"><h5>التعريف</h5><div class="narr">${esc(p.b)}</div></div>
+    ${evs.length?`<div class="sec">
+      <h5>ظهر في ${nf(evs.length)} من الأحداث</h5>
+      ${evs.map(({e,p:pp})=>`
+        <button class="ev" style="--pcol:${pp.c};border:1px solid var(--line);margin-bottom:8px" onclick="openEvent('${e.id}')">
+          <span class="evmeta">
+            <h4>${esc(e.t)}</h4>
+            <div class="evdate">${esc(pp.t)} · ${esc(e.d)}</div>
+            <div class="evsum">${esc(e.s)}</div>
+          </span>
+        </button>`).join('')}
+    </div>`:`<div class="sec"><h5>الأحداث</h5><div class="srcbox">لم تُربط بعد بأحداث في قاعدة البيانات.</div></div>`}
+  </div>`;
+  $('#ovl').classList.add('on'); document.body.style.overflow='hidden';
+}
+
+/* ============================================================
+   ملاحظاتي والمختارات
+   ============================================================ */
+function renderMine(){
+  const notes=Object.keys(USER.notes).filter(k=>EV[k]);
+  const marks=USER.marks.filter(k=>EV[k]);
+  $('#v-mine').innerHTML=`
+  <div class="vhead">
+    <div class="eyebrow">${nf(notes.length)} ملاحظة · ${nf(marks.length)} مختار · ${nf((USER.ben||[]).length)} فائدة مضافة</div>
+    <h2>ملاحظاتي</h2>
+    <p>كل ما سجّلته أثناء الدراسة. يُحفظ على جهازك، ويمكن مزامنته أو تصديره من زرّ المزامنة بالأعلى.</p>
+  </div>
+
+  <div class="sec"><h5>إضافة فائدة من عندك</h5>
+    <label class="lbl">نصّ الفائدة</label>
+    <input class="fld" id="ubT" placeholder="اكتب الفائدة التي استخرجتها…">
+    <label class="lbl">المحور</label>
+    <select class="fld" id="ubTag">${TAGS.map(t=>`<option value="${t.id}">${esc(t.n)}</option>`).join('')}</select>
+    <label class="lbl">مرتبطة بحدث (اختياري)</label>
+    <select class="fld" id="ubEv"><option value="">— بدون —</option>${
+      PERIODS.map(p=>`<optgroup label="${esc(p.t)}">${p.ev.map(e=>`<option value="${e.id}">${esc(e.t)}</option>`).join('')}</optgroup>`).join('')}</select>
+    <div class="row"><button class="btn pri" onclick="addBen()">أضف الفائدة</button></div>
+  </div>
+
+  ${notes.length?`<div class="sec"><h5>ملاحظاتي على الأحداث</h5>
+    ${notes.map(k=>`<details class="acc"><summary>${esc(EV[k].t)}</summary>
+      <div class="inner" style="white-space:pre-wrap;color:var(--ivory-dim)">${esc(USER.notes[k])}
+      <div class="row"><button class="btn" onclick="openEvent('${k}')">افتح الحدث</button></div></div></details>`).join('')}
+  </div>`:''}
+
+  ${marks.length?`<div class="sec"><h5>المختارات</h5>
+    <div class="grid g2">${marks.map(k=>`
+      <button class="pers" onclick="openEvent('${k}')" style="--kcol:${EV_PERIOD[k].c}">
+        <h4>${esc(EV[k].t)}</h4>
+        <div class="role">${esc(EV_PERIOD[k].t)} · ${esc(EV[k].d)}</div>
+      </button>`).join('')}</div>
+  </div>`:''}
+
+  ${(USER.ben||[]).length?`<div class="sec"><h5>فوائدي المضافة</h5>
+    ${USER.ben.map((b,i)=>`<div class="bcard" style="margin-bottom:9px"><p>${esc(b.t)}</p>
+      <div class="btags">${(b.tags||[]).map(t=>`<span class="btag"><span class="hash">#</span>${esc(TAG[t]?.n||t)}</span>`).join('')}</div>
+      <div class="bsrc">${b.ev?`<a href="#" onclick="openEvent('${b.ev}');return false">${esc(EV[b.ev]?.t||'')}</a>`:'<span>غير مرتبطة بحدث</span>'}
+      <button class="btn dgr" style="padding:3px 11px;font-size:12px" onclick="delBen(${i})">حذف</button></div></div>`).join('')}
+  </div>`:''}
+
+  ${!notes.length&&!marks.length&&!(USER.ben||[]).length?
+    '<div class="empty"><div class="big">لا شيء بعد</div><p>افتح أي حدث من الخط الزمني واكتب ملاحظتك، أو أضف فائدة من الأعلى.</p></div>':''}`;
+}
+function addBen(){
+  const t=$('#ubT').value.trim(); if(!t){ toast('اكتب نصّ الفائدة أولاً'); return; }
+  USER.ben=USER.ben||[];
+  USER.ben.push({t, tags:[$('#ubTag').value], ev:$('#ubEv').value||null});
+  save(); toast('أُضيفت الفائدة'); renderMine();
+}
+function delBen(i){ USER.ben.splice(i,1); save(); toast('حُذفت الفائدة'); renderMine(); }
+
+/* ============================================================
+   البحث
+   ============================================================ */
+function hl(txt,q){
+  if(!q) return esc(txt);
+  const i=txt.toLowerCase().indexOf(q.toLowerCase());
+  if(i<0) return esc(txt);
+  return esc(txt.slice(0,i))+'<mark>'+esc(txt.slice(i,i+q.length))+'</mark>'+esc(txt.slice(i+q.length));
+}
+function renderSearch(){
+  $('#v-search').innerHTML=`
+  <div class="vhead">
+    <div class="eyebrow">أحداث · فوائد · شخصيات</div>
+    <h2>البحث</h2>
+    <p>ابحث في السرد والفوائد وتراجم الشخصيات دفعة واحدة.</p>
+  </div>
+  <div class="searchwrap">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="q" placeholder="اكتب كلمة… مثلاً: الشورى، خديجة، الخندق، الصبر">
+  </div>
+  <div id="sout"><div class="empty"><div class="big">ابحث</div><p>اكتب كلمتين على الأقل لبدء البحث.</p></div></div>`;
+  let t;
+  $('#q').oninput=e=>{ clearTimeout(t); t=setTimeout(()=>doSearch(e.target.value.trim()),200); };
+}
+function doSearch(q){
+  const out=$('#sout');
+  if(q.length<2){ out.innerHTML='<div class="empty"><div class="big">ابحث</div><p>اكتب كلمتين على الأقل لبدء البحث.</p></div>'; return; }
+  const L=q.toLowerCase(), R=[];
+  PERIODS.forEach(p=>p.ev.forEach(e=>{
+    const hay=(e.t+' '+e.s+' '+e.n).toLowerCase();
+    if(hay.includes(L)) R.push({k:'حدث', t:e.t, p:e.s, go:`openEvent('${e.id}')`, sub:p.t+' · '+e.d});
+  }));
+  allBenefits().forEach(b=>{ if(b.t.toLowerCase().includes(L))
+    R.push({k:'فائدة', t:b.t, p:'من: '+b.evT, go:b.ev?`openEvent('${b.ev}')`:'', sub:''}); });
+  PEOPLE.forEach(p=>{ if((p.n+' '+p.r+' '+p.b).toLowerCase().includes(L))
+    R.push({k:'شخصية', t:p.n, p:p.r, go:`openPerson('${p.id}')`, sub:KINDS[p.k].n}); });
+
+  out.innerHTML = R.length
+    ? `<div style="color:var(--muted);font-size:13px;margin-bottom:12px">${nf(R.length)} نتيجة</div>`+
+      R.slice(0,80).map(r=>`<button class="sres" ${r.go?`onclick="${r.go}"`:''}>
+        <div class="k">${r.k}${r.sub?' · '+esc(r.sub):''}</div>
+        <h4>${hl(r.t,q)}</h4><p>${hl(r.p.slice(0,180),q)}</p></button>`).join('')
+    : `<div class="empty"><div class="big">لا نتائج</div><p>جرّب كلمة أخرى أو أقصر.</p></div>`;
+}
+
+/* ============================================================
+   المظهر
+   ============================================================ */
+function setTheme(t){
+  document.documentElement.dataset.theme=t;
+  USER.theme=t; save();
+}
+$('#themeBtn').onclick=()=>setTheme(USER.theme==='dark'?'light':'dark');
+
+/* ============================================================
+   المزامنة والنسخ الاحتياطي
+   ============================================================ */
+let fbDB=null;
+function fbInit(){
+  if(!USER.fb) return false;
+  try{
+    if(!firebase.apps.length) firebase.initializeApp(USER.fb);
+    fbDB=firebase.database(); return true;
+  }catch(e){ console.warn(e); return false; }
+}
+let pushTmr;
+function cloudPush(){
+  if(!fbDB||!USER.code) return;
+  clearTimeout(pushTmr);
+  pushTmr=setTimeout(()=>{
+    fbDB.ref('seerah/'+USER.code).set({
+      notes:USER.notes, marks:USER.marks, ben:USER.ben, at:Date.now()
+    }).catch(e=>console.warn(e));
+  },1200);
+}
+function cloudPull(){
+  if(!fbDB||!USER.code){ toast('اضبط إعدادات فايربيس ورمز المزامنة أولاً'); return; }
+  fbDB.ref('seerah/'+USER.code).get().then(s=>{
+    if(!s.exists()){ toast('لا توجد نسخة محفوظة بهذا الرمز'); return; }
+    const d=s.val();
+    USER.notes=d.notes||{}; USER.marks=d.marks||[]; USER.ben=d.ben||[];
+    store.set(USER); toast('تم تنزيل النسخة السحابية');
+    renderTimeline(); renderMine(); closeOvl();
+  }).catch(e=>toast('تعذّر الاتصال: '+e.message));
+}
+function exportJSON(){
+  const blob=new Blob([JSON.stringify({notes:USER.notes,marks:USER.marks,ben:USER.ben},null,2)],
+    {type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='seerah-notes-'+new Date().toISOString().slice(0,10)+'.json';
+  a.click(); toast('نُزّل الملف');
+}
+function importJSON(inp){
+  const f=inp.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ try{
+    const d=JSON.parse(r.result);
+    USER.notes=Object.assign(USER.notes,d.notes||{});
+    USER.marks=[...new Set([...(USER.marks||[]),...(d.marks||[])])];
+    USER.ben=[...(USER.ben||[]),...(d.ben||[])];
+    save(); toast('تم الاستيراد والدمج'); renderTimeline(); renderMine(); closeOvl();
+  }catch(e){ toast('الملف غير صالح'); } };
+  r.readAsText(f);
+}
+$('#syncBtn').onclick=()=>{
+  $('#sheet').style.setProperty('--pcol','var(--gold)');
+  $('#sheet').innerHTML=`
+  <div class="shead">
+    <button class="xbtn" onclick="closeOvl()"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div class="eyebrow">حفظ ونقل</div>
+    <h3>المزامنة والنسخ</h3>
+  </div>
+  <div class="sbody">
+    <div class="sec">
+      <h5>نسخة على جهازك</h5>
+      <div class="srcbox">ملاحظاتك محفوظة تلقائياً في هذا المتصفح. صدّرها كملف لتحتفظ بنسخة أو تنقلها لجهاز آخر.</div>
+      <div class="row">
+        <button class="btn pri" onclick="exportJSON()">تصدير ملف</button>
+        <label class="btn" style="cursor:pointer">استيراد ملف
+          <input type="file" accept="application/json" style="display:none" onchange="importJSON(this)">
+        </label>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h5>المزامنة السحابية (فايربيس)</h5>
+      <div class="srcbox">الصق إعدادات مشروعك من Firebase Console ← إعدادات المشروع ← تطبيق الويب. ثم اختر رمز مزامنة تستخدمه على كل أجهزتك.</div>
+      <label class="lbl">إعدادات فايربيس (JSON)</label>
+      <textarea class="note" id="fbCfg" style="min-height:130px;font-size:12.5px;direction:ltr;text-align:left"
+        placeholder='{"apiKey":"…","authDomain":"…","databaseURL":"https://…","projectId":"…"}'>${USER.fb?esc(JSON.stringify(USER.fb)):''}</textarea>
+      <label class="lbl">رمز المزامنة</label>
+      <input class="fld" id="fbCode" placeholder="مثلاً: mazen-seerah" value="${esc(USER.code||'')}">
+      <div class="row">
+        <button class="btn pri" onclick="saveSync()">احفظ الإعدادات</button>
+        <button class="btn" onclick="cloudPull()">تنزيل من السحابة</button>
+        <button class="btn" onclick="cloudPush();toast('جارٍ الرفع…')">رفع الآن</button>
+      </div>
+      <div class="srcbox" style="margin-top:12px">الحالة: ${fbDB?'<span style="color:var(--sage)">متصل</span>':'<span style="color:var(--amber)">غير مضبوط</span>'}</div>
+    </div>
+
+    <div class="sec">
+      <h5>عن هذا التطبيق</h5>
+      <div class="srcbox">
+        المحتوى مستخلَص من: صحيحَي البخاري ومسلم، سيرة ابن هشام، الطبقات لابن سعد، البداية والنهاية لابن كثير، والرحيق المختوم.<br><br>
+        كل حدث مذيّل بدرجة ثبوته، وقد نُبّه صراحةً على الروايات الضعيفة أو المشهورة غير الثابتة.<br><br>
+        <strong style="color:var(--ivory)">تنبيه:</strong> هذا عمل بشري قابل للخطأ، فراجع ما تحتاج الاستدلال به في مظانّه من كتب أهل العلم.
+      </div>
+    </div>
+  </div>`;
+  $('#ovl').classList.add('on'); document.body.style.overflow='hidden';
+};
+function saveSync(){
+  const raw=$('#fbCfg').value.trim();
+  USER.code=$('#fbCode').value.trim();
+  if(raw){
+    try{ USER.fb=JSON.parse(raw); }
+    catch(e){ toast('صيغة الإعدادات غير صحيحة'); return; }
+  } else USER.fb=null;
+  store.set(USER);
+  if(fbInit()){ toast('اتصلت بفايربيس'); cloudPush(); } else toast('حُفظت الإعدادات');
+  closeOvl();
+}
+
+/* ============================================================
+   الإقلاع
+   ============================================================ */
+document.documentElement.dataset.theme = USER.theme||'dark';
+renderTimeline(); renderSearch(); fbInit();
+if(fbDB && USER.code) setTimeout(()=>{
+  fbDB.ref('seerah/'+USER.code).get().then(s=>{
+    if(s.exists()){
+      const d=s.val(), local=Object.keys(USER.notes).length;
+      if((Object.keys(d.notes||{}).length)>local){
+        USER.notes=d.notes||{}; USER.marks=d.marks||[]; USER.ben=d.ben||[];
+        store.set(USER); renderTimeline(); toast('حُدّثت البيانات من السحابة');
+      }
+    }
+  }).catch(()=>{});
+},900);
+</script>
+</body>
+</html>
